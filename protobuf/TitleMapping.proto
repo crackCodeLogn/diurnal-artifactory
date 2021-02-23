@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "com.vv.personal.diurnal.artifactory.generated";
+option java_outer_classname = "TitleMappingProto";
+
+message TitleMapping {
+  int64 mobile = 1;
+  int32 date = 2;
+  string title = 3;
+}
+
+message TitleMappingList {
+  repeated TitleMapping titleMappings = 1;
+}
