@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 option java_package = "com.vv.personal.diurnal.artifactory.generated";
-option java_outer_classname = "EntriesProto";
+option java_outer_classname = "EntryProto";
 
 message Entry {
   int64 mobile = 1;

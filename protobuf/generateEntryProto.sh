@@ -1,3 +1,3 @@
 #To be run from this folder itself!
 #Install protoc via 'sudo apt install protobuf-compiler'
-protoc --java_out='../src/main/java' Entries.proto
+protoc --java_out='../src/main/java' Entry.proto
