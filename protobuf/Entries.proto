@@ -10,6 +10,7 @@ message Entry {
   Currency currency = 4;
   double amount = 5;
   string description = 6;
+  int32 serial = 7;
 }
 
 enum Sign {
