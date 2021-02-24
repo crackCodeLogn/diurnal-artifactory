@@ -14,9 +14,9 @@ message Entry {
 }
 
 enum Sign {
-  POSITIVE = 0;
-  NEGATIVE = 1;
-  COMMENT = 3;
+  NEGATIVE = 0;
+  POSITIVE = 1;
+  COMMENT = 2;
 }
 
 enum Currency {
