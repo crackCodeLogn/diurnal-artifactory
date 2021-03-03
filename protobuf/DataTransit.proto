@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "com.vv.personal.diurnal.artifactory.generated";
+option java_outer_classname = "DataTransitProto";
+
+message DataTransit {
+  int64 mobile = 1;
+  int32 date = 2;
+  Currency currency = 3;
+  string backupData = 4;
+}
+
+enum Currency {
+  INR = 0;
+  USD = 1;
+  CND = 2;
+}
+
+message DataTransitList {
+  repeated DataTransit dataTransit = 1;
+}
