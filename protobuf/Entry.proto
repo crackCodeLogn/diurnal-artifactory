@@ -26,5 +26,5 @@ enum Currency {
 }
 
 message EntryList {
-  repeated Entry entries = 1;
+  repeated Entry entry = 1;
 }

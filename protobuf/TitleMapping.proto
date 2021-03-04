@@ -10,5 +10,5 @@ message TitleMapping {
 }
 
 message TitleMappingList {
-  repeated TitleMapping titleMappings = 1;
+  repeated TitleMapping titleMapping = 1;
 }

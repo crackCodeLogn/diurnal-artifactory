@@ -9,5 +9,5 @@ message UserMapping {
 }
 
 message UserMappingList {
-  repeated UserMapping userMappings = 1;
+  repeated UserMapping userMapping = 1;
 }
