@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "com.vv.personal.diurnal.artifactory.generated";
+option java_outer_classname = "ResponsePrimitiveProto";
+
+message ResponsePrimitive {
+  int32 integralResponse = 1;
+  int64 longResponse = 2;
+  double doubleResponse = 3;
+  bool boolResponse = 4;
+  string response = 5;
+}
+
+message ResponsePrimitiveList {
+  repeated ResponsePrimitive responsePrimitive = 1;
+}
