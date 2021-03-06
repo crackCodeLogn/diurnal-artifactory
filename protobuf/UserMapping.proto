@@ -6,6 +6,7 @@ option java_outer_classname = "UserMappingProto";
 message UserMapping {
   int64 mobile = 1;
   string username = 2;
+  bool powerUser = 3;
 }
 
 message UserMappingList {
