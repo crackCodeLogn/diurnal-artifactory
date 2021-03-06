@@ -6,7 +6,8 @@ option java_outer_classname = "EntryDayProto";
 message EntryDay {
   int64 mobile = 1;
   int32 date = 2;
-  string entriesAsString = 3;
+  string title = 3;
+  string entriesAsString = 4;
 }
 
 message EntryDayList {

@@ -19,11 +19,12 @@ public final class EntryDayProto {
 
   static {
     java.lang.String[] descriptorData = {
-            "\n\016EntryDay.proto\"A\n\010EntryDay\022\016\n\006mobile\030\001" +
-                    " \001(\003\022\014\n\004date\030\002 \001(\005\022\027\n\017entriesAsString\030\003 " +
-                    "\001(\t\"+\n\014EntryDayList\022\033\n\010entryDay\030\001 \003(\0132\t." +
-                    "EntryDayB>\n-com.vv.personal.diurnal.arti" +
-                    "factory.generatedB\rEntryDayProtob\006proto3"
+            "\n\016EntryDay.proto\"P\n\010EntryDay\022\016\n\006mobile\030\001" +
+                    " \001(\003\022\014\n\004date\030\002 \001(\005\022\r\n\005title\030\003 \001(\t\022\027\n\017ent" +
+                    "riesAsString\030\004 \001(\t\"+\n\014EntryDayList\022\033\n\010en" +
+                    "tryDay\030\001 \003(\0132\t.EntryDayB>\n-com.vv.person" +
+                    "al.diurnal.artifactory.generatedB\rEntryD" +
+                    "ayProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -42,7 +43,7 @@ public final class EntryDayProto {
     internal_static_EntryDay_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_EntryDay_descriptor,
-            new java.lang.String[]{"Mobile", "Date", "EntriesAsString",});
+            new java.lang.String[]{"Mobile", "Date", "Title", "EntriesAsString",});
     internal_static_EntryDayList_descriptor =
             getDescriptor().getMessageTypes().get(1);
     internal_static_EntryDayList_fieldAccessorTable = new
@@ -84,12 +85,23 @@ public final class EntryDayProto {
     int getDate();
 
     /**
-     * <code>string entriesAsString = 3;</code>
+     * <code>string title = 3;</code>
+     */
+    java.lang.String getTitle();
+
+    /**
+     * <code>string title = 3;</code>
+     */
+    com.google.protobuf.ByteString
+    getTitleBytes();
+
+    /**
+     * <code>string entriesAsString = 4;</code>
      */
     java.lang.String getEntriesAsString();
 
     /**
-     * <code>string entriesAsString = 3;</code>
+     * <code>string entriesAsString = 4;</code>
      */
     com.google.protobuf.ByteString
     getEntriesAsStringBytes();
@@ -136,8 +148,15 @@ public final class EntryDayProto {
           // @@protoc_insertion_point(message_implements:EntryDay)
           EntryDayOrBuilder {
     public static final int MOBILE_FIELD_NUMBER = 1;
+
+    // Use EntryDay.newBuilder() to construct.
+    private EntryDay(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
     public static final int DATE_FIELD_NUMBER = 2;
-    public static final int ENTRIESASSTRING_FIELD_NUMBER = 3;
+    public static final int TITLE_FIELD_NUMBER = 3;
+    public static final int ENTRIESASSTRING_FIELD_NUMBER = 4;
     private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(class_scope:EntryDay)
     private static final com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay DEFAULT_INSTANCE;
@@ -156,19 +175,31 @@ public final class EntryDayProto {
       DEFAULT_INSTANCE = new com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay();
     }
 
+    /**
+     * <code>int64 mobile = 1;</code>
+     */
+    public long getMobile() {
+      return mobile_;
+    }
+
     private long mobile_;
     private int date_;
+
+    /**
+     * <code>int32 date = 2;</code>
+     */
+    public int getDate() {
+      return date_;
+    }
+
+    private volatile java.lang.Object title_;
     private volatile java.lang.Object entriesAsString_;
     private byte memoizedIsInitialized = -1;
-
-    // Use EntryDay.newBuilder() to construct.
-    private EntryDay(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
 
     private EntryDay() {
       mobile_ = 0L;
       date_ = 0;
+      title_ = "";
       entriesAsString_ = "";
     }
 
@@ -204,6 +235,12 @@ public final class EntryDayProto {
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              title_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               entriesAsString_ = s;
               break;
             }
@@ -220,7 +257,7 @@ public final class EntryDayProto {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -249,6 +286,16 @@ public final class EntryDayProto {
             com.google.protobuf.ByteString data)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public static com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay parseFrom(
@@ -310,7 +357,7 @@ public final class EntryDayProto {
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     public static Builder newBuilder() {
@@ -344,21 +391,40 @@ public final class EntryDayProto {
     }
 
     /**
-     * <code>int64 mobile = 1;</code>
+     * <code>string title = 3;</code>
      */
-    public long getMobile() {
-      return mobile_;
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      }
     }
 
     /**
-     * <code>int32 date = 2;</code>
+     * <code>string title = 3;</code>
      */
-    public int getDate() {
-      return date_;
+    public com.google.protobuf.ByteString
+    getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     /**
-     * <code>string entriesAsString = 3;</code>
+     * <code>string entriesAsString = 4;</code>
      */
     public java.lang.String getEntriesAsString() {
       java.lang.Object ref = entriesAsString_;
@@ -366,7 +432,7 @@ public final class EntryDayProto {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         entriesAsString_ = s;
         return s;
@@ -374,7 +440,7 @@ public final class EntryDayProto {
     }
 
     /**
-     * <code>string entriesAsString = 3;</code>
+     * <code>string entriesAsString = 4;</code>
      */
     public com.google.protobuf.ByteString
     getEntriesAsStringBytes() {
@@ -391,16 +457,6 @@ public final class EntryDayProto {
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
       if (mobile_ != 0L) {
@@ -409,8 +465,11 @@ public final class EntryDayProto {
       if (date_ != 0) {
         output.writeInt32(2, date_);
       }
+      if (!getTitleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title_);
+      }
       if (!getEntriesAsStringBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, entriesAsString_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, entriesAsString_);
       }
       unknownFields.writeTo(output);
     }
@@ -429,8 +488,11 @@ public final class EntryDayProto {
         size += com.google.protobuf.CodedOutputStream
                 .computeInt32Size(2, date_);
       }
+      if (!getTitleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title_);
+      }
       if (!getEntriesAsStringBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, entriesAsString_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, entriesAsString_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -452,6 +514,8 @@ public final class EntryDayProto {
               == other.getMobile());
       result = result && (getDate()
               == other.getDate());
+      result = result && getTitle()
+              .equals(other.getTitle());
       result = result && getEntriesAsString()
               .equals(other.getEntriesAsString());
       result = result && unknownFields.equals(other.unknownFields);
@@ -470,6 +534,8 @@ public final class EntryDayProto {
               getMobile());
       hash = (37 * hash) + DATE_FIELD_NUMBER;
       hash = (53 * hash) + getDate();
+      hash = (37 * hash) + TITLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTitle().hashCode();
       hash = (37 * hash) + ENTRIESASSTRING_FIELD_NUMBER;
       hash = (53 * hash) + getEntriesAsString().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -514,7 +580,14 @@ public final class EntryDayProto {
             com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayOrBuilder {
       private long mobile_;
       private int date_;
+      private java.lang.Object title_ = "";
       private java.lang.Object entriesAsString_ = "";
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
 
       // Construct using com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay.newBuilder()
       private Builder() {
@@ -525,43 +598,6 @@ public final class EntryDayProto {
               com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
-      }
-
-      public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDay_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDay_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay.class, com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay.Builder.class);
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        mobile_ = 0L;
-
-        date_ = 0;
-
-        entriesAsString_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDay_descriptor;
       }
 
       @java.lang.Override
@@ -578,19 +614,53 @@ public final class EntryDayProto {
         return result;
       }
 
-      @java.lang.Override
-      public com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay buildPartial() {
-        com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay result = new com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay(this);
-        result.mobile_ = mobile_;
-        result.date_ = date_;
-        result.entriesAsString_ = entriesAsString_;
-        onBuilt();
-        return result;
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDay_descriptor;
       }
 
       @java.lang.Override
       public Builder clone() {
         return super.clone();
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDay_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay.class, com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay.Builder.class);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mobile_ = 0L;
+
+        date_ = 0;
+
+        title_ = "";
+
+        entriesAsString_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDay_descriptor;
+      }
+
+      @java.lang.Override
+      public com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay buildPartial() {
+        com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay result = new com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay(this);
+        result.mobile_ = mobile_;
+        result.date_ = date_;
+        result.title_ = title_;
+        result.entriesAsString_ = entriesAsString_;
+        onBuilt();
+        return result;
       }
 
       @java.lang.Override
@@ -613,6 +683,11 @@ public final class EntryDayProto {
       }
 
       @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
       public Builder setRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               int index, java.lang.Object value) {
@@ -626,10 +701,17 @@ public final class EntryDayProto {
         return super.addRepeatedField(field, value);
       }
 
+      /**
+       * <code>int64 mobile = 1;</code>
+       */
+      public long getMobile() {
+        return mobile_;
+      }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay) {
-          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay) other);
+          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -644,6 +726,10 @@ public final class EntryDayProto {
         if (other.getDate() != 0) {
           setDate(other.getDate());
         }
+        if (!other.getTitle().isEmpty()) {
+          title_ = other.title_;
+          onChanged();
+        }
         if (!other.getEntriesAsString().isEmpty()) {
           entriesAsString_ = other.entriesAsString_;
           onChanged();
@@ -651,11 +737,6 @@ public final class EntryDayProto {
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
       }
 
       @java.lang.Override
@@ -676,12 +757,11 @@ public final class EntryDayProto {
         }
         return this;
       }
-
       /**
-       * <code>int64 mobile = 1;</code>
+       * <code>int32 date = 2;</code>
        */
-      public long getMobile() {
-        return mobile_;
+      public int getDate() {
+        return date_;
       }
 
       /**
@@ -707,13 +787,6 @@ public final class EntryDayProto {
       /**
        * <code>int32 date = 2;</code>
        */
-      public int getDate() {
-        return date_;
-      }
-
-      /**
-       * <code>int32 date = 2;</code>
-       */
       public Builder setDate(int value) {
 
         date_ = value;
@@ -732,7 +805,79 @@ public final class EntryDayProto {
       }
 
       /**
-       * <code>string entriesAsString = 3;</code>
+       * <code>string title = 3;</code>
+       */
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       * <code>string title = 3;</code>
+       */
+      public Builder setTitle(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        title_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string title = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+      getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       * <code>string title = 3;</code>
+       */
+      public Builder setTitleBytes(
+              com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        title_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string title = 3;</code>
+       */
+      public Builder clearTitle() {
+
+        title_ = getDefaultInstance().getTitle();
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string entriesAsString = 4;</code>
        */
       public java.lang.String getEntriesAsString() {
         java.lang.Object ref = entriesAsString_;
@@ -748,7 +893,7 @@ public final class EntryDayProto {
       }
 
       /**
-       * <code>string entriesAsString = 3;</code>
+       * <code>string entriesAsString = 4;</code>
        */
       public Builder setEntriesAsString(
               java.lang.String value) {
@@ -762,7 +907,7 @@ public final class EntryDayProto {
       }
 
       /**
-       * <code>string entriesAsString = 3;</code>
+       * <code>string entriesAsString = 4;</code>
        */
       public com.google.protobuf.ByteString
       getEntriesAsStringBytes() {
@@ -779,14 +924,14 @@ public final class EntryDayProto {
       }
 
       /**
-       * <code>string entriesAsString = 3;</code>
+       * <code>string entriesAsString = 4;</code>
        */
       public Builder setEntriesAsStringBytes(
               com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
 
         entriesAsString_ = value;
         onChanged();
@@ -794,7 +939,7 @@ public final class EntryDayProto {
       }
 
       /**
-       * <code>string entriesAsString = 3;</code>
+       * <code>string entriesAsString = 4;</code>
        */
       public Builder clearEntriesAsString() {
 
@@ -829,6 +974,16 @@ public final class EntryDayProto {
           // @@protoc_insertion_point(message_implements:EntryDayList)
           EntryDayListOrBuilder {
     public static final int ENTRYDAY_FIELD_NUMBER = 1;
+
+    // Use EntryDayList.newBuilder() to construct.
+    private EntryDayList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EntryDayList() {
+      entryDay_ = java.util.Collections.emptyList();
+    }
+
     private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(class_scope:EntryDayList)
     private static final com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList DEFAULT_INSTANCE;
@@ -850,13 +1005,11 @@ public final class EntryDayProto {
     private java.util.List<com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay> entryDay_;
     private byte memoizedIsInitialized = -1;
 
-    // Use EntryDayList.newBuilder() to construct.
-    private EntryDayList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private EntryDayList() {
-      entryDay_ = java.util.Collections.emptyList();
+    /**
+     * <code>repeated .EntryDay entryDay = 1;</code>
+     */
+    public java.util.List<com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay> getEntryDayList() {
+      return entryDay_;
     }
 
     private EntryDayList(
@@ -869,7 +1022,7 @@ public final class EntryDayProto {
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -889,7 +1042,7 @@ public final class EntryDayProto {
             }
             default: {
               if (!parseUnknownFieldProto3(
-                      input, unknownFields, extensionRegistry, tag)) {
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -910,6 +1063,20 @@ public final class EntryDayProto {
       }
     }
 
+    /**
+     * <code>repeated .EntryDay entryDay = 1;</code>
+     */
+    public int getEntryDayCount() {
+      return entryDay_.size();
+    }
+
+    /**
+     * <code>repeated .EntryDay entryDay = 1;</code>
+     */
+    public com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay getEntryDay(int index) {
+      return entryDay_.get(index);
+    }
+
     public static final com.google.protobuf.Descriptors.Descriptor
     getDescriptor() {
       return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDayList_descriptor;
@@ -919,6 +1086,16 @@ public final class EntryDayProto {
             java.nio.ByteBuffer data)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     public static com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList parseFrom(
@@ -939,6 +1116,22 @@ public final class EntryDayProto {
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getEntryDayCount() > 0) {
+        hash = (37 * hash) + ENTRYDAY_FIELD_NUMBER;
+        hash = (53 * hash) + getEntryDayList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList parseFrom(byte[] data)
@@ -989,11 +1182,11 @@ public final class EntryDayProto {
     }
 
     public static com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     public static Builder newBuilder() {
@@ -1029,30 +1222,9 @@ public final class EntryDayProto {
     /**
      * <code>repeated .EntryDay entryDay = 1;</code>
      */
-    public java.util.List<com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay> getEntryDayList() {
-      return entryDay_;
-    }
-
-    /**
-     * <code>repeated .EntryDay entryDay = 1;</code>
-     */
     public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayOrBuilder>
     getEntryDayOrBuilderList() {
       return entryDay_;
-    }
-
-    /**
-     * <code>repeated .EntryDay entryDay = 1;</code>
-     */
-    public int getEntryDayCount() {
-      return entryDay_.size();
-    }
-
-    /**
-     * <code>repeated .EntryDay entryDay = 1;</code>
-     */
-    public com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay getEntryDay(int index) {
-      return entryDay_.get(index);
     }
 
     /**
@@ -1064,18 +1236,8 @@ public final class EntryDayProto {
     }
 
     @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
+                        throws java.io.IOException {
       for (int i = 0; i < entryDay_.size(); i++) {
         output.writeMessage(1, entryDay_.get(i));
       }
@@ -1090,7 +1252,7 @@ public final class EntryDayProto {
       size = 0;
       for (int i = 0; i < entryDay_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-                .computeMessageSize(1, entryDay_.get(i));
+          .computeMessageSize(1, entryDay_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1100,7 +1262,7 @@ public final class EntryDayProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-        return true;
+       return true;
       }
       if (!(obj instanceof com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList)) {
         return super.equals(obj);
@@ -1115,22 +1277,6 @@ public final class EntryDayProto {
     }
 
     @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getEntryDayCount() > 0) {
-        hash = (37 * hash) + ENTRYDAY_FIELD_NUMBER;
-        hash = (53 * hash) + getEntryDayList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    @java.lang.Override
     public Builder newBuilderForType() {
       return newBuilder();
     }
@@ -1138,12 +1284,12 @@ public final class EntryDayProto {
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-              ? new Builder() : new Builder().mergeFrom(this);
+          ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1176,25 +1322,6 @@ public final class EntryDayProto {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDayList_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDayList_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList.class, com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList.Builder.class);
-      }
-
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
@@ -1214,10 +1341,10 @@ public final class EntryDayProto {
         return this;
       }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDayList_descriptor;
+      private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
       }
 
       @java.lang.Override
@@ -1256,6 +1383,25 @@ public final class EntryDayProto {
         return super.clone();
       }
 
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDayList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDayList_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList.class, com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList.Builder.class);
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return com.vv.personal.diurnal.artifactory.generated.EntryDayProto.internal_static_EntryDayList_descriptor;
+      }
+
       @java.lang.Override
       public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -1283,16 +1429,21 @@ public final class EntryDayProto {
       }
 
       @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList) {
-          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList) other);
+          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDayList)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1320,8 +1471,8 @@ public final class EntryDayProto {
               entryDay_ = other.entryDay_;
               bitField0_ = (bitField0_ & ~0x00000001);
               entryDayBuilder_ =
-                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                              getEntryDayFieldBuilder() : null;
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                        getEntryDayFieldBuilder() : null;
             } else {
               entryDayBuilder_.addAllMessages(other.entryDay_);
             }
@@ -1330,11 +1481,6 @@ public final class EntryDayProto {
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
       }
 
       @java.lang.Override
@@ -1360,7 +1506,7 @@ public final class EntryDayProto {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           entryDay_ = new java.util.ArrayList<com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay>(entryDay_);
           bitField0_ |= 0x00000001;
-        }
+         }
       }
 
       /**
@@ -1373,7 +1519,6 @@ public final class EntryDayProto {
           return entryDayBuilder_.getMessageList();
         }
       }
-
       /**
        * <code>repeated .EntryDay entryDay = 1;</code>
        */
@@ -1384,7 +1529,6 @@ public final class EntryDayProto {
           return entryDayBuilder_.getCount();
         }
       }
-
       /**
        * <code>repeated .EntryDay entryDay = 1;</code>
        */
@@ -1428,7 +1572,6 @@ public final class EntryDayProto {
         }
         return this;
       }
-
       /**
        * <code>repeated .EntryDay entryDay = 1;</code>
        */
@@ -1502,14 +1645,13 @@ public final class EntryDayProto {
         if (entryDayBuilder_ == null) {
           ensureEntryDayIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                  values, entryDay_);
+              values, entryDay_);
           onChanged();
         } else {
           entryDayBuilder_.addAllMessages(values);
         }
         return this;
       }
-
       /**
        * <code>repeated .EntryDay entryDay = 1;</code>
        */
@@ -1609,16 +1751,15 @@ public final class EntryDayProto {
         }
         return entryDayBuilder_;
       }
-
       @java.lang.Override
       public final Builder setUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
