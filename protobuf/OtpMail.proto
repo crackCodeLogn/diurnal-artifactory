@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "com.vv.personal.diurnal.artifactory.generated";
+option java_outer_classname = "OtpMailProto";
+
+message OtpMail {
+  string email = 1;
+  int32 otp = 2;
+}
+
+message OtpMailList {
+  repeated OtpMail otpMail = 1;
+}
