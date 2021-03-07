@@ -4,75 +4,19 @@
 package com.vv.personal.diurnal.artifactory.generated;
 
 public final class TitleMappingProto {
-  private TitleMappingProto() {
+  private TitleMappingProto() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
   public static void registerAllExtensions(
-          com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-
-  public static void registerAllExtensions(
-          com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-            (com.google.protobuf.ExtensionRegistryLite) registry);
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_TitleMapping_descriptor;
-  private static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_TitleMapping_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_TitleMappingList_descriptor;
-  private static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_TitleMappingList_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.FileDescriptor
-          descriptor;
-
-  static {
-    java.lang.String[] descriptorData = {
-            "\n\022TitleMapping.proto\";\n\014TitleMapping\022\016\n\006" +
-                    "mobile\030\001 \001(\003\022\014\n\004date\030\002 \001(\005\022\r\n\005title\030\003 \001(" +
-                    "\t\"7\n\020TitleMappingList\022#\n\014titleMapping\030\001 " +
-                    "\003(\0132\r.TitleMappingBB\n-com.vv.personal.di" +
-                    "urnal.artifactory.generatedB\021TitleMappin" +
-                    "gProtob\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-            new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-              public com.google.protobuf.ExtensionRegistry assignDescriptors(
-                      com.google.protobuf.Descriptors.FileDescriptor root) {
-                descriptor = root;
-                return null;
-              }
-            };
-    com.google.protobuf.Descriptors.FileDescriptor
-            .internalBuildGeneratedFileFrom(descriptorData,
-                    new com.google.protobuf.Descriptors.FileDescriptor[]{
-                    }, assigner);
-    internal_static_TitleMapping_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-    internal_static_TitleMapping_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_TitleMapping_descriptor,
-            new java.lang.String[]{"Mobile", "Date", "Title",});
-    internal_static_TitleMappingList_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-    internal_static_TitleMappingList_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_TitleMappingList_descriptor,
-            new java.lang.String[]{"TitleMapping",});
-  }
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-  getDescriptor() {
-    return descriptor;
-  }
-
   public interface TitleMappingOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:TitleMapping)
-          com.google.protobuf.MessageOrBuilder {
+      // @@protoc_insertion_point(interface_extends:TitleMapping)
+      com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>int64 mobile = 1;</code>
@@ -88,61 +32,24 @@ public final class TitleMappingProto {
      * <code>string title = 3;</code>
      */
     java.lang.String getTitle();
-
     /**
      * <code>string title = 3;</code>
      */
     com.google.protobuf.ByteString
-    getTitleBytes();
+        getTitleBytes();
   }
-
-  public interface TitleMappingListOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:TitleMappingList)
-          com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>repeated .TitleMapping titleMapping = 1;</code>
-     */
-    java.util.List<com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping>
-    getTitleMappingList();
-
-    /**
-     * <code>repeated .TitleMapping titleMapping = 1;</code>
-     */
-    com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping getTitleMapping(int index);
-
-    /**
-     * <code>repeated .TitleMapping titleMapping = 1;</code>
-     */
-    int getTitleMappingCount();
-
-    /**
-     * <code>repeated .TitleMapping titleMapping = 1;</code>
-     */
-    java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder>
-    getTitleMappingOrBuilderList();
-
-    /**
-     * <code>repeated .TitleMapping titleMapping = 1;</code>
-     */
-    com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder getTitleMappingOrBuilder(
-            int index);
-  }
-
   /**
    * Protobuf type {@code TitleMapping}
    */
-  public static final class TitleMapping extends
-          com.google.protobuf.GeneratedMessageV3 implements
-          // @@protoc_insertion_point(message_implements:TitleMapping)
-          TitleMappingOrBuilder {
-    private static final long serialVersionUID = 0L;
-
+  public  static final class TitleMapping extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:TitleMapping)
+      TitleMappingOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use TitleMapping.newBuilder() to construct.
     private TitleMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-
     private TitleMapping() {
       mobile_ = 0L;
       date_ = 0;
@@ -249,8 +156,8 @@ public final class TitleMappingProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         title_ = s;
         return s;
@@ -263,8 +170,8 @@ public final class TitleMappingProto {
         getTitleBytes() {
       java.lang.Object ref = title_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-                com.google.protobuf.ByteString.copyFromUtf8(
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         title_ = b;
         return b;
@@ -530,35 +437,35 @@ public final class TitleMappingProto {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.setField(field, value);
+        return (Builder) super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+        return (Builder) super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+        return (Builder) super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+        return (Builder) super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+        return (Builder) super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -622,7 +529,7 @@ public final class TitleMappingProto {
        * <code>int64 mobile = 1;</code>
        */
       public Builder setMobile(long value) {
-
+        
         mobile_ = value;
         onChanged();
         return this;
@@ -631,7 +538,7 @@ public final class TitleMappingProto {
        * <code>int64 mobile = 1;</code>
        */
       public Builder clearMobile() {
-
+        
         mobile_ = 0L;
         onChanged();
         return this;
@@ -648,7 +555,7 @@ public final class TitleMappingProto {
        * <code>int32 date = 2;</code>
        */
       public Builder setDate(int value) {
-
+        
         date_ = value;
         onChanged();
         return this;
@@ -657,7 +564,7 @@ public final class TitleMappingProto {
        * <code>int32 date = 2;</code>
        */
       public Builder clearDate() {
-
+        
         date_ = 0;
         onChanged();
         return this;
@@ -683,54 +590,51 @@ public final class TitleMappingProto {
        * <code>string title = 3;</code>
        */
       public com.google.protobuf.ByteString
-      getTitleBytes() {
+          getTitleBytes() {
         java.lang.Object ref = title_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                          (java.lang.String) ref);
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           title_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
-      /**
-       * <code>string title = 3;</code>
-       */
-      public Builder setTitleBytes(
-              com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
-        title_ = value;
-        onChanged();
-        return this;
-      }
-
       /**
        * <code>string title = 3;</code>
        */
       public Builder setTitle(
-              java.lang.String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
+  
         title_ = value;
         onChanged();
         return this;
       }
-
       /**
        * <code>string title = 3;</code>
        */
       public Builder clearTitle() {
-
+        
         title_ = getDefaultInstance().getTitle();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string title = 3;</code>
+       */
+      public Builder setTitleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        title_ = value;
         onChanged();
         return this;
       }
@@ -787,44 +691,66 @@ public final class TitleMappingProto {
 
   }
 
+  public interface TitleMappingListOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:TitleMappingList)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .TitleMapping titleMapping = 1;</code>
+     */
+    java.util.List<com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping> 
+        getTitleMappingList();
+    /**
+     * <code>repeated .TitleMapping titleMapping = 1;</code>
+     */
+    com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping getTitleMapping(int index);
+    /**
+     * <code>repeated .TitleMapping titleMapping = 1;</code>
+     */
+    int getTitleMappingCount();
+    /**
+     * <code>repeated .TitleMapping titleMapping = 1;</code>
+     */
+    java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder> 
+        getTitleMappingOrBuilderList();
+    /**
+     * <code>repeated .TitleMapping titleMapping = 1;</code>
+     */
+    com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder getTitleMappingOrBuilder(
+        int index);
+  }
   /**
    * Protobuf type {@code TitleMappingList}
    */
-  public static final class TitleMappingList extends
-          com.google.protobuf.GeneratedMessageV3 implements
-          // @@protoc_insertion_point(message_implements:TitleMappingList)
-          TitleMappingListOrBuilder {
-    public static final int TITLEMAPPING_FIELD_NUMBER = 1;
-
+  public  static final class TitleMappingList extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:TitleMappingList)
+      TitleMappingListOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use TitleMappingList.newBuilder() to construct.
     private TitleMappingList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-
-    private static final long serialVersionUID = 0L;
+    private TitleMappingList() {
+      titleMapping_ = java.util.Collections.emptyList();
+    }
 
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
     }
-    private java.util.List<com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping> titleMapping_;
-
-    private TitleMappingList() {
-      titleMapping_ = java.util.Collections.emptyList();
-    }
-
     private TitleMappingList(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -839,7 +765,7 @@ public final class TitleMappingProto {
                 mutable_bitField0_ |= 0x00000001;
               }
               titleMapping_.add(
-                      input.readMessage(com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.parser(), extensionRegistry));
+                  input.readMessage(com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -855,7 +781,7 @@ public final class TitleMappingProto {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           titleMapping_ = java.util.Collections.unmodifiableList(titleMapping_);
@@ -864,49 +790,46 @@ public final class TitleMappingProto {
         makeExtensionsImmutable();
       }
     }
-
     public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
+        getDescriptor() {
       return com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.internal_static_TitleMappingList_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
+        internalGetFieldAccessorTable() {
       return com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.internal_static_TitleMappingList_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList.class, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList.Builder.class);
+          .ensureFieldAccessorsInitialized(
+              com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList.class, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList.Builder.class);
     }
 
+    public static final int TITLEMAPPING_FIELD_NUMBER = 1;
+    private java.util.List<com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping> titleMapping_;
     /**
      * <code>repeated .TitleMapping titleMapping = 1;</code>
      */
     public java.util.List<com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping> getTitleMappingList() {
       return titleMapping_;
     }
-
     /**
      * <code>repeated .TitleMapping titleMapping = 1;</code>
      */
-    public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder>
-    getTitleMappingOrBuilderList() {
+    public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder> 
+        getTitleMappingOrBuilderList() {
       return titleMapping_;
     }
-
     /**
      * <code>repeated .TitleMapping titleMapping = 1;</code>
      */
     public int getTitleMappingCount() {
       return titleMapping_.size();
     }
-
     /**
      * <code>repeated .TitleMapping titleMapping = 1;</code>
      */
     public com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping getTitleMapping(int index) {
       return titleMapping_.get(index);
     }
-
     /**
      * <code>repeated .TitleMapping titleMapping = 1;</code>
      */
@@ -928,7 +851,7 @@ public final class TitleMappingProto {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
+                        throws java.io.IOException {
       for (int i = 0; i < titleMapping_.size(); i++) {
         output.writeMessage(1, titleMapping_.get(i));
       }
@@ -1098,14 +1021,17 @@ public final class TitleMappingProto {
         maybeForceBuilderInitialization();
       }
 
-      private int bitField0_;
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getTitleMappingFieldBuilder();
         }
       }
-
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -1118,15 +1044,24 @@ public final class TitleMappingProto {
         return this;
       }
 
-      private java.util.List<com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping> titleMapping_ =
-              java.util.Collections.emptyList();
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder> titleMappingBuilder_;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.internal_static_TitleMappingList_descriptor;
+      }
 
-      private Builder(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
+      @java.lang.Override
+      public com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList getDefaultInstanceForType() {
+        return com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList build() {
+        com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
       }
 
       @java.lang.Override
@@ -1148,66 +1083,40 @@ public final class TitleMappingProto {
 
       @java.lang.Override
       public Builder clone() {
-        return super.clone();
+        return (Builder) super.clone();
       }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.internal_static_TitleMappingList_descriptor;
-      }
-
-      @java.lang.Override
-      public com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList getDefaultInstanceForType() {
-        return com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList build() {
-        com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
       @java.lang.Override
       public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.setField(field, value);
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
       }
-
       @java.lang.Override
       public Builder clearField(
-              com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
       }
-
       @java.lang.Override
       public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
       }
-
       @java.lang.Override
       public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
       }
-
       @java.lang.Override
       public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
       }
-
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList) {
-          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList) other);
+          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1234,9 +1143,9 @@ public final class TitleMappingProto {
               titleMappingBuilder_ = null;
               titleMapping_ = other.titleMapping_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              titleMappingBuilder_ =
-                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                              getTitleMappingFieldBuilder() : null;
+              titleMappingBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTitleMappingFieldBuilder() : null;
             } else {
               titleMappingBuilder_.addAllMessages(other.titleMapping_);
             }
@@ -1254,9 +1163,9 @@ public final class TitleMappingProto {
 
       @java.lang.Override
       public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
         com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingList parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
@@ -1270,13 +1179,19 @@ public final class TitleMappingProto {
         }
         return this;
       }
+      private int bitField0_;
 
+      private java.util.List<com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping> titleMapping_ =
+        java.util.Collections.emptyList();
       private void ensureTitleMappingIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           titleMapping_ = new java.util.ArrayList<com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping>(titleMapping_);
           bitField0_ |= 0x00000001;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder> titleMappingBuilder_;
 
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
@@ -1308,12 +1223,11 @@ public final class TitleMappingProto {
           return titleMappingBuilder_.getMessage(index);
         }
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
       public Builder setTitleMapping(
-              int index, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping value) {
+          int index, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping value) {
         if (titleMappingBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1326,12 +1240,11 @@ public final class TitleMappingProto {
         }
         return this;
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
       public Builder setTitleMapping(
-              int index, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder builderForValue) {
+          int index, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder builderForValue) {
         if (titleMappingBuilder_ == null) {
           ensureTitleMappingIsMutable();
           titleMapping_.set(index, builderForValue.build());
@@ -1357,12 +1270,11 @@ public final class TitleMappingProto {
         }
         return this;
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
       public Builder addTitleMapping(
-              int index, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping value) {
+          int index, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping value) {
         if (titleMappingBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1375,12 +1287,11 @@ public final class TitleMappingProto {
         }
         return this;
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
       public Builder addTitleMapping(
-              com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder builderForValue) {
+          com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder builderForValue) {
         if (titleMappingBuilder_ == null) {
           ensureTitleMappingIsMutable();
           titleMapping_.add(builderForValue.build());
@@ -1390,12 +1301,11 @@ public final class TitleMappingProto {
         }
         return this;
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
       public Builder addTitleMapping(
-              int index, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder builderForValue) {
+          int index, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder builderForValue) {
         if (titleMappingBuilder_ == null) {
           ensureTitleMappingIsMutable();
           titleMapping_.add(index, builderForValue.build());
@@ -1405,16 +1315,15 @@ public final class TitleMappingProto {
         }
         return this;
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
       public Builder addAllTitleMapping(
-              java.lang.Iterable<? extends com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping> values) {
+          java.lang.Iterable<? extends com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping> values) {
         if (titleMappingBuilder_ == null) {
           ensureTitleMappingIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                  values, titleMapping_);
+              values, titleMapping_);
           onChanged();
         } else {
           titleMappingBuilder_.addAllMessages(values);
@@ -1447,70 +1356,62 @@ public final class TitleMappingProto {
         }
         return this;
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
       public com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder getTitleMappingBuilder(
-              int index) {
+          int index) {
         return getTitleMappingFieldBuilder().getBuilder(index);
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
       public com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder getTitleMappingOrBuilder(
-              int index) {
+          int index) {
         if (titleMappingBuilder_ == null) {
-          return titleMapping_.get(index);
-        } else {
+          return titleMapping_.get(index);  } else {
           return titleMappingBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
-      public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder>
-      getTitleMappingOrBuilderList() {
+      public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder> 
+           getTitleMappingOrBuilderList() {
         if (titleMappingBuilder_ != null) {
           return titleMappingBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(titleMapping_);
         }
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
       public com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder addTitleMappingBuilder() {
         return getTitleMappingFieldBuilder().addBuilder(
-                com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.getDefaultInstance());
+            com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.getDefaultInstance());
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
       public com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder addTitleMappingBuilder(
-              int index) {
+          int index) {
         return getTitleMappingFieldBuilder().addBuilder(
-                index, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.getDefaultInstance());
+            index, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.getDefaultInstance());
       }
-
       /**
        * <code>repeated .TitleMapping titleMapping = 1;</code>
        */
-      public java.util.List<com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder>
-      getTitleMappingBuilderList() {
+      public java.util.List<com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder> 
+           getTitleMappingBuilderList() {
         return getTitleMappingFieldBuilder().getBuilderList();
       }
-
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder>
-      getTitleMappingFieldBuilder() {
+          com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder> 
+          getTitleMappingFieldBuilder() {
         if (titleMappingBuilder_ == null) {
           titleMappingBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                  com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder>(
+              com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.Builder, com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMappingOrBuilder>(
                   titleMapping_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -1519,10 +1420,9 @@ public final class TitleMappingProto {
         }
         return titleMappingBuilder_;
       }
-
       @java.lang.Override
       public final Builder setUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
@@ -1571,6 +1471,58 @@ public final class TitleMappingProto {
       return DEFAULT_INSTANCE;
     }
 
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TitleMapping_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TitleMapping_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_TitleMappingList_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_TitleMappingList_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\022TitleMapping.proto\";\n\014TitleMapping\022\016\n\006" +
+      "mobile\030\001 \001(\003\022\014\n\004date\030\002 \001(\005\022\r\n\005title\030\003 \001(" +
+      "\t\"7\n\020TitleMappingList\022#\n\014titleMapping\030\001 " +
+      "\003(\0132\r.TitleMappingBB\n-com.vv.personal.di" +
+      "urnal.artifactory.generatedB\021TitleMappin" +
+      "gProtob\006proto3"
+    };
+    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
+    com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        }, assigner);
+    internal_static_TitleMapping_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_TitleMapping_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TitleMapping_descriptor,
+        new java.lang.String[] { "Mobile", "Date", "Title", });
+    internal_static_TitleMappingList_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_TitleMappingList_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_TitleMappingList_descriptor,
+        new java.lang.String[] { "TitleMapping", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
