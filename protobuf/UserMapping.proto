@@ -5,9 +5,11 @@ option java_outer_classname = "UserMappingProto";
 
 message UserMapping {
   int64 mobile = 1;
-  string username = 2;
-  bool powerUser = 3;
-  string cred = 4;
+  string email = 2;
+  string username = 3;
+  bool powerUser = 4;
+  string hash_cred = 5;
+  string hash_email = 6;
 }
 
 message UserMappingList {

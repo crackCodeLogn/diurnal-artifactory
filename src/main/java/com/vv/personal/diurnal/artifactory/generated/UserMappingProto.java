@@ -24,29 +24,49 @@ public final class UserMappingProto {
     long getMobile();
 
     /**
-     * <code>string username = 2;</code>
+     * <code>string email = 2;</code>
+     */
+    java.lang.String getEmail();
+    /**
+     * <code>string email = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+
+    /**
+     * <code>string username = 3;</code>
      */
     java.lang.String getUsername();
     /**
-     * <code>string username = 2;</code>
+     * <code>string username = 3;</code>
      */
     com.google.protobuf.ByteString
         getUsernameBytes();
 
     /**
-     * <code>bool powerUser = 3;</code>
+     * <code>bool powerUser = 4;</code>
      */
     boolean getPowerUser();
 
     /**
-     * <code>string cred = 4;</code>
+     * <code>string hash_cred = 5;</code>
      */
-    java.lang.String getCred();
+    java.lang.String getHashCred();
     /**
-     * <code>string cred = 4;</code>
+     * <code>string hash_cred = 5;</code>
      */
     com.google.protobuf.ByteString
-        getCredBytes();
+        getHashCredBytes();
+
+    /**
+     * <code>string hash_email = 6;</code>
+     */
+    java.lang.String getHashEmail();
+    /**
+     * <code>string hash_email = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getHashEmailBytes();
   }
   /**
    * Protobuf type {@code UserMapping}
@@ -62,9 +82,11 @@ public final class UserMappingProto {
     }
     private UserMapping() {
       mobile_ = 0L;
+      email_ = "";
       username_ = "";
       powerUser_ = false;
-      cred_ = "";
+      hashCred_ = "";
+      hashEmail_ = "";
     }
 
     @java.lang.Override
@@ -99,18 +121,30 @@ public final class UserMappingProto {
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              email_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               username_ = s;
               break;
             }
-            case 24: {
+            case 32: {
 
               powerUser_ = input.readBool();
               break;
             }
-            case 34: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              cred_ = s;
+              hashCred_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hashEmail_ = s;
               break;
             }
             default: {
@@ -154,10 +188,44 @@ public final class UserMappingProto {
       return mobile_;
     }
 
-    public static final int USERNAME_FIELD_NUMBER = 2;
+    public static final int EMAIL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object email_;
+    /**
+     * <code>string email = 2;</code>
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string email = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 3;
     private volatile java.lang.Object username_;
     /**
-     * <code>string username = 2;</code>
+     * <code>string username = 3;</code>
      */
     public java.lang.String getUsername() {
       java.lang.Object ref = username_;
@@ -172,7 +240,7 @@ public final class UserMappingProto {
       }
     }
     /**
-     * <code>string username = 2;</code>
+     * <code>string username = 3;</code>
      */
     public com.google.protobuf.ByteString
         getUsernameBytes() {
@@ -188,43 +256,77 @@ public final class UserMappingProto {
       }
     }
 
-    public static final int POWERUSER_FIELD_NUMBER = 3;
+    public static final int POWERUSER_FIELD_NUMBER = 4;
     private boolean powerUser_;
     /**
-     * <code>bool powerUser = 3;</code>
+     * <code>bool powerUser = 4;</code>
      */
     public boolean getPowerUser() {
       return powerUser_;
     }
 
-    public static final int CRED_FIELD_NUMBER = 4;
-    private volatile java.lang.Object cred_;
+    public static final int HASH_CRED_FIELD_NUMBER = 5;
+    private volatile java.lang.Object hashCred_;
     /**
-     * <code>string cred = 4;</code>
+     * <code>string hash_cred = 5;</code>
      */
-    public java.lang.String getCred() {
-      java.lang.Object ref = cred_;
+    public java.lang.String getHashCred() {
+      java.lang.Object ref = hashCred_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        cred_ = s;
+        hashCred_ = s;
         return s;
       }
     }
     /**
-     * <code>string cred = 4;</code>
+     * <code>string hash_cred = 5;</code>
      */
     public com.google.protobuf.ByteString
-        getCredBytes() {
-      java.lang.Object ref = cred_;
+        getHashCredBytes() {
+      java.lang.Object ref = hashCred_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        cred_ = b;
+        hashCred_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HASH_EMAIL_FIELD_NUMBER = 6;
+    private volatile java.lang.Object hashEmail_;
+    /**
+     * <code>string hash_email = 6;</code>
+     */
+    public java.lang.String getHashEmail() {
+      java.lang.Object ref = hashEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hashEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string hash_email = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHashEmailBytes() {
+      java.lang.Object ref = hashEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        hashEmail_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -248,14 +350,20 @@ public final class UserMappingProto {
       if (mobile_ != 0L) {
         output.writeInt64(1, mobile_);
       }
+      if (!getEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, email_);
+      }
       if (!getUsernameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, username_);
       }
       if (powerUser_ != false) {
-        output.writeBool(3, powerUser_);
+        output.writeBool(4, powerUser_);
       }
-      if (!getCredBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cred_);
+      if (!getHashCredBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, hashCred_);
+      }
+      if (!getHashEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, hashEmail_);
       }
       unknownFields.writeTo(output);
     }
@@ -270,15 +378,21 @@ public final class UserMappingProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, mobile_);
       }
+      if (!getEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, email_);
+      }
       if (!getUsernameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, username_);
       }
       if (powerUser_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, powerUser_);
+          .computeBoolSize(4, powerUser_);
       }
-      if (!getCredBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cred_);
+      if (!getHashCredBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, hashCred_);
+      }
+      if (!getHashEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, hashEmail_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -298,12 +412,16 @@ public final class UserMappingProto {
       boolean result = true;
       result = result && (getMobile()
           == other.getMobile());
+      result = result && getEmail()
+          .equals(other.getEmail());
       result = result && getUsername()
           .equals(other.getUsername());
       result = result && (getPowerUser()
           == other.getPowerUser());
-      result = result && getCred()
-          .equals(other.getCred());
+      result = result && getHashCred()
+          .equals(other.getHashCred());
+      result = result && getHashEmail()
+          .equals(other.getHashEmail());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -318,13 +436,17 @@ public final class UserMappingProto {
       hash = (37 * hash) + MOBILE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMobile());
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
       hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + POWERUSER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getPowerUser());
-      hash = (37 * hash) + CRED_FIELD_NUMBER;
-      hash = (53 * hash) + getCred().hashCode();
+      hash = (37 * hash) + HASH_CRED_FIELD_NUMBER;
+      hash = (53 * hash) + getHashCred().hashCode();
+      hash = (37 * hash) + HASH_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getHashEmail().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -460,11 +582,15 @@ public final class UserMappingProto {
         super.clear();
         mobile_ = 0L;
 
+        email_ = "";
+
         username_ = "";
 
         powerUser_ = false;
 
-        cred_ = "";
+        hashCred_ = "";
+
+        hashEmail_ = "";
 
         return this;
       }
@@ -493,9 +619,11 @@ public final class UserMappingProto {
       public com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping buildPartial() {
         com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping result = new com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping(this);
         result.mobile_ = mobile_;
+        result.email_ = email_;
         result.username_ = username_;
         result.powerUser_ = powerUser_;
-        result.cred_ = cred_;
+        result.hashCred_ = hashCred_;
+        result.hashEmail_ = hashEmail_;
         onBuilt();
         return result;
       }
@@ -547,6 +675,10 @@ public final class UserMappingProto {
         if (other.getMobile() != 0L) {
           setMobile(other.getMobile());
         }
+        if (!other.getEmail().isEmpty()) {
+          email_ = other.email_;
+          onChanged();
+        }
         if (!other.getUsername().isEmpty()) {
           username_ = other.username_;
           onChanged();
@@ -554,8 +686,12 @@ public final class UserMappingProto {
         if (other.getPowerUser() != false) {
           setPowerUser(other.getPowerUser());
         }
-        if (!other.getCred().isEmpty()) {
-          cred_ = other.cred_;
+        if (!other.getHashCred().isEmpty()) {
+          hashCred_ = other.hashCred_;
+          onChanged();
+        }
+        if (!other.getHashEmail().isEmpty()) {
+          hashEmail_ = other.hashEmail_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -613,9 +749,78 @@ public final class UserMappingProto {
         return this;
       }
 
+      private java.lang.Object email_ = "";
+      /**
+       * <code>string email = 2;</code>
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string email = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string email = 2;</code>
+       */
+      public Builder setEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        email_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 2;</code>
+       */
+      public Builder clearEmail() {
+        
+        email_ = getDefaultInstance().getEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 2;</code>
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        email_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object username_ = "";
       /**
-       * <code>string username = 2;</code>
+       * <code>string username = 3;</code>
        */
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
@@ -630,7 +835,7 @@ public final class UserMappingProto {
         }
       }
       /**
-       * <code>string username = 2;</code>
+       * <code>string username = 3;</code>
        */
       public com.google.protobuf.ByteString
           getUsernameBytes() {
@@ -646,7 +851,7 @@ public final class UserMappingProto {
         }
       }
       /**
-       * <code>string username = 2;</code>
+       * <code>string username = 3;</code>
        */
       public Builder setUsername(
           java.lang.String value) {
@@ -659,7 +864,7 @@ public final class UserMappingProto {
         return this;
       }
       /**
-       * <code>string username = 2;</code>
+       * <code>string username = 3;</code>
        */
       public Builder clearUsername() {
         
@@ -668,7 +873,7 @@ public final class UserMappingProto {
         return this;
       }
       /**
-       * <code>string username = 2;</code>
+       * <code>string username = 3;</code>
        */
       public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
@@ -684,13 +889,13 @@ public final class UserMappingProto {
 
       private boolean powerUser_ ;
       /**
-       * <code>bool powerUser = 3;</code>
+       * <code>bool powerUser = 4;</code>
        */
       public boolean getPowerUser() {
         return powerUser_;
       }
       /**
-       * <code>bool powerUser = 3;</code>
+       * <code>bool powerUser = 4;</code>
        */
       public Builder setPowerUser(boolean value) {
         
@@ -699,7 +904,7 @@ public final class UserMappingProto {
         return this;
       }
       /**
-       * <code>bool powerUser = 3;</code>
+       * <code>bool powerUser = 4;</code>
        */
       public Builder clearPowerUser() {
         
@@ -708,71 +913,140 @@ public final class UserMappingProto {
         return this;
       }
 
-      private java.lang.Object cred_ = "";
+      private java.lang.Object hashCred_ = "";
       /**
-       * <code>string cred = 4;</code>
+       * <code>string hash_cred = 5;</code>
        */
-      public java.lang.String getCred() {
-        java.lang.Object ref = cred_;
+      public java.lang.String getHashCred() {
+        java.lang.Object ref = hashCred_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          cred_ = s;
+          hashCred_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string cred = 4;</code>
+       * <code>string hash_cred = 5;</code>
        */
       public com.google.protobuf.ByteString
-          getCredBytes() {
-        java.lang.Object ref = cred_;
+          getHashCredBytes() {
+        java.lang.Object ref = hashCred_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          cred_ = b;
+          hashCred_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string cred = 4;</code>
+       * <code>string hash_cred = 5;</code>
        */
-      public Builder setCred(
+      public Builder setHashCred(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        cred_ = value;
+        hashCred_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string cred = 4;</code>
+       * <code>string hash_cred = 5;</code>
        */
-      public Builder clearCred() {
+      public Builder clearHashCred() {
         
-        cred_ = getDefaultInstance().getCred();
+        hashCred_ = getDefaultInstance().getHashCred();
         onChanged();
         return this;
       }
       /**
-       * <code>string cred = 4;</code>
+       * <code>string hash_cred = 5;</code>
        */
-      public Builder setCredBytes(
+      public Builder setHashCredBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        cred_ = value;
+        hashCred_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object hashEmail_ = "";
+      /**
+       * <code>string hash_email = 6;</code>
+       */
+      public java.lang.String getHashEmail() {
+        java.lang.Object ref = hashEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          hashEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string hash_email = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHashEmailBytes() {
+        java.lang.Object ref = hashEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          hashEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string hash_email = 6;</code>
+       */
+      public Builder setHashEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        hashEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string hash_email = 6;</code>
+       */
+      public Builder clearHashEmail() {
+        
+        hashEmail_ = getDefaultInstance().getHashEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string hash_email = 6;</code>
+       */
+      public Builder setHashEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        hashEmail_ = value;
         onChanged();
         return this;
       }
@@ -1630,9 +1904,10 @@ public final class UserMappingProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021UserMapping.proto\"P\n\013UserMapping\022\016\n\006mo" +
-      "bile\030\001 \001(\003\022\020\n\010username\030\002 \001(\t\022\021\n\tpowerUse" +
-      "r\030\003 \001(\010\022\014\n\004cred\030\004 \001(\t\"4\n\017UserMappingList" +
+      "\n\021UserMapping.proto\"x\n\013UserMapping\022\016\n\006mo" +
+      "bile\030\001 \001(\003\022\r\n\005email\030\002 \001(\t\022\020\n\010username\030\003 " +
+      "\001(\t\022\021\n\tpowerUser\030\004 \001(\010\022\021\n\thash_cred\030\005 \001(" +
+      "\t\022\022\n\nhash_email\030\006 \001(\t\"4\n\017UserMappingList" +
       "\022!\n\013userMapping\030\001 \003(\0132\014.UserMappingBA\n-c" +
       "om.vv.personal.diurnal.artifactory.gener" +
       "atedB\020UserMappingProtob\006proto3"
@@ -1654,7 +1929,7 @@ public final class UserMappingProto {
     internal_static_UserMapping_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserMapping_descriptor,
-        new java.lang.String[] { "Mobile", "Username", "PowerUser", "Cred", });
+        new java.lang.String[] { "Mobile", "Email", "Username", "PowerUser", "HashCred", "HashEmail", });
     internal_static_UserMappingList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_UserMappingList_fieldAccessorTable = new
