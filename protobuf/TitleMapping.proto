@@ -5,8 +5,9 @@ option java_outer_classname = "TitleMappingProto";
 
 message TitleMapping {
   int64 mobile = 1;
-  int32 date = 2;
-  string title = 3;
+  int32 hash_email = 2;
+  int32 date = 3;
+  string title = 4;
 }
 
 message TitleMappingList {

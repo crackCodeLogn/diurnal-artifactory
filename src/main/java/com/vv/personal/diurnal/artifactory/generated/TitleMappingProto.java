@@ -24,16 +24,21 @@ public final class TitleMappingProto {
     long getMobile();
 
     /**
-     * <code>int32 date = 2;</code>
+     * <code>int32 hash_email = 2;</code>
+     */
+    int getHashEmail();
+
+    /**
+     * <code>int32 date = 3;</code>
      */
     int getDate();
 
     /**
-     * <code>string title = 3;</code>
+     * <code>string title = 4;</code>
      */
     java.lang.String getTitle();
     /**
-     * <code>string title = 3;</code>
+     * <code>string title = 4;</code>
      */
     com.google.protobuf.ByteString
         getTitleBytes();
@@ -52,6 +57,7 @@ public final class TitleMappingProto {
     }
     private TitleMapping() {
       mobile_ = 0L;
+      hashEmail_ = 0;
       date_ = 0;
       title_ = "";
     }
@@ -87,10 +93,15 @@ public final class TitleMappingProto {
             }
             case 16: {
 
+              hashEmail_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
               date_ = input.readInt32();
               break;
             }
-            case 26: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               title_ = s;
@@ -137,19 +148,28 @@ public final class TitleMappingProto {
       return mobile_;
     }
 
-    public static final int DATE_FIELD_NUMBER = 2;
+    public static final int HASH_EMAIL_FIELD_NUMBER = 2;
+    private int hashEmail_;
+    /**
+     * <code>int32 hash_email = 2;</code>
+     */
+    public int getHashEmail() {
+      return hashEmail_;
+    }
+
+    public static final int DATE_FIELD_NUMBER = 3;
     private int date_;
     /**
-     * <code>int32 date = 2;</code>
+     * <code>int32 date = 3;</code>
      */
     public int getDate() {
       return date_;
     }
 
-    public static final int TITLE_FIELD_NUMBER = 3;
+    public static final int TITLE_FIELD_NUMBER = 4;
     private volatile java.lang.Object title_;
     /**
-     * <code>string title = 3;</code>
+     * <code>string title = 4;</code>
      */
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
@@ -164,7 +184,7 @@ public final class TitleMappingProto {
       }
     }
     /**
-     * <code>string title = 3;</code>
+     * <code>string title = 4;</code>
      */
     public com.google.protobuf.ByteString
         getTitleBytes() {
@@ -197,11 +217,14 @@ public final class TitleMappingProto {
       if (mobile_ != 0L) {
         output.writeInt64(1, mobile_);
       }
+      if (hashEmail_ != 0) {
+        output.writeInt32(2, hashEmail_);
+      }
       if (date_ != 0) {
-        output.writeInt32(2, date_);
+        output.writeInt32(3, date_);
       }
       if (!getTitleBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, title_);
       }
       unknownFields.writeTo(output);
     }
@@ -216,12 +239,16 @@ public final class TitleMappingProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, mobile_);
       }
+      if (hashEmail_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, hashEmail_);
+      }
       if (date_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, date_);
+          .computeInt32Size(3, date_);
       }
       if (!getTitleBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, title_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -241,6 +268,8 @@ public final class TitleMappingProto {
       boolean result = true;
       result = result && (getMobile()
           == other.getMobile());
+      result = result && (getHashEmail()
+          == other.getHashEmail());
       result = result && (getDate()
           == other.getDate());
       result = result && getTitle()
@@ -259,6 +288,8 @@ public final class TitleMappingProto {
       hash = (37 * hash) + MOBILE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMobile());
+      hash = (37 * hash) + HASH_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getHashEmail();
       hash = (37 * hash) + DATE_FIELD_NUMBER;
       hash = (53 * hash) + getDate();
       hash = (37 * hash) + TITLE_FIELD_NUMBER;
@@ -398,6 +429,8 @@ public final class TitleMappingProto {
         super.clear();
         mobile_ = 0L;
 
+        hashEmail_ = 0;
+
         date_ = 0;
 
         title_ = "";
@@ -429,6 +462,7 @@ public final class TitleMappingProto {
       public com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping buildPartial() {
         com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping result = new com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping(this);
         result.mobile_ = mobile_;
+        result.hashEmail_ = hashEmail_;
         result.date_ = date_;
         result.title_ = title_;
         onBuilt();
@@ -481,6 +515,9 @@ public final class TitleMappingProto {
         if (other == com.vv.personal.diurnal.artifactory.generated.TitleMappingProto.TitleMapping.getDefaultInstance()) return this;
         if (other.getMobile() != 0L) {
           setMobile(other.getMobile());
+        }
+        if (other.getHashEmail() != 0) {
+          setHashEmail(other.getHashEmail());
         }
         if (other.getDate() != 0) {
           setDate(other.getDate());
@@ -544,15 +581,41 @@ public final class TitleMappingProto {
         return this;
       }
 
+      private int hashEmail_ ;
+      /**
+       * <code>int32 hash_email = 2;</code>
+       */
+      public int getHashEmail() {
+        return hashEmail_;
+      }
+      /**
+       * <code>int32 hash_email = 2;</code>
+       */
+      public Builder setHashEmail(int value) {
+        
+        hashEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 hash_email = 2;</code>
+       */
+      public Builder clearHashEmail() {
+        
+        hashEmail_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int date_ ;
       /**
-       * <code>int32 date = 2;</code>
+       * <code>int32 date = 3;</code>
        */
       public int getDate() {
         return date_;
       }
       /**
-       * <code>int32 date = 2;</code>
+       * <code>int32 date = 3;</code>
        */
       public Builder setDate(int value) {
         
@@ -561,7 +624,7 @@ public final class TitleMappingProto {
         return this;
       }
       /**
-       * <code>int32 date = 2;</code>
+       * <code>int32 date = 3;</code>
        */
       public Builder clearDate() {
         
@@ -572,7 +635,7 @@ public final class TitleMappingProto {
 
       private java.lang.Object title_ = "";
       /**
-       * <code>string title = 3;</code>
+       * <code>string title = 4;</code>
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -587,7 +650,7 @@ public final class TitleMappingProto {
         }
       }
       /**
-       * <code>string title = 3;</code>
+       * <code>string title = 4;</code>
        */
       public com.google.protobuf.ByteString
           getTitleBytes() {
@@ -603,7 +666,7 @@ public final class TitleMappingProto {
         }
       }
       /**
-       * <code>string title = 3;</code>
+       * <code>string title = 4;</code>
        */
       public Builder setTitle(
           java.lang.String value) {
@@ -616,7 +679,7 @@ public final class TitleMappingProto {
         return this;
       }
       /**
-       * <code>string title = 3;</code>
+       * <code>string title = 4;</code>
        */
       public Builder clearTitle() {
         
@@ -625,7 +688,7 @@ public final class TitleMappingProto {
         return this;
       }
       /**
-       * <code>string title = 3;</code>
+       * <code>string title = 4;</code>
        */
       public Builder setTitleBytes(
           com.google.protobuf.ByteString value) {
@@ -1492,12 +1555,12 @@ public final class TitleMappingProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022TitleMapping.proto\";\n\014TitleMapping\022\016\n\006" +
-      "mobile\030\001 \001(\003\022\014\n\004date\030\002 \001(\005\022\r\n\005title\030\003 \001(" +
-      "\t\"7\n\020TitleMappingList\022#\n\014titleMapping\030\001 " +
-      "\003(\0132\r.TitleMappingBB\n-com.vv.personal.di" +
-      "urnal.artifactory.generatedB\021TitleMappin" +
-      "gProtob\006proto3"
+      "\n\022TitleMapping.proto\"O\n\014TitleMapping\022\016\n\006" +
+      "mobile\030\001 \001(\003\022\022\n\nhash_email\030\002 \001(\005\022\014\n\004date" +
+      "\030\003 \001(\005\022\r\n\005title\030\004 \001(\t\"7\n\020TitleMappingLis" +
+      "t\022#\n\014titleMapping\030\001 \003(\0132\r.TitleMappingBB" +
+      "\n-com.vv.personal.diurnal.artifactory.ge" +
+      "neratedB\021TitleMappingProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1516,7 +1579,7 @@ public final class TitleMappingProto {
     internal_static_TitleMapping_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TitleMapping_descriptor,
-        new java.lang.String[] { "Mobile", "Date", "Title", });
+        new java.lang.String[] { "Mobile", "HashEmail", "Date", "Title", });
     internal_static_TitleMappingList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_TitleMappingList_fieldAccessorTable = new
