@@ -5,9 +5,10 @@ option java_outer_classname = "DataTransitProto";
 
 message DataTransit {
   int64 mobile = 1;
-  int32 date = 2;
-  Currency currency = 3;
-  string backupData = 4;
+  string email = 2;
+  int32 date = 3;
+  Currency currency = 4;
+  string backupData = 5;
 }
 
 enum Currency {

@@ -131,25 +131,35 @@ public final class DataTransitProto {
     long getMobile();
 
     /**
-     * <code>int32 date = 2;</code>
+     * <code>string email = 2;</code>
+     */
+    java.lang.String getEmail();
+    /**
+     * <code>string email = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+
+    /**
+     * <code>int32 date = 3;</code>
      */
     int getDate();
 
     /**
-     * <code>.Currency currency = 3;</code>
+     * <code>.Currency currency = 4;</code>
      */
     int getCurrencyValue();
     /**
-     * <code>.Currency currency = 3;</code>
+     * <code>.Currency currency = 4;</code>
      */
     com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency getCurrency();
 
     /**
-     * <code>string backupData = 4;</code>
+     * <code>string backupData = 5;</code>
      */
     java.lang.String getBackupData();
     /**
-     * <code>string backupData = 4;</code>
+     * <code>string backupData = 5;</code>
      */
     com.google.protobuf.ByteString
         getBackupDataBytes();
@@ -168,6 +178,7 @@ public final class DataTransitProto {
     }
     private DataTransit() {
       mobile_ = 0L;
+      email_ = "";
       date_ = 0;
       currency_ = 0;
       backupData_ = "";
@@ -202,18 +213,24 @@ public final class DataTransitProto {
               mobile_ = input.readInt64();
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              email_ = s;
+              break;
+            }
+            case 24: {
 
               date_ = input.readInt32();
               break;
             }
-            case 24: {
+            case 32: {
               int rawValue = input.readEnum();
 
               currency_ = rawValue;
               break;
             }
-            case 34: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               backupData_ = s;
@@ -260,25 +277,59 @@ public final class DataTransitProto {
       return mobile_;
     }
 
-    public static final int DATE_FIELD_NUMBER = 2;
+    public static final int EMAIL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object email_;
+    /**
+     * <code>string email = 2;</code>
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string email = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DATE_FIELD_NUMBER = 3;
     private int date_;
     /**
-     * <code>int32 date = 2;</code>
+     * <code>int32 date = 3;</code>
      */
     public int getDate() {
       return date_;
     }
 
-    public static final int CURRENCY_FIELD_NUMBER = 3;
+    public static final int CURRENCY_FIELD_NUMBER = 4;
     private int currency_;
     /**
-     * <code>.Currency currency = 3;</code>
+     * <code>.Currency currency = 4;</code>
      */
     public int getCurrencyValue() {
       return currency_;
     }
     /**
-     * <code>.Currency currency = 3;</code>
+     * <code>.Currency currency = 4;</code>
      */
     public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency getCurrency() {
       @SuppressWarnings("deprecation")
@@ -286,10 +337,10 @@ public final class DataTransitProto {
       return result == null ? com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency.UNRECOGNIZED : result;
     }
 
-    public static final int BACKUPDATA_FIELD_NUMBER = 4;
+    public static final int BACKUPDATA_FIELD_NUMBER = 5;
     private volatile java.lang.Object backupData_;
     /**
-     * <code>string backupData = 4;</code>
+     * <code>string backupData = 5;</code>
      */
     public java.lang.String getBackupData() {
       java.lang.Object ref = backupData_;
@@ -304,7 +355,7 @@ public final class DataTransitProto {
       }
     }
     /**
-     * <code>string backupData = 4;</code>
+     * <code>string backupData = 5;</code>
      */
     public com.google.protobuf.ByteString
         getBackupDataBytes() {
@@ -337,14 +388,17 @@ public final class DataTransitProto {
       if (mobile_ != 0L) {
         output.writeInt64(1, mobile_);
       }
+      if (!getEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, email_);
+      }
       if (date_ != 0) {
-        output.writeInt32(2, date_);
+        output.writeInt32(3, date_);
       }
       if (currency_ != com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency.INR.getNumber()) {
-        output.writeEnum(3, currency_);
+        output.writeEnum(4, currency_);
       }
       if (!getBackupDataBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, backupData_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, backupData_);
       }
       unknownFields.writeTo(output);
     }
@@ -359,16 +413,19 @@ public final class DataTransitProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, mobile_);
       }
+      if (!getEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, email_);
+      }
       if (date_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, date_);
+          .computeInt32Size(3, date_);
       }
       if (currency_ != com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency.INR.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, currency_);
+          .computeEnumSize(4, currency_);
       }
       if (!getBackupDataBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, backupData_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, backupData_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -388,6 +445,8 @@ public final class DataTransitProto {
       boolean result = true;
       result = result && (getMobile()
           == other.getMobile());
+      result = result && getEmail()
+          .equals(other.getEmail());
       result = result && (getDate()
           == other.getDate());
       result = result && currency_ == other.currency_;
@@ -407,6 +466,8 @@ public final class DataTransitProto {
       hash = (37 * hash) + MOBILE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMobile());
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
       hash = (37 * hash) + DATE_FIELD_NUMBER;
       hash = (53 * hash) + getDate();
       hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
@@ -548,6 +609,8 @@ public final class DataTransitProto {
         super.clear();
         mobile_ = 0L;
 
+        email_ = "";
+
         date_ = 0;
 
         currency_ = 0;
@@ -581,6 +644,7 @@ public final class DataTransitProto {
       public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit buildPartial() {
         com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit result = new com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit(this);
         result.mobile_ = mobile_;
+        result.email_ = email_;
         result.date_ = date_;
         result.currency_ = currency_;
         result.backupData_ = backupData_;
@@ -634,6 +698,10 @@ public final class DataTransitProto {
         if (other == com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.getDefaultInstance()) return this;
         if (other.getMobile() != 0L) {
           setMobile(other.getMobile());
+        }
+        if (!other.getEmail().isEmpty()) {
+          email_ = other.email_;
+          onChanged();
         }
         if (other.getDate() != 0) {
           setDate(other.getDate());
@@ -700,15 +768,84 @@ public final class DataTransitProto {
         return this;
       }
 
+      private java.lang.Object email_ = "";
+      /**
+       * <code>string email = 2;</code>
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string email = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string email = 2;</code>
+       */
+      public Builder setEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        email_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 2;</code>
+       */
+      public Builder clearEmail() {
+        
+        email_ = getDefaultInstance().getEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 2;</code>
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        email_ = value;
+        onChanged();
+        return this;
+      }
+
       private int date_ ;
       /**
-       * <code>int32 date = 2;</code>
+       * <code>int32 date = 3;</code>
        */
       public int getDate() {
         return date_;
       }
       /**
-       * <code>int32 date = 2;</code>
+       * <code>int32 date = 3;</code>
        */
       public Builder setDate(int value) {
         
@@ -717,7 +854,7 @@ public final class DataTransitProto {
         return this;
       }
       /**
-       * <code>int32 date = 2;</code>
+       * <code>int32 date = 3;</code>
        */
       public Builder clearDate() {
         
@@ -728,13 +865,13 @@ public final class DataTransitProto {
 
       private int currency_ = 0;
       /**
-       * <code>.Currency currency = 3;</code>
+       * <code>.Currency currency = 4;</code>
        */
       public int getCurrencyValue() {
         return currency_;
       }
       /**
-       * <code>.Currency currency = 3;</code>
+       * <code>.Currency currency = 4;</code>
        */
       public Builder setCurrencyValue(int value) {
         currency_ = value;
@@ -742,7 +879,7 @@ public final class DataTransitProto {
         return this;
       }
       /**
-       * <code>.Currency currency = 3;</code>
+       * <code>.Currency currency = 4;</code>
        */
       public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency getCurrency() {
         @SuppressWarnings("deprecation")
@@ -750,7 +887,7 @@ public final class DataTransitProto {
         return result == null ? com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency.UNRECOGNIZED : result;
       }
       /**
-       * <code>.Currency currency = 3;</code>
+       * <code>.Currency currency = 4;</code>
        */
       public Builder setCurrency(com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency value) {
         if (value == null) {
@@ -762,7 +899,7 @@ public final class DataTransitProto {
         return this;
       }
       /**
-       * <code>.Currency currency = 3;</code>
+       * <code>.Currency currency = 4;</code>
        */
       public Builder clearCurrency() {
         
@@ -773,7 +910,7 @@ public final class DataTransitProto {
 
       private java.lang.Object backupData_ = "";
       /**
-       * <code>string backupData = 4;</code>
+       * <code>string backupData = 5;</code>
        */
       public java.lang.String getBackupData() {
         java.lang.Object ref = backupData_;
@@ -788,7 +925,7 @@ public final class DataTransitProto {
         }
       }
       /**
-       * <code>string backupData = 4;</code>
+       * <code>string backupData = 5;</code>
        */
       public com.google.protobuf.ByteString
           getBackupDataBytes() {
@@ -804,7 +941,7 @@ public final class DataTransitProto {
         }
       }
       /**
-       * <code>string backupData = 4;</code>
+       * <code>string backupData = 5;</code>
        */
       public Builder setBackupData(
           java.lang.String value) {
@@ -817,7 +954,7 @@ public final class DataTransitProto {
         return this;
       }
       /**
-       * <code>string backupData = 4;</code>
+       * <code>string backupData = 5;</code>
        */
       public Builder clearBackupData() {
         
@@ -826,7 +963,7 @@ public final class DataTransitProto {
         return this;
       }
       /**
-       * <code>string backupData = 4;</code>
+       * <code>string backupData = 5;</code>
        */
       public Builder setBackupDataBytes(
           com.google.protobuf.ByteString value) {
@@ -1693,14 +1830,14 @@ public final class DataTransitProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021DataTransit.proto\"\\\n\013DataTransit\022\016\n\006mo" +
-      "bile\030\001 \001(\003\022\014\n\004date\030\002 \001(\005\022\033\n\010currency\030\003 \001" +
-      "(\0162\t.Currency\022\022\n\nbackupData\030\004 \001(\t\"4\n\017Dat" +
-      "aTransitList\022!\n\013dataTransit\030\001 \003(\0132\014.Data" +
-      "Transit*%\n\010Currency\022\007\n\003INR\020\000\022\007\n\003USD\020\001\022\007\n" +
-      "\003CND\020\002BA\n-com.vv.personal.diurnal.artifa" +
-      "ctory.generatedB\020DataTransitProtob\006proto" +
-      "3"
+      "\n\021DataTransit.proto\"k\n\013DataTransit\022\016\n\006mo" +
+      "bile\030\001 \001(\003\022\r\n\005email\030\002 \001(\t\022\014\n\004date\030\003 \001(\005\022" +
+      "\033\n\010currency\030\004 \001(\0162\t.Currency\022\022\n\nbackupDa" +
+      "ta\030\005 \001(\t\"4\n\017DataTransitList\022!\n\013dataTrans" +
+      "it\030\001 \003(\0132\014.DataTransit*%\n\010Currency\022\007\n\003IN" +
+      "R\020\000\022\007\n\003USD\020\001\022\007\n\003CND\020\002BA\n-com.vv.personal" +
+      ".diurnal.artifactory.generatedB\020DataTran" +
+      "sitProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1719,7 +1856,7 @@ public final class DataTransitProto {
     internal_static_DataTransit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DataTransit_descriptor,
-        new java.lang.String[] { "Mobile", "Date", "Currency", "BackupData", });
+        new java.lang.String[] { "Mobile", "Email", "Date", "Currency", "BackupData", });
     internal_static_DataTransitList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_DataTransitList_fieldAccessorTable = new
