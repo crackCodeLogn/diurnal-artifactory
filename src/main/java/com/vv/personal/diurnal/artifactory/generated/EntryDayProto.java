@@ -19,9 +19,9 @@ public final class EntryDayProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 mobile = 1;</code>
+     * <code>int32 hash_email = 1;</code>
      */
-    long getMobile();
+    int getHashEmail();
 
     /**
      * <code>int32 date = 2;</code>
@@ -61,7 +61,7 @@ public final class EntryDayProto {
       super(builder);
     }
     private EntryDay() {
-      mobile_ = 0L;
+      hashEmail_ = 0;
       date_ = 0;
       title_ = "";
       entriesAsString_ = "";
@@ -93,7 +93,7 @@ public final class EntryDayProto {
               break;
             case 8: {
 
-              mobile_ = input.readInt64();
+              hashEmail_ = input.readInt32();
               break;
             }
             case 16: {
@@ -145,13 +145,13 @@ public final class EntryDayProto {
               com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay.class, com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay.Builder.class);
     }
 
-    public static final int MOBILE_FIELD_NUMBER = 1;
-    private long mobile_;
+    public static final int HASH_EMAIL_FIELD_NUMBER = 1;
+    private int hashEmail_;
     /**
-     * <code>int64 mobile = 1;</code>
+     * <code>int32 hash_email = 1;</code>
      */
-    public long getMobile() {
-      return mobile_;
+    public int getHashEmail() {
+      return hashEmail_;
     }
 
     public static final int DATE_FIELD_NUMBER = 2;
@@ -245,8 +245,8 @@ public final class EntryDayProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (mobile_ != 0L) {
-        output.writeInt64(1, mobile_);
+      if (hashEmail_ != 0) {
+        output.writeInt32(1, hashEmail_);
       }
       if (date_ != 0) {
         output.writeInt32(2, date_);
@@ -266,9 +266,9 @@ public final class EntryDayProto {
       if (size != -1) return size;
 
       size = 0;
-      if (mobile_ != 0L) {
+      if (hashEmail_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, mobile_);
+          .computeInt32Size(1, hashEmail_);
       }
       if (date_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -296,8 +296,8 @@ public final class EntryDayProto {
       com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay other = (com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay) obj;
 
       boolean result = true;
-      result = result && (getMobile()
-          == other.getMobile());
+      result = result && (getHashEmail()
+          == other.getHashEmail());
       result = result && (getDate()
           == other.getDate());
       result = result && getTitle()
@@ -315,9 +315,8 @@ public final class EntryDayProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MOBILE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getMobile());
+      hash = (37 * hash) + HASH_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getHashEmail();
       hash = (37 * hash) + DATE_FIELD_NUMBER;
       hash = (53 * hash) + getDate();
       hash = (37 * hash) + TITLE_FIELD_NUMBER;
@@ -457,7 +456,7 @@ public final class EntryDayProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mobile_ = 0L;
+        hashEmail_ = 0;
 
         date_ = 0;
 
@@ -491,7 +490,7 @@ public final class EntryDayProto {
       @java.lang.Override
       public com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay buildPartial() {
         com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay result = new com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay(this);
-        result.mobile_ = mobile_;
+        result.hashEmail_ = hashEmail_;
         result.date_ = date_;
         result.title_ = title_;
         result.entriesAsString_ = entriesAsString_;
@@ -543,8 +542,8 @@ public final class EntryDayProto {
 
       public Builder mergeFrom(com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay other) {
         if (other == com.vv.personal.diurnal.artifactory.generated.EntryDayProto.EntryDay.getDefaultInstance()) return this;
-        if (other.getMobile() != 0L) {
-          setMobile(other.getMobile());
+        if (other.getHashEmail() != 0) {
+          setHashEmail(other.getHashEmail());
         }
         if (other.getDate() != 0) {
           setDate(other.getDate());
@@ -586,28 +585,28 @@ public final class EntryDayProto {
         return this;
       }
 
-      private long mobile_ ;
+      private int hashEmail_ ;
       /**
-       * <code>int64 mobile = 1;</code>
+       * <code>int32 hash_email = 1;</code>
        */
-      public long getMobile() {
-        return mobile_;
+      public int getHashEmail() {
+        return hashEmail_;
       }
       /**
-       * <code>int64 mobile = 1;</code>
+       * <code>int32 hash_email = 1;</code>
        */
-      public Builder setMobile(long value) {
+      public Builder setHashEmail(int value) {
         
-        mobile_ = value;
+        hashEmail_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 mobile = 1;</code>
+       * <code>int32 hash_email = 1;</code>
        */
-      public Builder clearMobile() {
+      public Builder clearHashEmail() {
         
-        mobile_ = 0L;
+        hashEmail_ = 0;
         onChanged();
         return this;
       }
@@ -1629,12 +1628,12 @@ public final class EntryDayProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016EntryDay.proto\"P\n\010EntryDay\022\016\n\006mobile\030\001" +
-      " \001(\003\022\014\n\004date\030\002 \001(\005\022\r\n\005title\030\003 \001(\t\022\027\n\017ent" +
-      "riesAsString\030\004 \001(\t\"+\n\014EntryDayList\022\033\n\010en" +
-      "tryDay\030\001 \003(\0132\t.EntryDayB>\n-com.vv.person" +
-      "al.diurnal.artifactory.generatedB\rEntryD" +
-      "ayProtob\006proto3"
+      "\n\016EntryDay.proto\"T\n\010EntryDay\022\022\n\nhash_ema" +
+      "il\030\001 \001(\005\022\014\n\004date\030\002 \001(\005\022\r\n\005title\030\003 \001(\t\022\027\n" +
+      "\017entriesAsString\030\004 \001(\t\"+\n\014EntryDayList\022\033" +
+      "\n\010entryDay\030\001 \003(\0132\t.EntryDayB>\n-com.vv.pe" +
+      "rsonal.diurnal.artifactory.generatedB\rEn" +
+      "tryDayProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1653,7 +1652,7 @@ public final class EntryDayProto {
     internal_static_EntryDay_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EntryDay_descriptor,
-        new java.lang.String[] { "Mobile", "Date", "Title", "EntriesAsString", });
+        new java.lang.String[] { "HashEmail", "Date", "Title", "EntriesAsString", });
     internal_static_EntryDayList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_EntryDayList_fieldAccessorTable = new

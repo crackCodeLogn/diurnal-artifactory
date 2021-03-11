@@ -4,7 +4,7 @@ option java_package = "com.vv.personal.diurnal.artifactory.generated";
 option java_outer_classname = "EntryDayProto";
 
 message EntryDay {
-  int64 mobile = 1;
+  int32 hash_email = 1;
   int32 date = 2;
   string title = 3;
   string entriesAsString = 4;
