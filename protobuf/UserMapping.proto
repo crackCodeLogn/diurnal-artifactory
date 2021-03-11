@@ -8,7 +8,7 @@ message UserMapping {
   string email = 2;
   string username = 3;
   bool powerUser = 4;
-  int32 hash_cred = 5;
+  string hash_cred = 5;
   int32 hash_email = 6;
 }
 
