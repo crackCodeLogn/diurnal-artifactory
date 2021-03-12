@@ -9,6 +9,10 @@ message DataTransit {
   int32 date = 3;
   Currency currency = 4;
   string backupData = 5;
+
+  string user = 6;
+  bool powerUser = 7;
+  string hashCred = 8;
 }
 
 enum Currency {
