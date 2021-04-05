@@ -14,6 +14,113 @@ public final class UserMappingProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code Currency}
+   */
+  public enum Currency
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>INR = 0;</code>
+     */
+    INR(0),
+    /**
+     * <code>USD = 1;</code>
+     */
+    USD(1),
+    /**
+     * <code>CND = 2;</code>
+     */
+    CND(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>INR = 0;</code>
+     */
+    public static final int INR_VALUE = 0;
+    /**
+     * <code>USD = 1;</code>
+     */
+    public static final int USD_VALUE = 1;
+    /**
+     * <code>CND = 2;</code>
+     */
+    public static final int CND_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Currency valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static Currency forNumber(int value) {
+      switch (value) {
+        case 0: return INR;
+        case 1: return USD;
+        case 2: return CND;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Currency>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Currency> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Currency>() {
+            public Currency findValueByNumber(int number) {
+              return Currency.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.vv.personal.diurnal.artifactory.generated.UserMappingProto.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Currency[] VALUES = values();
+
+    public static Currency valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Currency(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:Currency)
+  }
+
   public interface UserMappingOrBuilder extends
       // @@protoc_insertion_point(interface_extends:UserMapping)
       com.google.protobuf.MessageOrBuilder {
@@ -24,10 +131,18 @@ public final class UserMappingProto {
     long getMobile();
 
     /**
+     * <pre>
+     *fixed
+     * </pre>
+     *
      * <code>string email = 2;</code>
      */
     java.lang.String getEmail();
     /**
+     * <pre>
+     *fixed
+     * </pre>
+     *
      * <code>string email = 2;</code>
      */
     com.google.protobuf.ByteString
@@ -44,9 +159,9 @@ public final class UserMappingProto {
         getUsernameBytes();
 
     /**
-     * <code>bool powerUser = 4;</code>
+     * <code>bool premiumUser = 4;</code>
      */
-    boolean getPowerUser();
+    boolean getPremiumUser();
 
     /**
      * <code>string hash_cred = 5;</code>
@@ -59,9 +174,37 @@ public final class UserMappingProto {
         getHashCredBytes();
 
     /**
+     * <pre>
+     *fixed
+     * </pre>
+     *
      * <code>int32 hash_email = 6;</code>
      */
     int getHashEmail();
+
+    /**
+     * <code>int64 lastCloudSaveTimestamp = 7;</code>
+     */
+    long getLastCloudSaveTimestamp();
+
+    /**
+     * <code>int64 paymentExpiryTimestamp = 8;</code>
+     */
+    long getPaymentExpiryTimestamp();
+
+    /**
+     * <code>int64 lastSavedTimestamp = 9;</code>
+     */
+    long getLastSavedTimestamp();
+
+    /**
+     * <code>.Currency currency = 10;</code>
+     */
+    int getCurrencyValue();
+    /**
+     * <code>.Currency currency = 10;</code>
+     */
+    com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency getCurrency();
   }
   /**
    * Protobuf type {@code UserMapping}
@@ -79,9 +222,13 @@ public final class UserMappingProto {
       mobile_ = 0L;
       email_ = "";
       username_ = "";
-      powerUser_ = false;
+      premiumUser_ = false;
       hashCred_ = "";
       hashEmail_ = 0;
+      lastCloudSaveTimestamp_ = 0L;
+      paymentExpiryTimestamp_ = 0L;
+      lastSavedTimestamp_ = 0L;
+      currency_ = 0;
     }
 
     @java.lang.Override
@@ -127,7 +274,7 @@ public final class UserMappingProto {
             }
             case 32: {
 
-              powerUser_ = input.readBool();
+              premiumUser_ = input.readBool();
               break;
             }
             case 42: {
@@ -139,6 +286,27 @@ public final class UserMappingProto {
             case 48: {
 
               hashEmail_ = input.readInt32();
+              break;
+            }
+            case 56: {
+
+              lastCloudSaveTimestamp_ = input.readInt64();
+              break;
+            }
+            case 64: {
+
+              paymentExpiryTimestamp_ = input.readInt64();
+              break;
+            }
+            case 72: {
+
+              lastSavedTimestamp_ = input.readInt64();
+              break;
+            }
+            case 80: {
+              int rawValue = input.readEnum();
+
+              currency_ = rawValue;
               break;
             }
             default: {
@@ -185,6 +353,10 @@ public final class UserMappingProto {
     public static final int EMAIL_FIELD_NUMBER = 2;
     private volatile java.lang.Object email_;
     /**
+     * <pre>
+     *fixed
+     * </pre>
+     *
      * <code>string email = 2;</code>
      */
     public java.lang.String getEmail() {
@@ -200,6 +372,10 @@ public final class UserMappingProto {
       }
     }
     /**
+     * <pre>
+     *fixed
+     * </pre>
+     *
      * <code>string email = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -250,13 +426,13 @@ public final class UserMappingProto {
       }
     }
 
-    public static final int POWERUSER_FIELD_NUMBER = 4;
-    private boolean powerUser_;
+    public static final int PREMIUMUSER_FIELD_NUMBER = 4;
+    private boolean premiumUser_;
     /**
-     * <code>bool powerUser = 4;</code>
+     * <code>bool premiumUser = 4;</code>
      */
-    public boolean getPowerUser() {
-      return powerUser_;
+    public boolean getPremiumUser() {
+      return premiumUser_;
     }
 
     public static final int HASH_CRED_FIELD_NUMBER = 5;
@@ -296,10 +472,58 @@ public final class UserMappingProto {
     public static final int HASH_EMAIL_FIELD_NUMBER = 6;
     private int hashEmail_;
     /**
+     * <pre>
+     *fixed
+     * </pre>
+     *
      * <code>int32 hash_email = 6;</code>
      */
     public int getHashEmail() {
       return hashEmail_;
+    }
+
+    public static final int LASTCLOUDSAVETIMESTAMP_FIELD_NUMBER = 7;
+    private long lastCloudSaveTimestamp_;
+    /**
+     * <code>int64 lastCloudSaveTimestamp = 7;</code>
+     */
+    public long getLastCloudSaveTimestamp() {
+      return lastCloudSaveTimestamp_;
+    }
+
+    public static final int PAYMENTEXPIRYTIMESTAMP_FIELD_NUMBER = 8;
+    private long paymentExpiryTimestamp_;
+    /**
+     * <code>int64 paymentExpiryTimestamp = 8;</code>
+     */
+    public long getPaymentExpiryTimestamp() {
+      return paymentExpiryTimestamp_;
+    }
+
+    public static final int LASTSAVEDTIMESTAMP_FIELD_NUMBER = 9;
+    private long lastSavedTimestamp_;
+    /**
+     * <code>int64 lastSavedTimestamp = 9;</code>
+     */
+    public long getLastSavedTimestamp() {
+      return lastSavedTimestamp_;
+    }
+
+    public static final int CURRENCY_FIELD_NUMBER = 10;
+    private int currency_;
+    /**
+     * <code>.Currency currency = 10;</code>
+     */
+    public int getCurrencyValue() {
+      return currency_;
+    }
+    /**
+     * <code>.Currency currency = 10;</code>
+     */
+    public com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency getCurrency() {
+      @SuppressWarnings("deprecation")
+      com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency result = com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.valueOf(currency_);
+      return result == null ? com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -325,14 +549,26 @@ public final class UserMappingProto {
       if (!getUsernameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, username_);
       }
-      if (powerUser_ != false) {
-        output.writeBool(4, powerUser_);
+      if (premiumUser_ != false) {
+        output.writeBool(4, premiumUser_);
       }
       if (!getHashCredBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, hashCred_);
       }
       if (hashEmail_ != 0) {
         output.writeInt32(6, hashEmail_);
+      }
+      if (lastCloudSaveTimestamp_ != 0L) {
+        output.writeInt64(7, lastCloudSaveTimestamp_);
+      }
+      if (paymentExpiryTimestamp_ != 0L) {
+        output.writeInt64(8, paymentExpiryTimestamp_);
+      }
+      if (lastSavedTimestamp_ != 0L) {
+        output.writeInt64(9, lastSavedTimestamp_);
+      }
+      if (currency_ != com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.INR.getNumber()) {
+        output.writeEnum(10, currency_);
       }
       unknownFields.writeTo(output);
     }
@@ -353,9 +589,9 @@ public final class UserMappingProto {
       if (!getUsernameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, username_);
       }
-      if (powerUser_ != false) {
+      if (premiumUser_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, powerUser_);
+          .computeBoolSize(4, premiumUser_);
       }
       if (!getHashCredBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, hashCred_);
@@ -363,6 +599,22 @@ public final class UserMappingProto {
       if (hashEmail_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, hashEmail_);
+      }
+      if (lastCloudSaveTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, lastCloudSaveTimestamp_);
+      }
+      if (paymentExpiryTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, paymentExpiryTimestamp_);
+      }
+      if (lastSavedTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(9, lastSavedTimestamp_);
+      }
+      if (currency_ != com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.INR.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(10, currency_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -386,12 +638,19 @@ public final class UserMappingProto {
           .equals(other.getEmail());
       result = result && getUsername()
           .equals(other.getUsername());
-      result = result && (getPowerUser()
-          == other.getPowerUser());
+      result = result && (getPremiumUser()
+          == other.getPremiumUser());
       result = result && getHashCred()
           .equals(other.getHashCred());
       result = result && (getHashEmail()
           == other.getHashEmail());
+      result = result && (getLastCloudSaveTimestamp()
+          == other.getLastCloudSaveTimestamp());
+      result = result && (getPaymentExpiryTimestamp()
+          == other.getPaymentExpiryTimestamp());
+      result = result && (getLastSavedTimestamp()
+          == other.getLastSavedTimestamp());
+      result = result && currency_ == other.currency_;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -410,13 +669,24 @@ public final class UserMappingProto {
       hash = (53 * hash) + getEmail().hashCode();
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
       hash = (53 * hash) + getUsername().hashCode();
-      hash = (37 * hash) + POWERUSER_FIELD_NUMBER;
+      hash = (37 * hash) + PREMIUMUSER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPowerUser());
+          getPremiumUser());
       hash = (37 * hash) + HASH_CRED_FIELD_NUMBER;
       hash = (53 * hash) + getHashCred().hashCode();
       hash = (37 * hash) + HASH_EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getHashEmail();
+      hash = (37 * hash) + LASTCLOUDSAVETIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLastCloudSaveTimestamp());
+      hash = (37 * hash) + PAYMENTEXPIRYTIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPaymentExpiryTimestamp());
+      hash = (37 * hash) + LASTSAVEDTIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLastSavedTimestamp());
+      hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
+      hash = (53 * hash) + currency_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -556,11 +826,19 @@ public final class UserMappingProto {
 
         username_ = "";
 
-        powerUser_ = false;
+        premiumUser_ = false;
 
         hashCred_ = "";
 
         hashEmail_ = 0;
+
+        lastCloudSaveTimestamp_ = 0L;
+
+        paymentExpiryTimestamp_ = 0L;
+
+        lastSavedTimestamp_ = 0L;
+
+        currency_ = 0;
 
         return this;
       }
@@ -591,9 +869,13 @@ public final class UserMappingProto {
         result.mobile_ = mobile_;
         result.email_ = email_;
         result.username_ = username_;
-        result.powerUser_ = powerUser_;
+        result.premiumUser_ = premiumUser_;
         result.hashCred_ = hashCred_;
         result.hashEmail_ = hashEmail_;
+        result.lastCloudSaveTimestamp_ = lastCloudSaveTimestamp_;
+        result.paymentExpiryTimestamp_ = paymentExpiryTimestamp_;
+        result.lastSavedTimestamp_ = lastSavedTimestamp_;
+        result.currency_ = currency_;
         onBuilt();
         return result;
       }
@@ -653,8 +935,8 @@ public final class UserMappingProto {
           username_ = other.username_;
           onChanged();
         }
-        if (other.getPowerUser() != false) {
-          setPowerUser(other.getPowerUser());
+        if (other.getPremiumUser() != false) {
+          setPremiumUser(other.getPremiumUser());
         }
         if (!other.getHashCred().isEmpty()) {
           hashCred_ = other.hashCred_;
@@ -662,6 +944,18 @@ public final class UserMappingProto {
         }
         if (other.getHashEmail() != 0) {
           setHashEmail(other.getHashEmail());
+        }
+        if (other.getLastCloudSaveTimestamp() != 0L) {
+          setLastCloudSaveTimestamp(other.getLastCloudSaveTimestamp());
+        }
+        if (other.getPaymentExpiryTimestamp() != 0L) {
+          setPaymentExpiryTimestamp(other.getPaymentExpiryTimestamp());
+        }
+        if (other.getLastSavedTimestamp() != 0L) {
+          setLastSavedTimestamp(other.getLastSavedTimestamp());
+        }
+        if (other.currency_ != 0) {
+          setCurrencyValue(other.getCurrencyValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -720,6 +1014,10 @@ public final class UserMappingProto {
 
       private java.lang.Object email_ = "";
       /**
+       * <pre>
+       *fixed
+       * </pre>
+       *
        * <code>string email = 2;</code>
        */
       public java.lang.String getEmail() {
@@ -735,6 +1033,10 @@ public final class UserMappingProto {
         }
       }
       /**
+       * <pre>
+       *fixed
+       * </pre>
+       *
        * <code>string email = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -751,6 +1053,10 @@ public final class UserMappingProto {
         }
       }
       /**
+       * <pre>
+       *fixed
+       * </pre>
+       *
        * <code>string email = 2;</code>
        */
       public Builder setEmail(
@@ -764,6 +1070,10 @@ public final class UserMappingProto {
         return this;
       }
       /**
+       * <pre>
+       *fixed
+       * </pre>
+       *
        * <code>string email = 2;</code>
        */
       public Builder clearEmail() {
@@ -773,6 +1083,10 @@ public final class UserMappingProto {
         return this;
       }
       /**
+       * <pre>
+       *fixed
+       * </pre>
+       *
        * <code>string email = 2;</code>
        */
       public Builder setEmailBytes(
@@ -856,28 +1170,28 @@ public final class UserMappingProto {
         return this;
       }
 
-      private boolean powerUser_ ;
+      private boolean premiumUser_ ;
       /**
-       * <code>bool powerUser = 4;</code>
+       * <code>bool premiumUser = 4;</code>
        */
-      public boolean getPowerUser() {
-        return powerUser_;
+      public boolean getPremiumUser() {
+        return premiumUser_;
       }
       /**
-       * <code>bool powerUser = 4;</code>
+       * <code>bool premiumUser = 4;</code>
        */
-      public Builder setPowerUser(boolean value) {
+      public Builder setPremiumUser(boolean value) {
         
-        powerUser_ = value;
+        premiumUser_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool powerUser = 4;</code>
+       * <code>bool premiumUser = 4;</code>
        */
-      public Builder clearPowerUser() {
+      public Builder clearPremiumUser() {
         
-        powerUser_ = false;
+        premiumUser_ = false;
         onChanged();
         return this;
       }
@@ -953,12 +1267,20 @@ public final class UserMappingProto {
 
       private int hashEmail_ ;
       /**
+       * <pre>
+       *fixed
+       * </pre>
+       *
        * <code>int32 hash_email = 6;</code>
        */
       public int getHashEmail() {
         return hashEmail_;
       }
       /**
+       * <pre>
+       *fixed
+       * </pre>
+       *
        * <code>int32 hash_email = 6;</code>
        */
       public Builder setHashEmail(int value) {
@@ -968,11 +1290,138 @@ public final class UserMappingProto {
         return this;
       }
       /**
+       * <pre>
+       *fixed
+       * </pre>
+       *
        * <code>int32 hash_email = 6;</code>
        */
       public Builder clearHashEmail() {
         
         hashEmail_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long lastCloudSaveTimestamp_ ;
+      /**
+       * <code>int64 lastCloudSaveTimestamp = 7;</code>
+       */
+      public long getLastCloudSaveTimestamp() {
+        return lastCloudSaveTimestamp_;
+      }
+      /**
+       * <code>int64 lastCloudSaveTimestamp = 7;</code>
+       */
+      public Builder setLastCloudSaveTimestamp(long value) {
+        
+        lastCloudSaveTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 lastCloudSaveTimestamp = 7;</code>
+       */
+      public Builder clearLastCloudSaveTimestamp() {
+        
+        lastCloudSaveTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long paymentExpiryTimestamp_ ;
+      /**
+       * <code>int64 paymentExpiryTimestamp = 8;</code>
+       */
+      public long getPaymentExpiryTimestamp() {
+        return paymentExpiryTimestamp_;
+      }
+      /**
+       * <code>int64 paymentExpiryTimestamp = 8;</code>
+       */
+      public Builder setPaymentExpiryTimestamp(long value) {
+        
+        paymentExpiryTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 paymentExpiryTimestamp = 8;</code>
+       */
+      public Builder clearPaymentExpiryTimestamp() {
+        
+        paymentExpiryTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long lastSavedTimestamp_ ;
+      /**
+       * <code>int64 lastSavedTimestamp = 9;</code>
+       */
+      public long getLastSavedTimestamp() {
+        return lastSavedTimestamp_;
+      }
+      /**
+       * <code>int64 lastSavedTimestamp = 9;</code>
+       */
+      public Builder setLastSavedTimestamp(long value) {
+        
+        lastSavedTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 lastSavedTimestamp = 9;</code>
+       */
+      public Builder clearLastSavedTimestamp() {
+        
+        lastSavedTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int currency_ = 0;
+      /**
+       * <code>.Currency currency = 10;</code>
+       */
+      public int getCurrencyValue() {
+        return currency_;
+      }
+      /**
+       * <code>.Currency currency = 10;</code>
+       */
+      public Builder setCurrencyValue(int value) {
+        currency_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.Currency currency = 10;</code>
+       */
+      public com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency getCurrency() {
+        @SuppressWarnings("deprecation")
+        com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency result = com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.valueOf(currency_);
+        return result == null ? com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.Currency currency = 10;</code>
+       */
+      public Builder setCurrency(com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        currency_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.Currency currency = 10;</code>
+       */
+      public Builder clearCurrency() {
+        
+        currency_ = 0;
         onChanged();
         return this;
       }
@@ -1830,13 +2279,17 @@ public final class UserMappingProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021UserMapping.proto\"x\n\013UserMapping\022\016\n\006mo" +
-      "bile\030\001 \001(\003\022\r\n\005email\030\002 \001(\t\022\020\n\010username\030\003 " +
-      "\001(\t\022\021\n\tpowerUser\030\004 \001(\010\022\021\n\thash_cred\030\005 \001(" +
-      "\t\022\022\n\nhash_email\030\006 \001(\005\"4\n\017UserMappingList" +
-      "\022!\n\013userMapping\030\001 \003(\0132\014.UserMappingBA\n-c" +
-      "om.vv.personal.diurnal.artifactory.gener" +
-      "atedB\020UserMappingProtob\006proto3"
+      "\n\021UserMapping.proto\"\363\001\n\013UserMapping\022\016\n\006m" +
+      "obile\030\001 \001(\003\022\r\n\005email\030\002 \001(\t\022\020\n\010username\030\003" +
+      " \001(\t\022\023\n\013premiumUser\030\004 \001(\010\022\021\n\thash_cred\030\005" +
+      " \001(\t\022\022\n\nhash_email\030\006 \001(\005\022\036\n\026lastCloudSav" +
+      "eTimestamp\030\007 \001(\003\022\036\n\026paymentExpiryTimesta" +
+      "mp\030\010 \001(\003\022\032\n\022lastSavedTimestamp\030\t \001(\003\022\033\n\010" +
+      "currency\030\n \001(\0162\t.Currency\"4\n\017UserMapping" +
+      "List\022!\n\013userMapping\030\001 \003(\0132\014.UserMapping*" +
+      "%\n\010Currency\022\007\n\003INR\020\000\022\007\n\003USD\020\001\022\007\n\003CND\020\002BA" +
+      "\n-com.vv.personal.diurnal.artifactory.ge" +
+      "neratedB\020UserMappingProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1855,7 +2308,7 @@ public final class UserMappingProto {
     internal_static_UserMapping_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserMapping_descriptor,
-        new java.lang.String[] { "Mobile", "Email", "Username", "PowerUser", "HashCred", "HashEmail", });
+        new java.lang.String[] { "Mobile", "Email", "Username", "PremiumUser", "HashCred", "HashEmail", "LastCloudSaveTimestamp", "PaymentExpiryTimestamp", "LastSavedTimestamp", "Currency", });
     internal_static_UserMappingList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_UserMappingList_fieldAccessorTable = new

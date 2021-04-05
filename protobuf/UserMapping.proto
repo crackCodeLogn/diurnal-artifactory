@@ -5,11 +5,24 @@ option java_outer_classname = "UserMappingProto";
 
 message UserMapping {
   int64 mobile = 1;
-  string email = 2;
+  string email = 2; //fixed
   string username = 3;
-  bool powerUser = 4;
+  bool premiumUser = 4;
+
   string hash_cred = 5;
-  int32 hash_email = 6;
+  int32 hash_email = 6; //fixed
+
+  int64 lastCloudSaveTimestamp = 7;
+  int64 paymentExpiryTimestamp = 8;
+
+  int64 lastSavedTimestamp = 9;
+  Currency currency = 10;
+}
+
+enum Currency {
+  INR = 0;
+  USD = 1;
+  CND = 2;
 }
 
 message UserMappingList {
