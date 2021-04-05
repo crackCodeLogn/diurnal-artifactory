@@ -175,9 +175,9 @@ public final class DataTransitProto {
         getUserBytes();
 
     /**
-     * <code>bool powerUser = 7;</code>
+     * <code>bool premiumUser = 7;</code>
      */
-    boolean getPowerUser();
+    boolean getPremiumUser();
 
     /**
      * <code>string hashCred = 8;</code>
@@ -188,6 +188,40 @@ public final class DataTransitProto {
      */
     com.google.protobuf.ByteString
         getHashCredBytes();
+
+    /**
+     * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+     */
+    int getSupplementaryLongsCount();
+    /**
+     * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+     */
+    boolean containsSupplementaryLongs(
+        java.lang.String key);
+    /**
+     * Use {@link #getSupplementaryLongsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Long>
+    getSupplementaryLongs();
+    /**
+     * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Long>
+    getSupplementaryLongsMap();
+    /**
+     * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+     */
+
+    long getSupplementaryLongsOrDefault(
+        java.lang.String key,
+        long defaultValue);
+    /**
+     * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+     */
+
+    long getSupplementaryLongsOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code DataTransit}
@@ -208,7 +242,7 @@ public final class DataTransitProto {
       currency_ = 0;
       backupData_ = "";
       user_ = "";
-      powerUser_ = false;
+      premiumUser_ = false;
       hashCred_ = "";
     }
 
@@ -272,13 +306,26 @@ public final class DataTransitProto {
             }
             case 56: {
 
-              powerUser_ = input.readBool();
+              premiumUser_ = input.readBool();
               break;
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               hashCred_ = s;
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                supplementaryLongs_ = com.google.protobuf.MapField.newMapField(
+                    SupplementaryLongsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000100;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
+              supplementaryLongs__ = input.readMessage(
+                  SupplementaryLongsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              supplementaryLongs_.getMutableMap().put(
+                  supplementaryLongs__.getKey(), supplementaryLongs__.getValue());
               break;
             }
             default: {
@@ -305,6 +352,18 @@ public final class DataTransitProto {
       return com.vv.personal.diurnal.artifactory.generated.DataTransitProto.internal_static_DataTransit_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 9:
+          return internalGetSupplementaryLongs();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -313,6 +372,7 @@ public final class DataTransitProto {
               com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.class, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.Builder.class);
     }
 
+    private int bitField0_;
     public static final int MOBILE_FIELD_NUMBER = 1;
     private long mobile_;
     /**
@@ -450,13 +510,13 @@ public final class DataTransitProto {
       }
     }
 
-    public static final int POWERUSER_FIELD_NUMBER = 7;
-    private boolean powerUser_;
+    public static final int PREMIUMUSER_FIELD_NUMBER = 7;
+    private boolean premiumUser_;
     /**
-     * <code>bool powerUser = 7;</code>
+     * <code>bool premiumUser = 7;</code>
      */
-    public boolean getPowerUser() {
-      return powerUser_;
+    public boolean getPremiumUser() {
+      return premiumUser_;
     }
 
     public static final int HASHCRED_FIELD_NUMBER = 8;
@@ -493,6 +553,82 @@ public final class DataTransitProto {
       }
     }
 
+    public static final int SUPPLEMENTARYLONGS_FIELD_NUMBER = 9;
+    private static final class SupplementaryLongsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Long> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Long>newDefaultInstance(
+                  com.vv.personal.diurnal.artifactory.generated.DataTransitProto.internal_static_DataTransit_SupplementaryLongsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.INT64,
+                  0L);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Long> supplementaryLongs_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+    internalGetSupplementaryLongs() {
+      if (supplementaryLongs_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SupplementaryLongsDefaultEntryHolder.defaultEntry);
+      }
+      return supplementaryLongs_;
+    }
+
+    public int getSupplementaryLongsCount() {
+      return internalGetSupplementaryLongs().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+     */
+
+    public boolean containsSupplementaryLongs(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetSupplementaryLongs().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getSupplementaryLongsMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Long> getSupplementaryLongs() {
+      return getSupplementaryLongsMap();
+    }
+    /**
+     * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.Long> getSupplementaryLongsMap() {
+      return internalGetSupplementaryLongs().getMap();
+    }
+    /**
+     * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+     */
+
+    public long getSupplementaryLongsOrDefault(
+        java.lang.String key,
+        long defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Long> map =
+          internalGetSupplementaryLongs().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+     */
+
+    public long getSupplementaryLongsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.Long> map =
+          internalGetSupplementaryLongs().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -525,12 +661,18 @@ public final class DataTransitProto {
       if (!getUserBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, user_);
       }
-      if (powerUser_ != false) {
-        output.writeBool(7, powerUser_);
+      if (premiumUser_ != false) {
+        output.writeBool(7, premiumUser_);
       }
       if (!getHashCredBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, hashCred_);
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetSupplementaryLongs(),
+          SupplementaryLongsDefaultEntryHolder.defaultEntry,
+          9);
       unknownFields.writeTo(output);
     }
 
@@ -561,12 +703,22 @@ public final class DataTransitProto {
       if (!getUserBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, user_);
       }
-      if (powerUser_ != false) {
+      if (premiumUser_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, powerUser_);
+          .computeBoolSize(7, premiumUser_);
       }
       if (!getHashCredBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, hashCred_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry
+           : internalGetSupplementaryLongs().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
+        supplementaryLongs__ = SupplementaryLongsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(9, supplementaryLongs__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -595,10 +747,12 @@ public final class DataTransitProto {
           .equals(other.getBackupData());
       result = result && getUser()
           .equals(other.getUser());
-      result = result && (getPowerUser()
-          == other.getPowerUser());
+      result = result && (getPremiumUser()
+          == other.getPremiumUser());
       result = result && getHashCred()
           .equals(other.getHashCred());
+      result = result && internalGetSupplementaryLongs().equals(
+          other.internalGetSupplementaryLongs());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -623,11 +777,15 @@ public final class DataTransitProto {
       hash = (53 * hash) + getBackupData().hashCode();
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
-      hash = (37 * hash) + POWERUSER_FIELD_NUMBER;
+      hash = (37 * hash) + PREMIUMUSER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPowerUser());
+          getPremiumUser());
       hash = (37 * hash) + HASHCRED_FIELD_NUMBER;
       hash = (53 * hash) + getHashCred().hashCode();
+      if (!internalGetSupplementaryLongs().getMap().isEmpty()) {
+        hash = (37 * hash) + SUPPLEMENTARYLONGS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetSupplementaryLongs().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -735,6 +893,28 @@ public final class DataTransitProto {
         return com.vv.personal.diurnal.artifactory.generated.DataTransitProto.internal_static_DataTransit_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 9:
+            return internalGetSupplementaryLongs();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 9:
+            return internalGetMutableSupplementaryLongs();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -773,10 +953,11 @@ public final class DataTransitProto {
 
         user_ = "";
 
-        powerUser_ = false;
+        premiumUser_ = false;
 
         hashCred_ = "";
 
+        internalGetMutableSupplementaryLongs().clear();
         return this;
       }
 
@@ -803,14 +984,19 @@ public final class DataTransitProto {
       @java.lang.Override
       public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit buildPartial() {
         com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit result = new com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.mobile_ = mobile_;
         result.email_ = email_;
         result.date_ = date_;
         result.currency_ = currency_;
         result.backupData_ = backupData_;
         result.user_ = user_;
-        result.powerUser_ = powerUser_;
+        result.premiumUser_ = premiumUser_;
         result.hashCred_ = hashCred_;
+        result.supplementaryLongs_ = internalGetSupplementaryLongs();
+        result.supplementaryLongs_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -880,13 +1066,15 @@ public final class DataTransitProto {
           user_ = other.user_;
           onChanged();
         }
-        if (other.getPowerUser() != false) {
-          setPowerUser(other.getPowerUser());
+        if (other.getPremiumUser() != false) {
+          setPremiumUser(other.getPremiumUser());
         }
         if (!other.getHashCred().isEmpty()) {
           hashCred_ = other.hashCred_;
           onChanged();
         }
+        internalGetMutableSupplementaryLongs().mergeFrom(
+            other.internalGetSupplementaryLongs());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -915,6 +1103,7 @@ public final class DataTransitProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private long mobile_ ;
       /**
@@ -1220,28 +1409,28 @@ public final class DataTransitProto {
         return this;
       }
 
-      private boolean powerUser_ ;
+      private boolean premiumUser_ ;
       /**
-       * <code>bool powerUser = 7;</code>
+       * <code>bool premiumUser = 7;</code>
        */
-      public boolean getPowerUser() {
-        return powerUser_;
+      public boolean getPremiumUser() {
+        return premiumUser_;
       }
       /**
-       * <code>bool powerUser = 7;</code>
+       * <code>bool premiumUser = 7;</code>
        */
-      public Builder setPowerUser(boolean value) {
+      public Builder setPremiumUser(boolean value) {
         
-        powerUser_ = value;
+        premiumUser_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool powerUser = 7;</code>
+       * <code>bool premiumUser = 7;</code>
        */
-      public Builder clearPowerUser() {
+      public Builder clearPremiumUser() {
         
-        powerUser_ = false;
+        premiumUser_ = false;
         onChanged();
         return this;
       }
@@ -1312,6 +1501,129 @@ public final class DataTransitProto {
         
         hashCred_ = value;
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Long> supplementaryLongs_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+      internalGetSupplementaryLongs() {
+        if (supplementaryLongs_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              SupplementaryLongsDefaultEntryHolder.defaultEntry);
+        }
+        return supplementaryLongs_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
+      internalGetMutableSupplementaryLongs() {
+        onChanged();;
+        if (supplementaryLongs_ == null) {
+          supplementaryLongs_ = com.google.protobuf.MapField.newMapField(
+              SupplementaryLongsDefaultEntryHolder.defaultEntry);
+        }
+        if (!supplementaryLongs_.isMutable()) {
+          supplementaryLongs_ = supplementaryLongs_.copy();
+        }
+        return supplementaryLongs_;
+      }
+
+      public int getSupplementaryLongsCount() {
+        return internalGetSupplementaryLongs().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+       */
+
+      public boolean containsSupplementaryLongs(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetSupplementaryLongs().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getSupplementaryLongsMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Long> getSupplementaryLongs() {
+        return getSupplementaryLongsMap();
+      }
+      /**
+       * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.Long> getSupplementaryLongsMap() {
+        return internalGetSupplementaryLongs().getMap();
+      }
+      /**
+       * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+       */
+
+      public long getSupplementaryLongsOrDefault(
+          java.lang.String key,
+          long defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Long> map =
+            internalGetSupplementaryLongs().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+       */
+
+      public long getSupplementaryLongsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.Long> map =
+            internalGetSupplementaryLongs().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearSupplementaryLongs() {
+        internalGetMutableSupplementaryLongs().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+       */
+
+      public Builder removeSupplementaryLongs(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableSupplementaryLongs().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Long>
+      getMutableSupplementaryLongs() {
+        return internalGetMutableSupplementaryLongs().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+       */
+      public Builder putSupplementaryLongs(
+          java.lang.String key,
+          long value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        
+        internalGetMutableSupplementaryLongs().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+       */
+
+      public Builder putAllSupplementaryLongs(
+          java.util.Map<java.lang.String, java.lang.Long> values) {
+        internalGetMutableSupplementaryLongs().getMutableMap()
+            .putAll(values);
         return this;
       }
       @java.lang.Override
@@ -2155,6 +2467,11 @@ public final class DataTransitProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_DataTransit_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DataTransit_SupplementaryLongsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DataTransit_SupplementaryLongsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_DataTransitList_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -2168,15 +2485,18 @@ public final class DataTransitProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021DataTransit.proto\"\236\001\n\013DataTransit\022\016\n\006m" +
+      "\n\021DataTransit.proto\"\235\002\n\013DataTransit\022\016\n\006m" +
       "obile\030\001 \001(\003\022\r\n\005email\030\002 \001(\t\022\014\n\004date\030\003 \001(\005" +
       "\022\033\n\010currency\030\004 \001(\0162\t.Currency\022\022\n\nbackupD" +
-      "ata\030\005 \001(\t\022\014\n\004user\030\006 \001(\t\022\021\n\tpowerUser\030\007 \001" +
-      "(\010\022\020\n\010hashCred\030\010 \001(\t\"4\n\017DataTransitList\022" +
-      "!\n\013dataTransit\030\001 \003(\0132\014.DataTransit*%\n\010Cu" +
-      "rrency\022\007\n\003INR\020\000\022\007\n\003USD\020\001\022\007\n\003CND\020\002BA\n-com" +
-      ".vv.personal.diurnal.artifactory.generat" +
-      "edB\020DataTransitProtob\006proto3"
+      "ata\030\005 \001(\t\022\014\n\004user\030\006 \001(\t\022\023\n\013premiumUser\030\007" +
+      " \001(\010\022\020\n\010hashCred\030\010 \001(\t\022@\n\022supplementaryL" +
+      "ongs\030\t \003(\0132$.DataTransit.SupplementaryLo" +
+      "ngsEntry\0329\n\027SupplementaryLongsEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\"4\n\017DataTrans" +
+      "itList\022!\n\013dataTransit\030\001 \003(\0132\014.DataTransi" +
+      "t*%\n\010Currency\022\007\n\003INR\020\000\022\007\n\003USD\020\001\022\007\n\003CND\020\002" +
+      "BA\n-com.vv.personal.diurnal.artifactory." +
+      "generatedB\020DataTransitProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2195,7 +2515,13 @@ public final class DataTransitProto {
     internal_static_DataTransit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DataTransit_descriptor,
-        new java.lang.String[] { "Mobile", "Email", "Date", "Currency", "BackupData", "User", "PowerUser", "HashCred", });
+        new java.lang.String[] { "Mobile", "Email", "Date", "Currency", "BackupData", "User", "PremiumUser", "HashCred", "SupplementaryLongs", });
+    internal_static_DataTransit_SupplementaryLongsEntry_descriptor =
+      internal_static_DataTransit_descriptor.getNestedTypes().get(0);
+    internal_static_DataTransit_SupplementaryLongsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DataTransit_SupplementaryLongsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_DataTransitList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_DataTransitList_fieldAccessorTable = new

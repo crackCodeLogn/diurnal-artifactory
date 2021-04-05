@@ -11,8 +11,10 @@ message DataTransit {
   string backupData = 5;
 
   string user = 6;
-  bool powerUser = 7;
+  bool premiumUser = 7;
   string hashCred = 8;
+
+  map<string, int64> supplementaryLongs = 9;
 }
 
 enum Currency {
