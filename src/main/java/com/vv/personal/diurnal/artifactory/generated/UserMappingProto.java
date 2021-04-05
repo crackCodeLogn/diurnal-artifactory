@@ -198,11 +198,16 @@ public final class UserMappingProto {
     long getLastSavedTimestamp();
 
     /**
-     * <code>.Currency currency = 10;</code>
+     * <code>int64 accountCreationTimestamp = 10;</code>
+     */
+    long getAccountCreationTimestamp();
+
+    /**
+     * <code>.Currency currency = 11;</code>
      */
     int getCurrencyValue();
     /**
-     * <code>.Currency currency = 10;</code>
+     * <code>.Currency currency = 11;</code>
      */
     com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency getCurrency();
   }
@@ -228,6 +233,7 @@ public final class UserMappingProto {
       lastCloudSaveTimestamp_ = 0L;
       paymentExpiryTimestamp_ = 0L;
       lastSavedTimestamp_ = 0L;
+      accountCreationTimestamp_ = 0L;
       currency_ = 0;
     }
 
@@ -304,6 +310,11 @@ public final class UserMappingProto {
               break;
             }
             case 80: {
+
+              accountCreationTimestamp_ = input.readInt64();
+              break;
+            }
+            case 88: {
               int rawValue = input.readEnum();
 
               currency_ = rawValue;
@@ -509,16 +520,25 @@ public final class UserMappingProto {
       return lastSavedTimestamp_;
     }
 
-    public static final int CURRENCY_FIELD_NUMBER = 10;
+    public static final int ACCOUNTCREATIONTIMESTAMP_FIELD_NUMBER = 10;
+    private long accountCreationTimestamp_;
+    /**
+     * <code>int64 accountCreationTimestamp = 10;</code>
+     */
+    public long getAccountCreationTimestamp() {
+      return accountCreationTimestamp_;
+    }
+
+    public static final int CURRENCY_FIELD_NUMBER = 11;
     private int currency_;
     /**
-     * <code>.Currency currency = 10;</code>
+     * <code>.Currency currency = 11;</code>
      */
     public int getCurrencyValue() {
       return currency_;
     }
     /**
-     * <code>.Currency currency = 10;</code>
+     * <code>.Currency currency = 11;</code>
      */
     public com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency getCurrency() {
       @SuppressWarnings("deprecation")
@@ -567,8 +587,11 @@ public final class UserMappingProto {
       if (lastSavedTimestamp_ != 0L) {
         output.writeInt64(9, lastSavedTimestamp_);
       }
+      if (accountCreationTimestamp_ != 0L) {
+        output.writeInt64(10, accountCreationTimestamp_);
+      }
       if (currency_ != com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.INR.getNumber()) {
-        output.writeEnum(10, currency_);
+        output.writeEnum(11, currency_);
       }
       unknownFields.writeTo(output);
     }
@@ -612,9 +635,13 @@ public final class UserMappingProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, lastSavedTimestamp_);
       }
+      if (accountCreationTimestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(10, accountCreationTimestamp_);
+      }
       if (currency_ != com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.INR.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, currency_);
+          .computeEnumSize(11, currency_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -650,6 +677,8 @@ public final class UserMappingProto {
           == other.getPaymentExpiryTimestamp());
       result = result && (getLastSavedTimestamp()
           == other.getLastSavedTimestamp());
+      result = result && (getAccountCreationTimestamp()
+          == other.getAccountCreationTimestamp());
       result = result && currency_ == other.currency_;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -685,6 +714,9 @@ public final class UserMappingProto {
       hash = (37 * hash) + LASTSAVEDTIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLastSavedTimestamp());
+      hash = (37 * hash) + ACCOUNTCREATIONTIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAccountCreationTimestamp());
       hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
       hash = (53 * hash) + currency_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -838,6 +870,8 @@ public final class UserMappingProto {
 
         lastSavedTimestamp_ = 0L;
 
+        accountCreationTimestamp_ = 0L;
+
         currency_ = 0;
 
         return this;
@@ -875,6 +909,7 @@ public final class UserMappingProto {
         result.lastCloudSaveTimestamp_ = lastCloudSaveTimestamp_;
         result.paymentExpiryTimestamp_ = paymentExpiryTimestamp_;
         result.lastSavedTimestamp_ = lastSavedTimestamp_;
+        result.accountCreationTimestamp_ = accountCreationTimestamp_;
         result.currency_ = currency_;
         onBuilt();
         return result;
@@ -953,6 +988,9 @@ public final class UserMappingProto {
         }
         if (other.getLastSavedTimestamp() != 0L) {
           setLastSavedTimestamp(other.getLastSavedTimestamp());
+        }
+        if (other.getAccountCreationTimestamp() != 0L) {
+          setAccountCreationTimestamp(other.getAccountCreationTimestamp());
         }
         if (other.currency_ != 0) {
           setCurrencyValue(other.getCurrencyValue());
@@ -1381,15 +1419,41 @@ public final class UserMappingProto {
         return this;
       }
 
+      private long accountCreationTimestamp_ ;
+      /**
+       * <code>int64 accountCreationTimestamp = 10;</code>
+       */
+      public long getAccountCreationTimestamp() {
+        return accountCreationTimestamp_;
+      }
+      /**
+       * <code>int64 accountCreationTimestamp = 10;</code>
+       */
+      public Builder setAccountCreationTimestamp(long value) {
+        
+        accountCreationTimestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 accountCreationTimestamp = 10;</code>
+       */
+      public Builder clearAccountCreationTimestamp() {
+        
+        accountCreationTimestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private int currency_ = 0;
       /**
-       * <code>.Currency currency = 10;</code>
+       * <code>.Currency currency = 11;</code>
        */
       public int getCurrencyValue() {
         return currency_;
       }
       /**
-       * <code>.Currency currency = 10;</code>
+       * <code>.Currency currency = 11;</code>
        */
       public Builder setCurrencyValue(int value) {
         currency_ = value;
@@ -1397,7 +1461,7 @@ public final class UserMappingProto {
         return this;
       }
       /**
-       * <code>.Currency currency = 10;</code>
+       * <code>.Currency currency = 11;</code>
        */
       public com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency getCurrency() {
         @SuppressWarnings("deprecation")
@@ -1405,7 +1469,7 @@ public final class UserMappingProto {
         return result == null ? com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.UNRECOGNIZED : result;
       }
       /**
-       * <code>.Currency currency = 10;</code>
+       * <code>.Currency currency = 11;</code>
        */
       public Builder setCurrency(com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency value) {
         if (value == null) {
@@ -1417,7 +1481,7 @@ public final class UserMappingProto {
         return this;
       }
       /**
-       * <code>.Currency currency = 10;</code>
+       * <code>.Currency currency = 11;</code>
        */
       public Builder clearCurrency() {
         
@@ -2279,17 +2343,18 @@ public final class UserMappingProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021UserMapping.proto\"\363\001\n\013UserMapping\022\016\n\006m" +
+      "\n\021UserMapping.proto\"\225\002\n\013UserMapping\022\016\n\006m" +
       "obile\030\001 \001(\003\022\r\n\005email\030\002 \001(\t\022\020\n\010username\030\003" +
       " \001(\t\022\023\n\013premiumUser\030\004 \001(\010\022\021\n\thash_cred\030\005" +
       " \001(\t\022\022\n\nhash_email\030\006 \001(\005\022\036\n\026lastCloudSav" +
       "eTimestamp\030\007 \001(\003\022\036\n\026paymentExpiryTimesta" +
-      "mp\030\010 \001(\003\022\032\n\022lastSavedTimestamp\030\t \001(\003\022\033\n\010" +
-      "currency\030\n \001(\0162\t.Currency\"4\n\017UserMapping" +
-      "List\022!\n\013userMapping\030\001 \003(\0132\014.UserMapping*" +
-      "%\n\010Currency\022\007\n\003INR\020\000\022\007\n\003USD\020\001\022\007\n\003CND\020\002BA" +
-      "\n-com.vv.personal.diurnal.artifactory.ge" +
-      "neratedB\020UserMappingProtob\006proto3"
+      "mp\030\010 \001(\003\022\032\n\022lastSavedTimestamp\030\t \001(\003\022 \n\030" +
+      "accountCreationTimestamp\030\n \001(\003\022\033\n\010curren" +
+      "cy\030\013 \001(\0162\t.Currency\"4\n\017UserMappingList\022!" +
+      "\n\013userMapping\030\001 \003(\0132\014.UserMapping*%\n\010Cur" +
+      "rency\022\007\n\003INR\020\000\022\007\n\003USD\020\001\022\007\n\003CND\020\002BA\n-com." +
+      "vv.personal.diurnal.artifactory.generate" +
+      "dB\020UserMappingProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2308,7 +2373,7 @@ public final class UserMappingProto {
     internal_static_UserMapping_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserMapping_descriptor,
-        new java.lang.String[] { "Mobile", "Email", "Username", "PremiumUser", "HashCred", "HashEmail", "LastCloudSaveTimestamp", "PaymentExpiryTimestamp", "LastSavedTimestamp", "Currency", });
+        new java.lang.String[] { "Mobile", "Email", "Username", "PremiumUser", "HashCred", "HashEmail", "LastCloudSaveTimestamp", "PaymentExpiryTimestamp", "LastSavedTimestamp", "AccountCreationTimestamp", "Currency", });
     internal_static_UserMappingList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_UserMappingList_fieldAccessorTable = new

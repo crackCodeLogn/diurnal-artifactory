@@ -14,9 +14,10 @@ message UserMapping {
 
   int64 lastCloudSaveTimestamp = 7;
   int64 paymentExpiryTimestamp = 8;
-
   int64 lastSavedTimestamp = 9;
-  Currency currency = 10;
+  int64 accountCreationTimestamp = 10;
+
+  Currency currency = 11;
 }
 
 enum Currency {
