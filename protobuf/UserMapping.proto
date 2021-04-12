@@ -22,8 +22,13 @@ message UserMapping {
 
 enum Currency {
   INR = 0;
-  USD = 1;
-  CND = 2;
+  CND = 1;
+  EUR = 2;
+  FR = 3;
+  GBP = 4;
+  RUB = 5;
+  USD = 6;
+  YEN = 7;
 }
 
 message UserMappingList {

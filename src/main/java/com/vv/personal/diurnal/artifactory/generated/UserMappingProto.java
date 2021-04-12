@@ -24,13 +24,33 @@ public final class UserMappingProto {
      */
     INR(0),
     /**
-     * <code>USD = 1;</code>
+     * <code>CND = 1;</code>
      */
-    USD(1),
+    CND(1),
     /**
-     * <code>CND = 2;</code>
+     * <code>EUR = 2;</code>
      */
-    CND(2),
+    EUR(2),
+    /**
+     * <code>FR = 3;</code>
+     */
+    FR(3),
+    /**
+     * <code>GBP = 4;</code>
+     */
+    GBP(4),
+    /**
+     * <code>RUB = 5;</code>
+     */
+    RUB(5),
+    /**
+     * <code>USD = 6;</code>
+     */
+    USD(6),
+    /**
+     * <code>YEN = 7;</code>
+     */
+    YEN(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -39,13 +59,33 @@ public final class UserMappingProto {
      */
     public static final int INR_VALUE = 0;
     /**
-     * <code>USD = 1;</code>
+     * <code>CND = 1;</code>
      */
-    public static final int USD_VALUE = 1;
+    public static final int CND_VALUE = 1;
     /**
-     * <code>CND = 2;</code>
+     * <code>EUR = 2;</code>
      */
-    public static final int CND_VALUE = 2;
+    public static final int EUR_VALUE = 2;
+    /**
+     * <code>FR = 3;</code>
+     */
+    public static final int FR_VALUE = 3;
+    /**
+     * <code>GBP = 4;</code>
+     */
+    public static final int GBP_VALUE = 4;
+    /**
+     * <code>RUB = 5;</code>
+     */
+    public static final int RUB_VALUE = 5;
+    /**
+     * <code>USD = 6;</code>
+     */
+    public static final int USD_VALUE = 6;
+    /**
+     * <code>YEN = 7;</code>
+     */
+    public static final int YEN_VALUE = 7;
 
 
     public final int getNumber() {
@@ -67,8 +107,13 @@ public final class UserMappingProto {
     public static Currency forNumber(int value) {
       switch (value) {
         case 0: return INR;
-        case 1: return USD;
-        case 2: return CND;
+        case 1: return CND;
+        case 2: return EUR;
+        case 3: return FR;
+        case 4: return GBP;
+        case 5: return RUB;
+        case 6: return USD;
+        case 7: return YEN;
         default: return null;
       }
     }
@@ -2351,10 +2396,11 @@ public final class UserMappingProto {
       "mp\030\010 \001(\003\022\032\n\022lastSavedTimestamp\030\t \001(\003\022 \n\030" +
       "accountCreationTimestamp\030\n \001(\003\022\033\n\010curren" +
       "cy\030\013 \001(\0162\t.Currency\"4\n\017UserMappingList\022!" +
-      "\n\013userMapping\030\001 \003(\0132\014.UserMapping*%\n\010Cur" +
-      "rency\022\007\n\003INR\020\000\022\007\n\003USD\020\001\022\007\n\003CND\020\002BA\n-com." +
-      "vv.personal.diurnal.artifactory.generate" +
-      "dB\020UserMappingProtob\006proto3"
+      "\n\013userMapping\030\001 \003(\0132\014.UserMapping*Q\n\010Cur" +
+      "rency\022\007\n\003INR\020\000\022\007\n\003CND\020\001\022\007\n\003EUR\020\002\022\006\n\002FR\020\003" +
+      "\022\007\n\003GBP\020\004\022\007\n\003RUB\020\005\022\007\n\003USD\020\006\022\007\n\003YEN\020\007BA\n-" +
+      "com.vv.personal.diurnal.artifactory.gene" +
+      "ratedB\020UserMappingProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
