@@ -14,113 +14,6 @@ public final class DataTransitProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  /**
-   * Protobuf enum {@code Currency}
-   */
-  public enum Currency
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>INR = 0;</code>
-     */
-    INR(0),
-    /**
-     * <code>USD = 1;</code>
-     */
-    USD(1),
-    /**
-     * <code>CND = 2;</code>
-     */
-    CND(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>INR = 0;</code>
-     */
-    public static final int INR_VALUE = 0;
-    /**
-     * <code>USD = 1;</code>
-     */
-    public static final int USD_VALUE = 1;
-    /**
-     * <code>CND = 2;</code>
-     */
-    public static final int CND_VALUE = 2;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Currency valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static Currency forNumber(int value) {
-      switch (value) {
-        case 0: return INR;
-        case 1: return USD;
-        case 2: return CND;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Currency>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Currency> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Currency>() {
-            public Currency findValueByNumber(int number) {
-              return Currency.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.vv.personal.diurnal.artifactory.generated.DataTransitProto.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Currency[] VALUES = values();
-
-    public static Currency valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Currency(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:Currency)
-  }
-
   public interface DataTransitOrBuilder extends
       // @@protoc_insertion_point(interface_extends:DataTransit)
       com.google.protobuf.MessageOrBuilder {
@@ -146,13 +39,14 @@ public final class DataTransitProto {
     int getDate();
 
     /**
-     * <code>.Currency currency = 4;</code>
+     * <code>string currency = 4;</code>
      */
-    int getCurrencyValue();
+    java.lang.String getCurrency();
     /**
-     * <code>.Currency currency = 4;</code>
+     * <code>string currency = 4;</code>
      */
-    com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency getCurrency();
+    com.google.protobuf.ByteString
+        getCurrencyBytes();
 
     /**
      * <code>string backupData = 5;</code>
@@ -239,7 +133,7 @@ public final class DataTransitProto {
       mobile_ = 0L;
       email_ = "";
       date_ = 0;
-      currency_ = 0;
+      currency_ = "";
       backupData_ = "";
       user_ = "";
       premiumUser_ = false;
@@ -286,10 +180,10 @@ public final class DataTransitProto {
               date_ = input.readInt32();
               break;
             }
-            case 32: {
-              int rawValue = input.readEnum();
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              currency_ = rawValue;
+              currency_ = s;
               break;
             }
             case 42: {
@@ -426,20 +320,37 @@ public final class DataTransitProto {
     }
 
     public static final int CURRENCY_FIELD_NUMBER = 4;
-    private int currency_;
+    private volatile java.lang.Object currency_;
     /**
-     * <code>.Currency currency = 4;</code>
+     * <code>string currency = 4;</code>
      */
-    public int getCurrencyValue() {
-      return currency_;
+    public java.lang.String getCurrency() {
+      java.lang.Object ref = currency_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currency_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.Currency currency = 4;</code>
+     * <code>string currency = 4;</code>
      */
-    public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency getCurrency() {
-      @SuppressWarnings("deprecation")
-      com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency result = com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency.valueOf(currency_);
-      return result == null ? com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency.UNRECOGNIZED : result;
+    public com.google.protobuf.ByteString
+        getCurrencyBytes() {
+      java.lang.Object ref = currency_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        currency_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int BACKUPDATA_FIELD_NUMBER = 5;
@@ -652,8 +563,8 @@ public final class DataTransitProto {
       if (date_ != 0) {
         output.writeInt32(3, date_);
       }
-      if (currency_ != com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency.INR.getNumber()) {
-        output.writeEnum(4, currency_);
+      if (!getCurrencyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, currency_);
       }
       if (!getBackupDataBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, backupData_);
@@ -693,9 +604,8 @@ public final class DataTransitProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, date_);
       }
-      if (currency_ != com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency.INR.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, currency_);
+      if (!getCurrencyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, currency_);
       }
       if (!getBackupDataBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, backupData_);
@@ -742,7 +652,8 @@ public final class DataTransitProto {
           .equals(other.getEmail());
       result = result && (getDate()
           == other.getDate());
-      result = result && currency_ == other.currency_;
+      result = result && getCurrency()
+          .equals(other.getCurrency());
       result = result && getBackupData()
           .equals(other.getBackupData());
       result = result && getUser()
@@ -772,7 +683,7 @@ public final class DataTransitProto {
       hash = (37 * hash) + DATE_FIELD_NUMBER;
       hash = (53 * hash) + getDate();
       hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
-      hash = (53 * hash) + currency_;
+      hash = (53 * hash) + getCurrency().hashCode();
       hash = (37 * hash) + BACKUPDATA_FIELD_NUMBER;
       hash = (53 * hash) + getBackupData().hashCode();
       hash = (37 * hash) + USER_FIELD_NUMBER;
@@ -947,7 +858,7 @@ public final class DataTransitProto {
 
         date_ = 0;
 
-        currency_ = 0;
+        currency_ = "";
 
         backupData_ = "";
 
@@ -1055,8 +966,9 @@ public final class DataTransitProto {
         if (other.getDate() != 0) {
           setDate(other.getDate());
         }
-        if (other.currency_ != 0) {
-          setCurrencyValue(other.getCurrencyValue());
+        if (!other.getCurrency().isEmpty()) {
+          currency_ = other.currency_;
+          onChanged();
         }
         if (!other.getBackupData().isEmpty()) {
           backupData_ = other.backupData_;
@@ -1226,47 +1138,71 @@ public final class DataTransitProto {
         return this;
       }
 
-      private int currency_ = 0;
+      private java.lang.Object currency_ = "";
       /**
-       * <code>.Currency currency = 4;</code>
+       * <code>string currency = 4;</code>
        */
-      public int getCurrencyValue() {
-        return currency_;
+      public java.lang.String getCurrency() {
+        java.lang.Object ref = currency_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          currency_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>.Currency currency = 4;</code>
+       * <code>string currency = 4;</code>
        */
-      public Builder setCurrencyValue(int value) {
+      public com.google.protobuf.ByteString
+          getCurrencyBytes() {
+        java.lang.Object ref = currency_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          currency_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string currency = 4;</code>
+       */
+      public Builder setCurrency(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         currency_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.Currency currency = 4;</code>
+       * <code>string currency = 4;</code>
        */
-      public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency getCurrency() {
-        @SuppressWarnings("deprecation")
-        com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency result = com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency.valueOf(currency_);
-        return result == null ? com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.Currency currency = 4;</code>
-       */
-      public Builder setCurrency(com.vv.personal.diurnal.artifactory.generated.DataTransitProto.Currency value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+      public Builder clearCurrency() {
         
-        currency_ = value.getNumber();
+        currency_ = getDefaultInstance().getCurrency();
         onChanged();
         return this;
       }
       /**
-       * <code>.Currency currency = 4;</code>
+       * <code>string currency = 4;</code>
        */
-      public Builder clearCurrency() {
+      public Builder setCurrencyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         
-        currency_ = 0;
+        currency_ = value;
         onChanged();
         return this;
       }
@@ -2485,18 +2421,17 @@ public final class DataTransitProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021DataTransit.proto\"\235\002\n\013DataTransit\022\016\n\006m" +
+      "\n\021DataTransit.proto\"\222\002\n\013DataTransit\022\016\n\006m" +
       "obile\030\001 \001(\003\022\r\n\005email\030\002 \001(\t\022\014\n\004date\030\003 \001(\005" +
-      "\022\033\n\010currency\030\004 \001(\0162\t.Currency\022\022\n\nbackupD" +
-      "ata\030\005 \001(\t\022\014\n\004user\030\006 \001(\t\022\023\n\013premiumUser\030\007" +
-      " \001(\010\022\020\n\010hashCred\030\010 \001(\t\022@\n\022supplementaryL" +
-      "ongs\030\t \003(\0132$.DataTransit.SupplementaryLo" +
-      "ngsEntry\0329\n\027SupplementaryLongsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\"4\n\017DataTrans" +
-      "itList\022!\n\013dataTransit\030\001 \003(\0132\014.DataTransi" +
-      "t*%\n\010Currency\022\007\n\003INR\020\000\022\007\n\003USD\020\001\022\007\n\003CND\020\002" +
-      "BA\n-com.vv.personal.diurnal.artifactory." +
-      "generatedB\020DataTransitProtob\006proto3"
+      "\022\020\n\010currency\030\004 \001(\t\022\022\n\nbackupData\030\005 \001(\t\022\014" +
+      "\n\004user\030\006 \001(\t\022\023\n\013premiumUser\030\007 \001(\010\022\020\n\010has" +
+      "hCred\030\010 \001(\t\022@\n\022supplementaryLongs\030\t \003(\0132" +
+      "$.DataTransit.SupplementaryLongsEntry\0329\n" +
+      "\027SupplementaryLongsEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\003:\0028\001\"4\n\017DataTransitList\022!\n\013d" +
+      "ataTransit\030\001 \003(\0132\014.DataTransitBA\n-com.vv" +
+      ".personal.diurnal.artifactory.generatedB" +
+      "\020DataTransitProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -7,7 +7,7 @@ message DataTransit {
   int64 mobile = 1;
   string email = 2;
   int32 date = 3;
-  Currency currency = 4;
+  string currency = 4;
   string backupData = 5;
 
   string user = 6;
@@ -15,12 +15,6 @@ message DataTransit {
   string hashCred = 8;
 
   map<string, int64> supplementaryLongs = 9;
-}
-
-enum Currency {
-  INR = 0;
-  USD = 1;
-  CND = 2;
 }
 
 message DataTransitList {
