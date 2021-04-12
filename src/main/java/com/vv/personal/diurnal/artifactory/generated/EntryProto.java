@@ -121,113 +121,6 @@ public final class EntryProto {
     // @@protoc_insertion_point(enum_scope:Sign)
   }
 
-  /**
-   * Protobuf enum {@code Currency}
-   */
-  public enum Currency
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>INR = 0;</code>
-     */
-    INR(0),
-    /**
-     * <code>USD = 1;</code>
-     */
-    USD(1),
-    /**
-     * <code>CND = 2;</code>
-     */
-    CND(2),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>INR = 0;</code>
-     */
-    public static final int INR_VALUE = 0;
-    /**
-     * <code>USD = 1;</code>
-     */
-    public static final int USD_VALUE = 1;
-    /**
-     * <code>CND = 2;</code>
-     */
-    public static final int CND_VALUE = 2;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Currency valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static Currency forNumber(int value) {
-      switch (value) {
-        case 0: return INR;
-        case 1: return USD;
-        case 2: return CND;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Currency>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Currency> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Currency>() {
-            public Currency findValueByNumber(int number) {
-              return Currency.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.vv.personal.diurnal.artifactory.generated.EntryProto.getDescriptor().getEnumTypes().get(1);
-    }
-
-    private static final Currency[] VALUES = values();
-
-    public static Currency valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Currency(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:Currency)
-  }
-
   public interface EntryOrBuilder extends
       // @@protoc_insertion_point(interface_extends:Entry)
       com.google.protobuf.MessageOrBuilder {
@@ -252,13 +145,14 @@ public final class EntryProto {
     com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign getSign();
 
     /**
-     * <code>.Currency currency = 4;</code>
+     * <code>string currency = 4;</code>
      */
-    int getCurrencyValue();
+    java.lang.String getCurrency();
     /**
-     * <code>.Currency currency = 4;</code>
+     * <code>string currency = 4;</code>
      */
-    com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency getCurrency();
+    com.google.protobuf.ByteString
+        getCurrencyBytes();
 
     /**
      * <code>double amount = 5;</code>
@@ -296,7 +190,7 @@ public final class EntryProto {
       mobile_ = 0L;
       date_ = 0;
       sign_ = 0;
-      currency_ = 0;
+      currency_ = "";
       amount_ = 0D;
       description_ = "";
       serial_ = 0;
@@ -342,10 +236,10 @@ public final class EntryProto {
               sign_ = rawValue;
               break;
             }
-            case 32: {
-              int rawValue = input.readEnum();
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              currency_ = rawValue;
+              currency_ = s;
               break;
             }
             case 41: {
@@ -432,20 +326,37 @@ public final class EntryProto {
     }
 
     public static final int CURRENCY_FIELD_NUMBER = 4;
-    private int currency_;
+    private volatile java.lang.Object currency_;
     /**
-     * <code>.Currency currency = 4;</code>
+     * <code>string currency = 4;</code>
      */
-    public int getCurrencyValue() {
-      return currency_;
+    public java.lang.String getCurrency() {
+      java.lang.Object ref = currency_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currency_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.Currency currency = 4;</code>
+     * <code>string currency = 4;</code>
      */
-    public com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency getCurrency() {
-      @SuppressWarnings("deprecation")
-      com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency result = com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency.valueOf(currency_);
-      return result == null ? com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency.UNRECOGNIZED : result;
+    public com.google.protobuf.ByteString
+        getCurrencyBytes() {
+      java.lang.Object ref = currency_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        currency_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int AMOUNT_FIELD_NUMBER = 5;
@@ -523,8 +434,8 @@ public final class EntryProto {
       if (sign_ != com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign.NEGATIVE.getNumber()) {
         output.writeEnum(3, sign_);
       }
-      if (currency_ != com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency.INR.getNumber()) {
-        output.writeEnum(4, currency_);
+      if (!getCurrencyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, currency_);
       }
       if (amount_ != 0D) {
         output.writeDouble(5, amount_);
@@ -556,9 +467,8 @@ public final class EntryProto {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, sign_);
       }
-      if (currency_ != com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency.INR.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, currency_);
+      if (!getCurrencyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, currency_);
       }
       if (amount_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
@@ -592,7 +502,8 @@ public final class EntryProto {
       result = result && (getDate()
           == other.getDate());
       result = result && sign_ == other.sign_;
-      result = result && currency_ == other.currency_;
+      result = result && getCurrency()
+          .equals(other.getCurrency());
       result = result && (
           java.lang.Double.doubleToLongBits(getAmount())
           == java.lang.Double.doubleToLongBits(
@@ -620,7 +531,7 @@ public final class EntryProto {
       hash = (37 * hash) + SIGN_FIELD_NUMBER;
       hash = (53 * hash) + sign_;
       hash = (37 * hash) + CURRENCY_FIELD_NUMBER;
-      hash = (53 * hash) + currency_;
+      hash = (53 * hash) + getCurrency().hashCode();
       hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getAmount()));
@@ -767,7 +678,7 @@ public final class EntryProto {
 
         sign_ = 0;
 
-        currency_ = 0;
+        currency_ = "";
 
         amount_ = 0D;
 
@@ -865,8 +776,9 @@ public final class EntryProto {
         if (other.sign_ != 0) {
           setSignValue(other.getSignValue());
         }
-        if (other.currency_ != 0) {
-          setCurrencyValue(other.getCurrencyValue());
+        if (!other.getCurrency().isEmpty()) {
+          currency_ = other.currency_;
+          onChanged();
         }
         if (other.getAmount() != 0D) {
           setAmount(other.getAmount());
@@ -1004,47 +916,71 @@ public final class EntryProto {
         return this;
       }
 
-      private int currency_ = 0;
+      private java.lang.Object currency_ = "";
       /**
-       * <code>.Currency currency = 4;</code>
+       * <code>string currency = 4;</code>
        */
-      public int getCurrencyValue() {
-        return currency_;
+      public java.lang.String getCurrency() {
+        java.lang.Object ref = currency_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          currency_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>.Currency currency = 4;</code>
+       * <code>string currency = 4;</code>
        */
-      public Builder setCurrencyValue(int value) {
+      public com.google.protobuf.ByteString
+          getCurrencyBytes() {
+        java.lang.Object ref = currency_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          currency_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string currency = 4;</code>
+       */
+      public Builder setCurrency(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         currency_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.Currency currency = 4;</code>
+       * <code>string currency = 4;</code>
        */
-      public com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency getCurrency() {
-        @SuppressWarnings("deprecation")
-        com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency result = com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency.valueOf(currency_);
-        return result == null ? com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.Currency currency = 4;</code>
-       */
-      public Builder setCurrency(com.vv.personal.diurnal.artifactory.generated.EntryProto.Currency value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+      public Builder clearCurrency() {
         
-        currency_ = value.getNumber();
+        currency_ = getDefaultInstance().getCurrency();
         onChanged();
         return this;
       }
       /**
-       * <code>.Currency currency = 4;</code>
+       * <code>string currency = 4;</code>
        */
-      public Builder clearCurrency() {
+      public Builder setCurrencyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         
-        currency_ = 0;
+        currency_ = value;
         onChanged();
         return this;
       }
@@ -2023,15 +1959,14 @@ public final class EntryProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013Entry.proto\"\214\001\n\005Entry\022\016\n\006mobile\030\001 \001(\003\022" +
-      "\014\n\004date\030\002 \001(\005\022\023\n\004sign\030\003 \001(\0162\005.Sign\022\033\n\010cu" +
-      "rrency\030\004 \001(\0162\t.Currency\022\016\n\006amount\030\005 \001(\001\022" +
-      "\023\n\013description\030\006 \001(\t\022\016\n\006serial\030\007 \001(\005\"\"\n\t" +
-      "EntryList\022\025\n\005entry\030\001 \003(\0132\006.Entry*/\n\004Sign" +
-      "\022\014\n\010NEGATIVE\020\000\022\014\n\010POSITIVE\020\001\022\013\n\007COMMENT\020" +
-      "\002*%\n\010Currency\022\007\n\003INR\020\000\022\007\n\003USD\020\001\022\007\n\003CND\020\002" +
-      "B;\n-com.vv.personal.diurnal.artifactory." +
-      "generatedB\nEntryProtob\006proto3"
+      "\n\013Entry.proto\"\201\001\n\005Entry\022\016\n\006mobile\030\001 \001(\003\022" +
+      "\014\n\004date\030\002 \001(\005\022\023\n\004sign\030\003 \001(\0162\005.Sign\022\020\n\010cu" +
+      "rrency\030\004 \001(\t\022\016\n\006amount\030\005 \001(\001\022\023\n\013descript" +
+      "ion\030\006 \001(\t\022\016\n\006serial\030\007 \001(\005\"\"\n\tEntryList\022\025" +
+      "\n\005entry\030\001 \003(\0132\006.Entry*/\n\004Sign\022\014\n\010NEGATIV" +
+      "E\020\000\022\014\n\010POSITIVE\020\001\022\013\n\007COMMENT\020\002B;\n-com.vv" +
+      ".personal.diurnal.artifactory.generatedB" +
+      "\nEntryProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
