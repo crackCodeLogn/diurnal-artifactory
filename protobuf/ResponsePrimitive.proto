@@ -9,6 +9,8 @@ message ResponsePrimitive {
   double doubleResponse = 3;
   bool boolResponse = 4;
   string response = 5;
+
+  repeated string responses = 6;
 }
 
 message ResponsePrimitiveList {

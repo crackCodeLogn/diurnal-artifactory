@@ -47,6 +47,25 @@ public final class ResponsePrimitiveProto {
      */
     com.google.protobuf.ByteString
         getResponseBytes();
+
+    /**
+     * <code>repeated string responses = 6;</code>
+     */
+    java.util.List<java.lang.String>
+        getResponsesList();
+    /**
+     * <code>repeated string responses = 6;</code>
+     */
+    int getResponsesCount();
+    /**
+     * <code>repeated string responses = 6;</code>
+     */
+    java.lang.String getResponses(int index);
+    /**
+     * <code>repeated string responses = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getResponsesBytes(int index);
   }
   /**
    * Protobuf type {@code ResponsePrimitive}
@@ -66,6 +85,7 @@ public final class ResponsePrimitiveProto {
       doubleResponse_ = 0D;
       boolResponse_ = false;
       response_ = "";
+      responses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -118,6 +138,15 @@ public final class ResponsePrimitiveProto {
               response_ = s;
               break;
             }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                responses_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              responses_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -133,6 +162,9 @@ public final class ResponsePrimitiveProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          responses_ = responses_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -150,6 +182,7 @@ public final class ResponsePrimitiveProto {
               com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.class, com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.Builder.class);
     }
 
+    private int bitField0_;
     public static final int INTEGRALRESPONSE_FIELD_NUMBER = 1;
     private int integralResponse_;
     /**
@@ -220,6 +253,35 @@ public final class ResponsePrimitiveProto {
       }
     }
 
+    public static final int RESPONSES_FIELD_NUMBER = 6;
+    private com.google.protobuf.LazyStringList responses_;
+    /**
+     * <code>repeated string responses = 6;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getResponsesList() {
+      return responses_;
+    }
+    /**
+     * <code>repeated string responses = 6;</code>
+     */
+    public int getResponsesCount() {
+      return responses_.size();
+    }
+    /**
+     * <code>repeated string responses = 6;</code>
+     */
+    public java.lang.String getResponses(int index) {
+      return responses_.get(index);
+    }
+    /**
+     * <code>repeated string responses = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResponsesBytes(int index) {
+      return responses_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -249,6 +311,9 @@ public final class ResponsePrimitiveProto {
       if (!getResponseBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, response_);
       }
+      for (int i = 0; i < responses_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, responses_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -276,6 +341,14 @@ public final class ResponsePrimitiveProto {
       }
       if (!getResponseBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, response_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < responses_.size(); i++) {
+          dataSize += computeStringSizeNoTag(responses_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getResponsesList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -305,6 +378,8 @@ public final class ResponsePrimitiveProto {
           == other.getBoolResponse());
       result = result && getResponse()
           .equals(other.getResponse());
+      result = result && getResponsesList()
+          .equals(other.getResponsesList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -329,6 +404,10 @@ public final class ResponsePrimitiveProto {
           getBoolResponse());
       hash = (37 * hash) + RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getResponse().hashCode();
+      if (getResponsesCount() > 0) {
+        hash = (37 * hash) + RESPONSES_FIELD_NUMBER;
+        hash = (53 * hash) + getResponsesList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -472,6 +551,8 @@ public final class ResponsePrimitiveProto {
 
         response_ = "";
 
+        responses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -498,11 +579,19 @@ public final class ResponsePrimitiveProto {
       @java.lang.Override
       public com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive buildPartial() {
         com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive result = new com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.integralResponse_ = integralResponse_;
         result.longResponse_ = longResponse_;
         result.doubleResponse_ = doubleResponse_;
         result.boolResponse_ = boolResponse_;
         result.response_ = response_;
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          responses_ = responses_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.responses_ = responses_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -567,6 +656,16 @@ public final class ResponsePrimitiveProto {
           response_ = other.response_;
           onChanged();
         }
+        if (!other.responses_.isEmpty()) {
+          if (responses_.isEmpty()) {
+            responses_ = other.responses_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureResponsesIsMutable();
+            responses_.addAll(other.responses_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -595,6 +694,7 @@ public final class ResponsePrimitiveProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private int integralResponse_ ;
       /**
@@ -765,6 +865,100 @@ public final class ResponsePrimitiveProto {
   checkByteStringIsUtf8(value);
         
         response_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList responses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureResponsesIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          responses_ = new com.google.protobuf.LazyStringArrayList(responses_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      /**
+       * <code>repeated string responses = 6;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getResponsesList() {
+        return responses_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string responses = 6;</code>
+       */
+      public int getResponsesCount() {
+        return responses_.size();
+      }
+      /**
+       * <code>repeated string responses = 6;</code>
+       */
+      public java.lang.String getResponses(int index) {
+        return responses_.get(index);
+      }
+      /**
+       * <code>repeated string responses = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResponsesBytes(int index) {
+        return responses_.getByteString(index);
+      }
+      /**
+       * <code>repeated string responses = 6;</code>
+       */
+      public Builder setResponses(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureResponsesIsMutable();
+        responses_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string responses = 6;</code>
+       */
+      public Builder addResponses(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureResponsesIsMutable();
+        responses_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string responses = 6;</code>
+       */
+      public Builder addAllResponses(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureResponsesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, responses_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string responses = 6;</code>
+       */
+      public Builder clearResponses() {
+        responses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string responses = 6;</code>
+       */
+      public Builder addResponsesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureResponsesIsMutable();
+        responses_.add(value);
         onChanged();
         return this;
       }
@@ -1622,14 +1816,15 @@ public final class ResponsePrimitiveProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027ResponsePrimitive.proto\"\203\001\n\021ResponsePr" +
+      "\n\027ResponsePrimitive.proto\"\226\001\n\021ResponsePr" +
       "imitive\022\030\n\020integralResponse\030\001 \001(\005\022\024\n\014lon" +
       "gResponse\030\002 \001(\003\022\026\n\016doubleResponse\030\003 \001(\001\022" +
-      "\024\n\014boolResponse\030\004 \001(\010\022\020\n\010response\030\005 \001(\t\"" +
-      "F\n\025ResponsePrimitiveList\022-\n\021responsePrim" +
-      "itive\030\001 \003(\0132\022.ResponsePrimitiveBG\n-com.v" +
-      "v.personal.diurnal.artifactory.generated" +
-      "B\026ResponsePrimitiveProtob\006proto3"
+      "\024\n\014boolResponse\030\004 \001(\010\022\020\n\010response\030\005 \001(\t\022" +
+      "\021\n\tresponses\030\006 \003(\t\"F\n\025ResponsePrimitiveL" +
+      "ist\022-\n\021responsePrimitive\030\001 \003(\0132\022.Respons" +
+      "ePrimitiveBG\n-com.vv.personal.diurnal.ar" +
+      "tifactory.generatedB\026ResponsePrimitivePr" +
+      "otob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1648,7 +1843,7 @@ public final class ResponsePrimitiveProto {
     internal_static_ResponsePrimitive_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ResponsePrimitive_descriptor,
-        new java.lang.String[] { "IntegralResponse", "LongResponse", "DoubleResponse", "BoolResponse", "Response", });
+        new java.lang.String[] { "IntegralResponse", "LongResponse", "DoubleResponse", "BoolResponse", "Response", "Responses", });
     internal_static_ResponsePrimitiveList_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ResponsePrimitiveList_fieldAccessorTable = new
