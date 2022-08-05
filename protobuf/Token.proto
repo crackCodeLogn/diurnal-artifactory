@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option java_package = "com.vv.personal.diurnal.artifactory.generated";
+option java_outer_classname = "TokenProto";
+
+message TokenShell {
+  string email = 1;
+  string token = 2;
+}
