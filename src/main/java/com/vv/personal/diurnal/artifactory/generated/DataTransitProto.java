@@ -4,147 +4,263 @@
 package com.vv.personal.diurnal.artifactory.generated;
 
 public final class DataTransitProto {
-  private DataTransitProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+  private DataTransitProto() {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+          com.google.protobuf.ExtensionRegistryLite registry) {
   }
+
+  public static void registerAllExtensions(
+          com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+            (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+
+  private static final com.google.protobuf.Descriptors.FileDescriptor
+          descriptor;
+
+  static {
+    java.lang.String[] descriptorData = {
+            "\n\021DataTransit.proto\"\222\002\n\013DataTransit\022\016\n\006m" +
+                    "obile\030\001 \001(\003\022\r\n\005email\030\002 \001(\t\022\014\n\004date\030\003 \001(\005" +
+                    "\022\020\n\010currency\030\004 \001(\t\022\022\n\nbackupData\030\005 \001(\t\022\014" +
+                    "\n\004user\030\006 \001(\t\022\023\n\013premiumUser\030\007 \001(\010\022\020\n\010has" +
+                    "hCred\030\010 \001(\t\022@\n\022supplementaryLongs\030\t \003(\0132" +
+                    "$.DataTransit.SupplementaryLongsEntry\0329\n" +
+                    "\027SupplementaryLongsEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+                    "\005value\030\002 \001(\003:\0028\001\"4\n\017DataTransitList\022!\n\013d" +
+                    "ataTransit\030\001 \003(\0132\014.DataTransitBA\n-com.vv" +
+                    ".personal.diurnal.artifactory.generatedB" +
+                    "\020DataTransitProtob\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+            .internalBuildGeneratedFileFrom(descriptorData,
+                    new com.google.protobuf.Descriptors.FileDescriptor[]{
+                    });
+    internal_static_DataTransit_descriptor =
+            getDescriptor().getMessageTypes().get(0);
+    internal_static_DataTransit_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_DataTransit_descriptor,
+            new java.lang.String[]{"Mobile", "Email", "Date", "Currency", "BackupData", "User", "PremiumUser", "HashCred", "SupplementaryLongs",});
+    internal_static_DataTransit_SupplementaryLongsEntry_descriptor =
+            internal_static_DataTransit_descriptor.getNestedTypes().get(0);
+    internal_static_DataTransit_SupplementaryLongsEntry_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_DataTransit_SupplementaryLongsEntry_descriptor,
+            new java.lang.String[]{"Key", "Value",});
+    internal_static_DataTransitList_descriptor =
+            getDescriptor().getMessageTypes().get(1);
+    internal_static_DataTransitList_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_DataTransitList_descriptor,
+            new java.lang.String[]{"DataTransit",});
+  }
+
+  public interface DataTransitListOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:DataTransitList)
+          com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .DataTransit dataTransit = 1;</code>
+     */
+    java.util.List<com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit>
+    getDataTransitList();
+
+    /**
+     * <code>repeated .DataTransit dataTransit = 1;</code>
+     */
+    com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit getDataTransit(int index);
+
+    /**
+     * <code>repeated .DataTransit dataTransit = 1;</code>
+     */
+    int getDataTransitCount();
+
+    /**
+     * <code>repeated .DataTransit dataTransit = 1;</code>
+     */
+    java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder>
+    getDataTransitOrBuilderList();
+
+    /**
+     * <code>repeated .DataTransit dataTransit = 1;</code>
+     */
+    com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder getDataTransitOrBuilder(
+            int index);
+  }
+
   public interface DataTransitOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:DataTransit)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:DataTransit)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>int64 mobile = 1;</code>
+     *
+     * @return The mobile.
      */
     long getMobile();
 
     /**
      * <code>string email = 2;</code>
+     * @return The email.
      */
     java.lang.String getEmail();
+
     /**
      * <code>string email = 2;</code>
+     * @return The bytes for email.
      */
     com.google.protobuf.ByteString
-        getEmailBytes();
+    getEmailBytes();
 
     /**
      * <code>int32 date = 3;</code>
+     * @return The date.
      */
     int getDate();
 
     /**
      * <code>string currency = 4;</code>
+     * @return The currency.
      */
     java.lang.String getCurrency();
+
     /**
      * <code>string currency = 4;</code>
+     * @return The bytes for currency.
      */
     com.google.protobuf.ByteString
-        getCurrencyBytes();
+    getCurrencyBytes();
 
     /**
      * <code>string backupData = 5;</code>
+     * @return The backupData.
      */
     java.lang.String getBackupData();
+
     /**
      * <code>string backupData = 5;</code>
+     * @return The bytes for backupData.
      */
     com.google.protobuf.ByteString
-        getBackupDataBytes();
+    getBackupDataBytes();
 
     /**
      * <code>string user = 6;</code>
+     * @return The user.
      */
     java.lang.String getUser();
+
     /**
      * <code>string user = 6;</code>
+     * @return The bytes for user.
      */
     com.google.protobuf.ByteString
-        getUserBytes();
+    getUserBytes();
 
     /**
      * <code>bool premiumUser = 7;</code>
+     * @return The premiumUser.
      */
     boolean getPremiumUser();
 
     /**
      * <code>string hashCred = 8;</code>
+     * @return The hashCred.
      */
     java.lang.String getHashCred();
+
     /**
      * <code>string hashCred = 8;</code>
+     * @return The bytes for hashCred.
      */
     com.google.protobuf.ByteString
-        getHashCredBytes();
+    getHashCredBytes();
 
     /**
      * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
      */
     int getSupplementaryLongsCount();
+
     /**
      * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
      */
     boolean containsSupplementaryLongs(
-        java.lang.String key);
+            java.lang.String key);
+
     /**
      * Use {@link #getSupplementaryLongsMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.Long>
     getSupplementaryLongs();
+
     /**
      * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
      */
     java.util.Map<java.lang.String, java.lang.Long>
     getSupplementaryLongsMap();
+
     /**
      * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
      */
 
     long getSupplementaryLongsOrDefault(
-        java.lang.String key,
-        long defaultValue);
+            java.lang.String key,
+            long defaultValue);
+
     /**
      * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
      */
 
     long getSupplementaryLongsOrThrow(
-        java.lang.String key);
+            java.lang.String key);
   }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_DataTransit_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_DataTransit_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_DataTransit_SupplementaryLongsEntry_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_DataTransit_SupplementaryLongsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_DataTransitList_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_DataTransitList_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+  getDescriptor() {
+    return descriptor;
+  }
+
   /**
    * Protobuf type {@code DataTransit}
    */
-  public  static final class DataTransit extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:DataTransit)
-      DataTransitOrBuilder {
-  private static final long serialVersionUID = 0L;
+  public static final class DataTransit extends
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:DataTransit)
+          DataTransitOrBuilder {
+    private static final long serialVersionUID = 0L;
+
     // Use DataTransit.newBuilder() to construct.
     private DataTransit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private DataTransit() {
-      mobile_ = 0L;
       email_ = "";
-      date_ = 0;
       currency_ = "";
       backupData_ = "";
       user_ = "";
-      premiumUser_ = false;
       hashCred_ = "";
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     private DataTransit(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -210,10 +326,10 @@ public final class DataTransitProto {
               break;
             }
             case 74: {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if ((mutable_bitField0_ & 0x00000001) == 0) {
                 supplementaryLongs_ = com.google.protobuf.MapField.newMapField(
-                    SupplementaryLongsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000100;
+                        SupplementaryLongsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
               supplementaryLongs__ = input.readMessage(
@@ -223,8 +339,8 @@ public final class DataTransitProto {
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(
+                      input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -235,28 +351,40 @@ public final class DataTransitProto {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+                e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
       return com.vv.personal.diurnal.artifactory.generated.DataTransitProto.internal_static_DataTransit_descriptor;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+      return new DataTransit();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
     }
 
     @SuppressWarnings({"rawtypes"})
     @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 9:
-          return internalGetSupplementaryLongs();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+            int number) {
+      if (number == 9) {
+        return internalGetSupplementaryLongs();
       }
+      throw new RuntimeException(
+              "Invalid map field number: " + number);
     }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -266,42 +394,50 @@ public final class DataTransitProto {
               com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.class, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.Builder.class);
     }
 
-    private int bitField0_;
     public static final int MOBILE_FIELD_NUMBER = 1;
     private long mobile_;
+
     /**
      * <code>int64 mobile = 1;</code>
+     * @return The mobile.
      */
+    @java.lang.Override
     public long getMobile() {
       return mobile_;
     }
 
     public static final int EMAIL_FIELD_NUMBER = 2;
     private volatile java.lang.Object email_;
+
     /**
      * <code>string email = 2;</code>
+     * @return The email.
      */
+    @java.lang.Override
     public java.lang.String getEmail() {
       java.lang.Object ref = email_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         email_ = s;
         return s;
       }
     }
+
     /**
      * <code>string email = 2;</code>
+     * @return The bytes for email.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getEmailBytes() {
       java.lang.Object ref = email_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         email_ = b;
         return b;
@@ -312,39 +448,48 @@ public final class DataTransitProto {
 
     public static final int DATE_FIELD_NUMBER = 3;
     private int date_;
+
     /**
      * <code>int32 date = 3;</code>
+     * @return The date.
      */
+    @java.lang.Override
     public int getDate() {
       return date_;
     }
 
     public static final int CURRENCY_FIELD_NUMBER = 4;
     private volatile java.lang.Object currency_;
+
     /**
      * <code>string currency = 4;</code>
+     * @return The currency.
      */
+    @java.lang.Override
     public java.lang.String getCurrency() {
       java.lang.Object ref = currency_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         currency_ = s;
         return s;
       }
     }
+
     /**
      * <code>string currency = 4;</code>
+     * @return The bytes for currency.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getCurrencyBytes() {
       java.lang.Object ref = currency_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         currency_ = b;
         return b;
@@ -355,30 +500,36 @@ public final class DataTransitProto {
 
     public static final int BACKUPDATA_FIELD_NUMBER = 5;
     private volatile java.lang.Object backupData_;
+
     /**
      * <code>string backupData = 5;</code>
+     * @return The backupData.
      */
+    @java.lang.Override
     public java.lang.String getBackupData() {
       java.lang.Object ref = backupData_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         backupData_ = s;
         return s;
       }
     }
+
     /**
      * <code>string backupData = 5;</code>
+     * @return The bytes for backupData.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getBackupDataBytes() {
       java.lang.Object ref = backupData_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         backupData_ = b;
         return b;
@@ -389,30 +540,36 @@ public final class DataTransitProto {
 
     public static final int USER_FIELD_NUMBER = 6;
     private volatile java.lang.Object user_;
+
     /**
      * <code>string user = 6;</code>
+     * @return The user.
      */
+    @java.lang.Override
     public java.lang.String getUser() {
       java.lang.Object ref = user_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         user_ = s;
         return s;
       }
     }
+
     /**
      * <code>string user = 6;</code>
+     * @return The bytes for user.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getUserBytes() {
       java.lang.Object ref = user_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         user_ = b;
         return b;
@@ -423,40 +580,49 @@ public final class DataTransitProto {
 
     public static final int PREMIUMUSER_FIELD_NUMBER = 7;
     private boolean premiumUser_;
+
     /**
      * <code>bool premiumUser = 7;</code>
+     * @return The premiumUser.
      */
+    @java.lang.Override
     public boolean getPremiumUser() {
       return premiumUser_;
     }
 
     public static final int HASHCRED_FIELD_NUMBER = 8;
     private volatile java.lang.Object hashCred_;
+
     /**
      * <code>string hashCred = 8;</code>
+     * @return The hashCred.
      */
+    @java.lang.Override
     public java.lang.String getHashCred() {
       java.lang.Object ref = hashCred_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         hashCred_ = s;
         return s;
       }
     }
+
     /**
      * <code>string hashCred = 8;</code>
+     * @return The bytes for hashCred.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getHashCredBytes() {
       java.lang.Object ref = hashCred_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
         hashCred_ = b;
         return b;
       } else {
@@ -465,24 +631,28 @@ public final class DataTransitProto {
     }
 
     public static final int SUPPLEMENTARYLONGS_FIELD_NUMBER = 9;
-    private static final class SupplementaryLongsDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.Long> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.Long>newDefaultInstance(
-                  com.vv.personal.diurnal.artifactory.generated.DataTransitProto.internal_static_DataTransit_SupplementaryLongsEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.INT64,
-                  0L);
+
+    /**
+     * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsSupplementaryLongs(
+            java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetSupplementaryLongs().getMap().containsKey(key);
     }
+
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.Long> supplementaryLongs_;
+            java.lang.String, java.lang.Long> supplementaryLongs_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
     internalGetSupplementaryLongs() {
       if (supplementaryLongs_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            SupplementaryLongsDefaultEntryHolder.defaultEntry);
+                SupplementaryLongsDefaultEntryHolder.defaultEntry);
       }
       return supplementaryLongs_;
     }
@@ -490,32 +660,29 @@ public final class DataTransitProto {
     public int getSupplementaryLongsCount() {
       return internalGetSupplementaryLongs().getMap().size();
     }
-    /**
-     * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
-     */
 
-    public boolean containsSupplementaryLongs(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetSupplementaryLongs().getMap().containsKey(key);
-    }
     /**
      * Use {@link #getSupplementaryLongsMap()} instead.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getSupplementaryLongs() {
       return getSupplementaryLongsMap();
     }
+
     /**
      * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
      */
+    @java.lang.Override
 
     public java.util.Map<java.lang.String, java.lang.Long> getSupplementaryLongsMap() {
       return internalGetSupplementaryLongs().getMap();
     }
+
     /**
      * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
      */
+    @java.lang.Override
 
     public long getSupplementaryLongsOrDefault(
         java.lang.String key,
@@ -525,9 +692,11 @@ public final class DataTransitProto {
           internalGetSupplementaryLongs().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
      */
+    @java.lang.Override
 
     public long getSupplementaryLongsOrThrow(
         java.lang.String key) {
@@ -540,9 +709,8 @@ public final class DataTransitProto {
       return map.get(key);
     }
 
-    private byte memoizedIsInitialized = -1;
     @java.lang.Override
-    public final boolean isInitialized() {
+    public boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
@@ -551,9 +719,11 @@ public final class DataTransitProto {
       return true;
     }
 
+    private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       if (mobile_ != 0L) {
         output.writeInt64(1, mobile_);
       }
@@ -572,7 +742,7 @@ public final class DataTransitProto {
       if (!getUserBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, user_);
       }
-      if (premiumUser_ != false) {
+      if (premiumUser_) {
         output.writeBool(7, premiumUser_);
       }
       if (!getHashCredBytes().isEmpty()) {
@@ -613,9 +783,9 @@ public final class DataTransitProto {
       if (!getUserBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, user_);
       }
-      if (premiumUser_ != false) {
+      if (premiumUser_) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, premiumUser_);
+                .computeBoolSize(7, premiumUser_);
       }
       if (!getHashCredBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, hashCred_);
@@ -638,34 +808,44 @@ public final class DataTransitProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit)) {
         return super.equals(obj);
       }
       com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit other = (com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit) obj;
 
-      boolean result = true;
-      result = result && (getMobile()
-          == other.getMobile());
-      result = result && getEmail()
-          .equals(other.getEmail());
-      result = result && (getDate()
-          == other.getDate());
-      result = result && getCurrency()
-          .equals(other.getCurrency());
-      result = result && getBackupData()
-          .equals(other.getBackupData());
-      result = result && getUser()
-          .equals(other.getUser());
-      result = result && (getPremiumUser()
-          == other.getPremiumUser());
-      result = result && getHashCred()
-          .equals(other.getHashCred());
-      result = result && internalGetSupplementaryLongs().equals(
-          other.internalGetSupplementaryLongs());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (getMobile()
+              != other.getMobile()) return false;
+      if (!getEmail()
+              .equals(other.getEmail())) return false;
+      if (getDate()
+              != other.getDate()) return false;
+      if (!getCurrency()
+              .equals(other.getCurrency())) return false;
+      if (!getBackupData()
+              .equals(other.getBackupData())) return false;
+      if (!getUser()
+              .equals(other.getUser())) return false;
+      if (getPremiumUser()
+              != other.getPremiumUser()) return false;
+      if (!getHashCred()
+              .equals(other.getHashCred())) return false;
+      if (!internalGetSupplementaryLongs().equals(
+              other.internalGetSupplementaryLongs())) return false;
+      return unknownFields.equals(other.unknownFields);
+    }
+
+    private static final class SupplementaryLongsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+              java.lang.String, java.lang.Long> defaultEntry =
+              com.google.protobuf.MapEntry
+                      .newDefaultInstance(
+                              com.vv.personal.diurnal.artifactory.generated.DataTransitProto.internal_static_DataTransit_SupplementaryLongsEntry_descriptor,
+                              com.google.protobuf.WireFormat.FieldType.STRING,
+                              "",
+                              com.google.protobuf.WireFormat.FieldType.INT64,
+                              0L);
     }
 
     @java.lang.Override
@@ -792,6 +972,7 @@ public final class DataTransitProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      * Protobuf type {@code DataTransit}
      */
@@ -799,32 +980,28 @@ public final class DataTransitProto {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:DataTransit)
         com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      public static com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
         return com.vv.personal.diurnal.artifactory.generated.DataTransitProto.internal_static_DataTransit_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
       protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 9:
-            return internalGetSupplementaryLongs();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+              int number) {
+        if (number == 9) {
+          return internalGetSupplementaryLongs();
         }
+        throw new RuntimeException(
+                "Invalid map field number: " + number);
       }
       @SuppressWarnings({"rawtypes"})
       protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 9:
-            return internalGetMutableSupplementaryLongs();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+              int number) {
+        if (number == 9) {
+          return internalGetMutableSupplementaryLongs();
         }
+        throw new RuntimeException(
+                "Invalid map field number: " + number);
       }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -896,7 +1073,6 @@ public final class DataTransitProto {
       public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit buildPartial() {
         com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit result = new com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit(this);
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.mobile_ = mobile_;
         result.email_ = email_;
         result.date_ = date_;
@@ -907,42 +1083,41 @@ public final class DataTransitProto {
         result.hashCred_ = hashCred_;
         result.supplementaryLongs_ = internalGetSupplementaryLongs();
         result.supplementaryLongs_.makeImmutable();
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+        return super.setField(field, value);
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -978,7 +1153,7 @@ public final class DataTransitProto {
           user_ = other.user_;
           onChanged();
         }
-        if (other.getPremiumUser() != false) {
+        if (other.getPremiumUser()) {
           setPremiumUser(other.getPremiumUser());
         }
         if (!other.getHashCred().isEmpty()) {
@@ -993,7 +1168,7 @@ public final class DataTransitProto {
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      public boolean isInitialized() {
         return true;
       }
 
@@ -1015,43 +1190,54 @@ public final class DataTransitProto {
         }
         return this;
       }
+
       private int bitField0_;
 
-      private long mobile_ ;
+      private long mobile_;
+
       /**
        * <code>int64 mobile = 1;</code>
+       * @return The mobile.
        */
+      @java.lang.Override
       public long getMobile() {
         return mobile_;
       }
+
       /**
        * <code>int64 mobile = 1;</code>
+       * @param value The mobile to set.
+       * @return This builder for chaining.
        */
       public Builder setMobile(long value) {
-        
+
         mobile_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <code>int64 mobile = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearMobile() {
-        
+
         mobile_ = 0L;
         onChanged();
         return this;
       }
 
       private java.lang.Object email_ = "";
+
       /**
        * <code>string email = 2;</code>
+       * @return The email.
        */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           email_ = s;
           return s;
@@ -1059,15 +1245,35 @@ public final class DataTransitProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string email = 2;</code>
+       *
+       * @param value The email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmail(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        email_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string email = 2;</code>
+       *
+       * @return The bytes for email.
        */
       public com.google.protobuf.ByteString
-          getEmailBytes() {
+      getEmailBytes() {
         java.lang.Object ref = email_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           email_ = b;
           return b;
@@ -1075,78 +1281,83 @@ public final class DataTransitProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string email = 2;</code>
-       */
-      public Builder setEmail(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        email_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 2;</code>
-       */
-      public Builder clearEmail() {
-        
-        email_ = getDefaultInstance().getEmail();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string email = 2;</code>
+       *
+       * @param value The bytes for email to set.
+       * @return This builder for chaining.
        */
       public Builder setEmailBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         email_ = value;
         onChanged();
         return this;
       }
 
-      private int date_ ;
+      /**
+       * <code>string email = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEmail() {
+
+        email_ = getDefaultInstance().getEmail();
+        onChanged();
+        return this;
+      }
+
+      private int date_;
+
       /**
        * <code>int32 date = 3;</code>
+       *
+       * @return The date.
        */
+      @java.lang.Override
       public int getDate() {
         return date_;
       }
+
       /**
        * <code>int32 date = 3;</code>
+       * @param value The date to set.
+       * @return This builder for chaining.
        */
       public Builder setDate(int value) {
-        
+
         date_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <code>int32 date = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDate() {
-        
+
         date_ = 0;
         onChanged();
         return this;
       }
 
       private java.lang.Object currency_ = "";
+
       /**
        * <code>string currency = 4;</code>
+       *
+       * @return The currency.
        */
       public java.lang.String getCurrency() {
         java.lang.Object ref = currency_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           currency_ = s;
           return s;
@@ -1154,68 +1365,83 @@ public final class DataTransitProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string currency = 4;</code>
+       *
+       * @param value The currency to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrency(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        currency_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string currency = 4;</code>
+       *
+       * @return The bytes for currency.
        */
       public com.google.protobuf.ByteString
-          getCurrencyBytes() {
+      getCurrencyBytes() {
         java.lang.Object ref = currency_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           currency_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string currency = 4;</code>
-       */
-      public Builder setCurrency(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        currency_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string currency = 4;</code>
-       */
-      public Builder clearCurrency() {
-        
-        currency_ = getDefaultInstance().getCurrency();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string currency = 4;</code>
+       * @param value The bytes for currency to set.
+       * @return This builder for chaining.
        */
       public Builder setCurrencyBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         currency_ = value;
         onChanged();
         return this;
       }
 
+      /**
+       * <code>string currency = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrency() {
+
+        currency_ = getDefaultInstance().getCurrency();
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object backupData_ = "";
+
       /**
        * <code>string backupData = 5;</code>
+       *
+       * @return The backupData.
        */
       public java.lang.String getBackupData() {
         java.lang.Object ref = backupData_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           backupData_ = s;
           return s;
@@ -1223,68 +1449,82 @@ public final class DataTransitProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string backupData = 5;</code>
+       *
+       * @param value The backupData to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBackupData(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        backupData_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string backupData = 5;</code>
+       * @return The bytes for backupData.
        */
       public com.google.protobuf.ByteString
-          getBackupDataBytes() {
+      getBackupDataBytes() {
         java.lang.Object ref = backupData_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           backupData_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string backupData = 5;</code>
-       */
-      public Builder setBackupData(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        backupData_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string backupData = 5;</code>
-       */
-      public Builder clearBackupData() {
-        
-        backupData_ = getDefaultInstance().getBackupData();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string backupData = 5;</code>
+       * @param value The bytes for backupData to set.
+       * @return This builder for chaining.
        */
       public Builder setBackupDataBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         backupData_ = value;
         onChanged();
         return this;
       }
 
+      /**
+       * <code>string backupData = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBackupData() {
+
+        backupData_ = getDefaultInstance().getBackupData();
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object user_ = "";
+
       /**
        * <code>string user = 6;</code>
+       *
+       * @return The user.
        */
       public java.lang.String getUser() {
         java.lang.Object ref = user_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           user_ = s;
           return s;
@@ -1292,94 +1532,117 @@ public final class DataTransitProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string user = 6;</code>
+       *
+       * @param value The user to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUser(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        user_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string user = 6;</code>
+       * @return The bytes for user.
        */
       public com.google.protobuf.ByteString
-          getUserBytes() {
+      getUserBytes() {
         java.lang.Object ref = user_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           user_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string user = 6;</code>
-       */
-      public Builder setUser(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        user_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user = 6;</code>
-       */
-      public Builder clearUser() {
-        
-        user_ = getDefaultInstance().getUser();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user = 6;</code>
+       * @param value The bytes for user to set.
+       * @return This builder for chaining.
        */
       public Builder setUserBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         user_ = value;
         onChanged();
         return this;
       }
 
+      /**
+       * <code>string user = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUser() {
+
+        user_ = getDefaultInstance().getUser();
+        onChanged();
+        return this;
+      }
+
       private boolean premiumUser_ ;
+
       /**
        * <code>bool premiumUser = 7;</code>
+       * @return The premiumUser.
        */
+      @java.lang.Override
       public boolean getPremiumUser() {
         return premiumUser_;
       }
+
       /**
        * <code>bool premiumUser = 7;</code>
+       * @param value The premiumUser to set.
+       * @return This builder for chaining.
        */
       public Builder setPremiumUser(boolean value) {
-        
+
         premiumUser_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <code>bool premiumUser = 7;</code>
+       *
+       * @return This builder for chaining.
        */
       public Builder clearPremiumUser() {
-        
+
         premiumUser_ = false;
         onChanged();
         return this;
       }
 
       private java.lang.Object hashCred_ = "";
+
       /**
        * <code>string hashCred = 8;</code>
+       *
+       * @return The hashCred.
        */
       public java.lang.String getHashCred() {
         java.lang.Object ref = hashCred_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           hashCred_ = s;
           return s;
@@ -1387,46 +1650,47 @@ public final class DataTransitProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string hashCred = 8;</code>
+       *
+       * @param value The hashCred to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHashCred(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        hashCred_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string hashCred = 8;</code>
+       *
+       * @return The bytes for hashCred.
        */
       public com.google.protobuf.ByteString
-          getHashCredBytes() {
+      getHashCredBytes() {
         java.lang.Object ref = hashCred_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
           hashCred_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string hashCred = 8;</code>
-       */
-      public Builder setHashCred(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        hashCred_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string hashCred = 8;</code>
-       */
-      public Builder clearHashCred() {
-        
-        hashCred_ = getDefaultInstance().getHashCred();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string hashCred = 8;</code>
+       * @param value The bytes for hashCred to set.
+       * @return This builder for chaining.
        */
       public Builder setHashCredBytes(
           com.google.protobuf.ByteString value) {
@@ -1434,8 +1698,19 @@ public final class DataTransitProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         hashCred_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string hashCred = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHashCred() {
+
+        hashCred_ = getDefaultInstance().getHashCred();
         onChanged();
         return this;
       }
@@ -1450,9 +1725,10 @@ public final class DataTransitProto {
         }
         return supplementaryLongs_;
       }
+
       private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
       internalGetMutableSupplementaryLongs() {
-        onChanged();;
+        onChanged();
         if (supplementaryLongs_ == null) {
           supplementaryLongs_ = com.google.protobuf.MapField.newMapField(
               SupplementaryLongsDefaultEntryHolder.defaultEntry);
@@ -1470,6 +1746,7 @@ public final class DataTransitProto {
        * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
        */
 
+      @java.lang.Override
       public boolean containsSupplementaryLongs(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
@@ -1478,6 +1755,7 @@ public final class DataTransitProto {
       /**
        * Use {@link #getSupplementaryLongsMap()} instead.
        */
+      @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.Long> getSupplementaryLongs() {
         return getSupplementaryLongsMap();
@@ -1485,6 +1763,7 @@ public final class DataTransitProto {
       /**
        * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
        */
+      @java.lang.Override
 
       public java.util.Map<java.lang.String, java.lang.Long> getSupplementaryLongsMap() {
         return internalGetSupplementaryLongs().getMap();
@@ -1492,6 +1771,7 @@ public final class DataTransitProto {
       /**
        * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
        */
+      @java.lang.Override
 
       public long getSupplementaryLongsOrDefault(
           java.lang.String key,
@@ -1504,6 +1784,7 @@ public final class DataTransitProto {
       /**
        * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
        */
+      @java.lang.Override
 
       public long getSupplementaryLongsOrThrow(
           java.lang.String key) {
@@ -1540,37 +1821,42 @@ public final class DataTransitProto {
       getMutableSupplementaryLongs() {
         return internalGetMutableSupplementaryLongs().getMutableMap();
       }
+
       /**
        * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
        */
       public Builder putSupplementaryLongs(
-          java.lang.String key,
-          long value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        
+              java.lang.String key,
+              long value) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+
         internalGetMutableSupplementaryLongs().getMutableMap()
-            .put(key, value);
+                .put(key, value);
         return this;
       }
+
       /**
        * <code>map&lt;string, int64&gt; supplementaryLongs = 9;</code>
        */
 
       public Builder putAllSupplementaryLongs(
-          java.util.Map<java.lang.String, java.lang.Long> values) {
+              java.util.Map<java.lang.String, java.lang.Long> values) {
         internalGetMutableSupplementaryLongs().getMutableMap()
-            .putAll(values);
+                .putAll(values);
         return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+      public Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -1594,7 +1880,7 @@ public final class DataTransitProto {
       public DataTransit parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return new DataTransit(input, extensionRegistry);
       }
     };
@@ -1615,42 +1901,15 @@ public final class DataTransitProto {
 
   }
 
-  public interface DataTransitListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:DataTransitList)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>repeated .DataTransit dataTransit = 1;</code>
-     */
-    java.util.List<com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit> 
-        getDataTransitList();
-    /**
-     * <code>repeated .DataTransit dataTransit = 1;</code>
-     */
-    com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit getDataTransit(int index);
-    /**
-     * <code>repeated .DataTransit dataTransit = 1;</code>
-     */
-    int getDataTransitCount();
-    /**
-     * <code>repeated .DataTransit dataTransit = 1;</code>
-     */
-    java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder> 
-        getDataTransitOrBuilderList();
-    /**
-     * <code>repeated .DataTransit dataTransit = 1;</code>
-     */
-    com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder getDataTransitOrBuilder(
-        int index);
-  }
   /**
    * Protobuf type {@code DataTransitList}
    */
-  public  static final class DataTransitList extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:DataTransitList)
-      DataTransitListOrBuilder {
-  private static final long serialVersionUID = 0L;
+  public static final class DataTransitList extends
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:DataTransitList)
+          DataTransitListOrBuilder {
+    private static final long serialVersionUID = 0L;
+
     // Use DataTransitList.newBuilder() to construct.
     private DataTransitList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1659,15 +1918,10 @@ public final class DataTransitProto {
       dataTransit_ = java.util.Collections.emptyList();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     private DataTransitList(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -1684,17 +1938,17 @@ public final class DataTransitProto {
               done = true;
               break;
             case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+              if ((mutable_bitField0_ & 0x00000001) == 0) {
                 dataTransit_ = new java.util.ArrayList<com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit>();
                 mutable_bitField0_ |= 0x00000001;
               }
               dataTransit_.add(
-                  input.readMessage(com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.parser(), extensionRegistry));
+                      input.readMessage(com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.parser(), extensionRegistry));
               break;
             }
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(
+                      input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1705,66 +1959,90 @@ public final class DataTransitProto {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+                e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           dataTransit_ = java.util.Collections.unmodifiableList(dataTransit_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+
+    public static com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
       return com.vv.personal.diurnal.artifactory.generated.DataTransitProto.internal_static_DataTransitList_descriptor;
     }
 
     @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+      return new DataTransitList();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
+    internalGetFieldAccessorTable() {
       return com.vv.personal.diurnal.artifactory.generated.DataTransitProto.internal_static_DataTransitList_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitList.class, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitList.Builder.class);
+              .ensureFieldAccessorsInitialized(
+                      com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitList.class, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitList.Builder.class);
     }
 
     public static final int DATATRANSIT_FIELD_NUMBER = 1;
     private java.util.List<com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit> dataTransit_;
+
     /**
      * <code>repeated .DataTransit dataTransit = 1;</code>
      */
+    @java.lang.Override
     public java.util.List<com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit> getDataTransitList() {
       return dataTransit_;
     }
+
     /**
      * <code>repeated .DataTransit dataTransit = 1;</code>
      */
-    public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder> 
-        getDataTransitOrBuilderList() {
+    @java.lang.Override
+    public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder>
+    getDataTransitOrBuilderList() {
       return dataTransit_;
     }
+
     /**
      * <code>repeated .DataTransit dataTransit = 1;</code>
      */
+    @java.lang.Override
     public int getDataTransitCount() {
       return dataTransit_.size();
     }
+
     /**
      * <code>repeated .DataTransit dataTransit = 1;</code>
      */
+    @java.lang.Override
     public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit getDataTransit(int index) {
       return dataTransit_.get(index);
     }
     /**
      * <code>repeated .DataTransit dataTransit = 1;</code>
      */
+    @java.lang.Override
     public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder getDataTransitOrBuilder(
-        int index) {
+            int index) {
       return dataTransit_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
-    public final boolean isInitialized() {
+    public boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
@@ -1790,7 +2068,7 @@ public final class DataTransitProto {
       size = 0;
       for (int i = 0; i < dataTransit_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, dataTransit_.get(i));
+                .computeMessageSize(1, dataTransit_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1800,18 +2078,16 @@ public final class DataTransitProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitList)) {
         return super.equals(obj);
       }
       com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitList other = (com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitList) obj;
 
-      boolean result = true;
-      result = result && getDataTransitList()
-          .equals(other.getDataTransitList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!getDataTransitList()
+          .equals(other.getDataTransitList())) return false;
+      return unknownFields.equals(other.unknownFields);
     }
 
     @java.lang.Override
@@ -1911,12 +2187,12 @@ public final class DataTransitProto {
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1926,9 +2202,9 @@ public final class DataTransitProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:DataTransitList)
-        com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitListOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+            com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitListOrBuilder {
+      public static com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
         return com.vv.personal.diurnal.artifactory.generated.DataTransitProto.internal_static_DataTransitList_descriptor;
       }
 
@@ -1993,7 +2269,7 @@ public final class DataTransitProto {
         com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitList result = new com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitList(this);
         int from_bitField0_ = bitField0_;
         if (dataTransitBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             dataTransit_ = java.util.Collections.unmodifiableList(dataTransit_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
@@ -2007,35 +2283,37 @@ public final class DataTransitProto {
 
       @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
       @java.lang.Override
       public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+              com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+        return super.setRepeatedField(field, index, value);
       }
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
+              com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+        return super.addRepeatedField(field, value);
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2067,7 +2345,7 @@ public final class DataTransitProto {
               dataTransitBuilder_ = null;
               dataTransit_ = other.dataTransit_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              dataTransitBuilder_ = 
+              dataTransitBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDataTransitFieldBuilder() : null;
             } else {
@@ -2081,7 +2359,7 @@ public final class DataTransitProto {
       }
 
       @java.lang.Override
-      public final boolean isInitialized() {
+      public boolean isInitialized() {
         return true;
       }
 
@@ -2106,9 +2384,10 @@ public final class DataTransitProto {
       private int bitField0_;
 
       private java.util.List<com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit> dataTransit_ =
-        java.util.Collections.emptyList();
+              java.util.Collections.emptyList();
+
       private void ensureDataTransitIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+        if ((bitField0_ & 0x00000001) == 0) {
           dataTransit_ = new java.util.ArrayList<com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit>(dataTransit_);
           bitField0_ |= 0x00000001;
          }
@@ -2280,78 +2559,87 @@ public final class DataTransitProto {
         }
         return this;
       }
+
       /**
        * <code>repeated .DataTransit dataTransit = 1;</code>
        */
       public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.Builder getDataTransitBuilder(
-          int index) {
+              int index) {
         return getDataTransitFieldBuilder().getBuilder(index);
       }
+
       /**
        * <code>repeated .DataTransit dataTransit = 1;</code>
        */
       public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder getDataTransitOrBuilder(
-          int index) {
+              int index) {
         if (dataTransitBuilder_ == null) {
-          return dataTransit_.get(index);  } else {
+          return dataTransit_.get(index);
+        } else {
           return dataTransitBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        * <code>repeated .DataTransit dataTransit = 1;</code>
        */
-      public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder> 
-           getDataTransitOrBuilderList() {
+      public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder>
+      getDataTransitOrBuilderList() {
         if (dataTransitBuilder_ != null) {
           return dataTransitBuilder_.getMessageOrBuilderList();
         } else {
           return java.util.Collections.unmodifiableList(dataTransit_);
         }
       }
+
       /**
        * <code>repeated .DataTransit dataTransit = 1;</code>
        */
       public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.Builder addDataTransitBuilder() {
         return getDataTransitFieldBuilder().addBuilder(
-            com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.getDefaultInstance());
+                com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.getDefaultInstance());
       }
+
       /**
        * <code>repeated .DataTransit dataTransit = 1;</code>
        */
       public com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.Builder addDataTransitBuilder(
-          int index) {
+              int index) {
         return getDataTransitFieldBuilder().addBuilder(
-            index, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.getDefaultInstance());
+                index, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.getDefaultInstance());
       }
+
       /**
        * <code>repeated .DataTransit dataTransit = 1;</code>
        */
-      public java.util.List<com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.Builder> 
-           getDataTransitBuilderList() {
+      public java.util.List<com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.Builder>
+      getDataTransitBuilderList() {
         return getDataTransitFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.Builder, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder> 
-          getDataTransitFieldBuilder() {
+              com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.Builder, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder>
+      getDataTransitFieldBuilder() {
         if (dataTransitBuilder_ == null) {
           dataTransitBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.Builder, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder>(
+                  com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransit.Builder, com.vv.personal.diurnal.artifactory.generated.DataTransitProto.DataTransitOrBuilder>(
                   dataTransit_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           dataTransit_ = null;
         }
         return dataTransitBuilder_;
       }
+
       @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+      public Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
-      public final Builder mergeUnknownFields(
+      public Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
@@ -2395,74 +2683,6 @@ public final class DataTransitProto {
       return DEFAULT_INSTANCE;
     }
 
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_DataTransit_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_DataTransit_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_DataTransit_SupplementaryLongsEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_DataTransit_SupplementaryLongsEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_DataTransitList_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_DataTransitList_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
-    return descriptor;
-  }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\021DataTransit.proto\"\222\002\n\013DataTransit\022\016\n\006m" +
-      "obile\030\001 \001(\003\022\r\n\005email\030\002 \001(\t\022\014\n\004date\030\003 \001(\005" +
-      "\022\020\n\010currency\030\004 \001(\t\022\022\n\nbackupData\030\005 \001(\t\022\014" +
-      "\n\004user\030\006 \001(\t\022\023\n\013premiumUser\030\007 \001(\010\022\020\n\010has" +
-      "hCred\030\010 \001(\t\022@\n\022supplementaryLongs\030\t \003(\0132" +
-      "$.DataTransit.SupplementaryLongsEntry\0329\n" +
-      "\027SupplementaryLongsEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
-      "\005value\030\002 \001(\003:\0028\001\"4\n\017DataTransitList\022!\n\013d" +
-      "ataTransit\030\001 \003(\0132\014.DataTransitBA\n-com.vv" +
-      ".personal.diurnal.artifactory.generatedB" +
-      "\020DataTransitProtob\006proto3"
-    };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
-    internal_static_DataTransit_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_DataTransit_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_DataTransit_descriptor,
-        new java.lang.String[] { "Mobile", "Email", "Date", "Currency", "BackupData", "User", "PremiumUser", "HashCred", "SupplementaryLongs", });
-    internal_static_DataTransit_SupplementaryLongsEntry_descriptor =
-      internal_static_DataTransit_descriptor.getNestedTypes().get(0);
-    internal_static_DataTransit_SupplementaryLongsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_DataTransit_SupplementaryLongsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_DataTransitList_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_DataTransitList_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_DataTransitList_descriptor,
-        new java.lang.String[] { "DataTransit", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
