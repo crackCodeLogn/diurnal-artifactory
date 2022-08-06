@@ -4,19 +4,16 @@
 package com.vv.personal.diurnal.artifactory.generated;
 
 public final class EntryProto {
-  private EntryProto() {
-  }
-
-  public static void registerAllExtensions(
-          com.google.protobuf.ExtensionRegistryLite registry) {
-  }
-
-  public static void registerAllExtensions(
-          com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-            (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-
+  private static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_Entry_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_Entry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_EntryList_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_EntryList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.FileDescriptor
           descriptor;
 
@@ -47,6 +44,24 @@ public final class EntryProto {
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_EntryList_descriptor,
             new java.lang.String[]{"Entry",});
+  }
+
+  private EntryProto() {
+  }
+
+  public static void registerAllExtensions(
+          com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+
+  public static void registerAllExtensions(
+          com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+            (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+  getDescriptor() {
+    return descriptor;
   }
 
   /**
@@ -83,17 +98,13 @@ public final class EntryProto {
     public static final int COMMENT_VALUE = 2;
 
 
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-                "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    Sign(int value) {
-      this.value = value;
-    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+            Sign> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Sign>() {
+              public Sign findValueByNumber(int number) {
+                return Sign.forNumber(number);
+              }
+            };
 
     /**
      * @param value The numeric wire value of the corresponding enum entry.
@@ -105,18 +116,14 @@ public final class EntryProto {
       return forNumber(value);
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Sign>
-        internalGetValueMap() {
-      return internalValueMap;
+    Sign(int value) {
+      this.value = value;
     }
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-            Sign> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Sign>() {
-              public Sign findValueByNumber(int number) {
-                return Sign.forNumber(number);
-              }
-            };
+    public static com.google.protobuf.Internal.EnumLiteMap<Sign>
+    internalGetValueMap() {
+      return internalValueMap;
+    }
 
     /**
      * @param value The numeric wire value of the corresponding enum entry.
@@ -135,17 +142,10 @@ public final class EntryProto {
       }
     }
 
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-    getDescriptorForType() {
-      return getDescriptor();
-    }
-
     public static final com.google.protobuf.Descriptors.EnumDescriptor
     getDescriptor() {
       return com.vv.personal.diurnal.artifactory.generated.EntryProto.getDescriptor().getEnumTypes().get(0);
     }
-
-    private static final Sign[] VALUES = values();
 
     public static Sign valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
@@ -159,7 +159,15 @@ public final class EntryProto {
       return VALUES[desc.getIndex()];
     }
 
-    private final int value;
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    private static final Sign[] VALUES = values();
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
     getValueDescriptor() {
@@ -170,7 +178,86 @@ public final class EntryProto {
       return getDescriptor().getValues().get(ordinal());
     }
 
+    private final int value;
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+    getDescriptorForType() {
+      return getDescriptor();
+    }
+
     // @@protoc_insertion_point(enum_scope:Sign)
+  }
+
+  public interface EntryOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:Entry)
+          com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 mobile = 1;</code>
+     *
+     * @return The mobile.
+     */
+    long getMobile();
+
+    /**
+     * <code>int32 date = 2;</code>
+     * @return The date.
+     */
+    int getDate();
+
+    /**
+     * <code>.Sign sign = 3;</code>
+     * @return The enum numeric value on the wire for sign.
+     */
+    int getSignValue();
+    /**
+     * <code>.Sign sign = 3;</code>
+     * @return The sign.
+     */
+    com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign getSign();
+
+    /**
+     * <code>string currency = 4;</code>
+     *
+     * @return The currency.
+     */
+    java.lang.String getCurrency();
+
+    /**
+     * <code>string currency = 4;</code>
+     *
+     * @return The bytes for currency.
+     */
+    com.google.protobuf.ByteString
+        getCurrencyBytes();
+
+    /**
+     * <code>double amount = 5;</code>
+     * @return The amount.
+     */
+    double getAmount();
+
+    /**
+     * <code>string description = 6;</code>
+     *
+     * @return The description.
+     */
+    java.lang.String getDescription();
+
+    /**
+     * <code>string description = 6;</code>
+     *
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString
+    getDescriptionBytes();
+
+    /**
+     * <code>int32 serial = 7;</code>
+     *
+     * @return The serial.
+     */
+    int getSerial();
   }
 
   public interface EntryListOrBuilder extends
@@ -204,91 +291,6 @@ public final class EntryProto {
      */
     com.vv.personal.diurnal.artifactory.generated.EntryProto.EntryOrBuilder getEntryOrBuilder(
             int index);
-  }
-
-  public interface EntryOrBuilder extends
-          // @@protoc_insertion_point(interface_extends:Entry)
-          com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int64 mobile = 1;</code>
-     * @return The mobile.
-     */
-    long getMobile();
-
-    /**
-     * <code>int32 date = 2;</code>
-     * @return The date.
-     */
-    int getDate();
-
-    /**
-     * <code>.Sign sign = 3;</code>
-     * @return The enum numeric value on the wire for sign.
-     */
-    int getSignValue();
-
-    /**
-     * <code>.Sign sign = 3;</code>
-     * @return The sign.
-     */
-    com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign getSign();
-
-    /**
-     * <code>string currency = 4;</code>
-     * @return The currency.
-     */
-    java.lang.String getCurrency();
-
-    /**
-     * <code>string currency = 4;</code>
-     * @return The bytes for currency.
-     */
-    com.google.protobuf.ByteString
-    getCurrencyBytes();
-
-    /**
-     * <code>double amount = 5;</code>
-     * @return The amount.
-     */
-    double getAmount();
-
-    /**
-     * <code>string description = 6;</code>
-     * @return The description.
-     */
-    java.lang.String getDescription();
-
-    /**
-     * <code>string description = 6;</code>
-     *
-     * @return The bytes for description.
-     */
-    com.google.protobuf.ByteString
-    getDescriptionBytes();
-
-    /**
-     * <code>int32 serial = 7;</code>
-     *
-     * @return The serial.
-     */
-    int getSerial();
-  }
-
-  private static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_Entry_descriptor;
-  private static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_Entry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-          internal_static_EntryList_descriptor;
-  private static final
-  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internal_static_EntryList_fieldAccessorTable;
-
-  public static com.google.protobuf.Descriptors.FileDescriptor
-  getDescriptor() {
-    return descriptor;
   }
 
   /**
@@ -368,7 +370,7 @@ public final class EntryProto {
             }
             default: {
               if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+                      input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -377,6 +379,8 @@ public final class EntryProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
                 e).setUnfinishedMessage(this);
@@ -408,13 +412,12 @@ public final class EntryProto {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
     internalGetFieldAccessorTable() {
       return com.vv.personal.diurnal.artifactory.generated.EntryProto.internal_static_Entry_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry.class, com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry.Builder.class);
+          .ensureFieldAccessorsInitialized(
+              com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry.class, com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry.Builder.class);
     }
 
     public static final int MOBILE_FIELD_NUMBER = 1;
     private long mobile_;
-
     /**
      * <code>int64 mobile = 1;</code>
      * @return The mobile.
@@ -479,8 +482,10 @@ public final class EntryProto {
         return s;
       }
     }
+
     /**
      * <code>string currency = 4;</code>
+     *
      * @return The bytes for currency.
      */
     @java.lang.Override
@@ -528,8 +533,10 @@ public final class EntryProto {
         return s;
       }
     }
+
     /**
      * <code>string description = 6;</code>
+     *
      * @return The bytes for description.
      */
     @java.lang.Override
@@ -559,7 +566,6 @@ public final class EntryProto {
     }
 
     private byte memoizedIsInitialized = -1;
-
     @java.lang.Override
     public boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -572,7 +578,7 @@ public final class EntryProto {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+            throws java.io.IOException {
       if (mobile_ != 0L) {
         output.writeInt64(1, mobile_);
       }
@@ -582,13 +588,13 @@ public final class EntryProto {
       if (sign_ != com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign.NEGATIVE.getNumber()) {
         output.writeEnum(3, sign_);
       }
-      if (!getCurrencyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currency_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, currency_);
       }
-      if (amount_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(amount_) != 0) {
         output.writeDouble(5, amount_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, description_);
       }
       if (serial_ != 0) {
@@ -605,24 +611,24 @@ public final class EntryProto {
       size = 0;
       if (mobile_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, mobile_);
+                .computeInt64Size(1, mobile_);
       }
       if (date_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, date_);
+                .computeInt32Size(2, date_);
       }
       if (sign_ != com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign.NEGATIVE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, sign_);
+                .computeEnumSize(3, sign_);
       }
-      if (!getCurrencyBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currency_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, currency_);
       }
-      if (amount_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(amount_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, amount_);
+                .computeDoubleSize(5, amount_);
       }
-      if (!getDescriptionBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, description_);
       }
       if (serial_ != 0) {
@@ -637,7 +643,7 @@ public final class EntryProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-        return true;
+       return true;
       }
       if (!(obj instanceof com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry)) {
         return super.equals(obj);
@@ -652,10 +658,10 @@ public final class EntryProto {
       if (!getCurrency()
               .equals(other.getCurrency())) return false;
       if (java.lang.Double.doubleToLongBits(getAmount())
-              != java.lang.Double.doubleToLongBits(
+          != java.lang.Double.doubleToLongBits(
               other.getAmount())) return false;
       if (!getDescription()
-              .equals(other.getDescription())) return false;
+          .equals(other.getDescription())) return false;
       if (getSerial()
           != other.getSerial()) return false;
       return unknownFields.equals(other.unknownFields);
@@ -770,24 +776,25 @@ public final class EntryProto {
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      * Protobuf type {@code Entry}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
             // @@protoc_insertion_point(builder_implements:Entry)
             com.vv.personal.diurnal.artifactory.generated.EntryProto.EntryOrBuilder {
       public static com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
+      getDescriptor() {
         return com.vv.personal.diurnal.artifactory.generated.EntryProto.internal_static_Entry_descriptor;
       }
 
@@ -872,7 +879,6 @@ public final class EntryProto {
       public Builder clone() {
         return super.clone();
       }
-
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -881,7 +887,7 @@ public final class EntryProto {
       }
       @java.lang.Override
       public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
@@ -889,13 +895,7 @@ public final class EntryProto {
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
-      public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
+      private double amount_ ;
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
@@ -966,17 +966,28 @@ public final class EntryProto {
         return this;
       }
 
-      private long mobile_ ;
+      private long mobile_;
+
       /**
        * <code>int64 mobile = 1;</code>
+       *
        * @return The mobile.
        */
       @java.lang.Override
       public long getMobile() {
         return mobile_;
       }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
       /**
        * <code>int64 mobile = 1;</code>
+       *
        * @param value The mobile to set.
        * @return This builder for chaining.
        */
@@ -986,8 +997,22 @@ public final class EntryProto {
         onChanged();
         return this;
       }
+
+      private int date_;
+
+      /**
+       * <code>int32 date = 2;</code>
+       *
+       * @return The date.
+       */
+      @java.lang.Override
+      public int getDate() {
+        return date_;
+      }
+
       /**
        * <code>int64 mobile = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearMobile() {
@@ -997,17 +1022,9 @@ public final class EntryProto {
         return this;
       }
 
-      private int date_ ;
       /**
        * <code>int32 date = 2;</code>
-       * @return The date.
-       */
-      @java.lang.Override
-      public int getDate() {
-        return date_;
-      }
-      /**
-       * <code>int32 date = 2;</code>
+       *
        * @param value The date to set.
        * @return This builder for chaining.
        */
@@ -1017,8 +1034,12 @@ public final class EntryProto {
         onChanged();
         return this;
       }
+
+      private int sign_ = 0;
+
       /**
        * <code>int32 date = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearDate() {
@@ -1027,8 +1048,6 @@ public final class EntryProto {
         onChanged();
         return this;
       }
-
-      private int sign_ = 0;
 
       /**
        * <code>.Sign sign = 3;</code>
@@ -1042,6 +1061,19 @@ public final class EntryProto {
 
       /**
        * <code>.Sign sign = 3;</code>
+       *
+       * @return The sign.
+       */
+      @java.lang.Override
+      public com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign getSign() {
+        @SuppressWarnings("deprecation")
+        com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign result = com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign.valueOf(sign_);
+        return result == null ? com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign.UNRECOGNIZED : result;
+      }
+
+      /**
+       * <code>.Sign sign = 3;</code>
+       *
        * @param value The enum numeric value on the wire for sign to set.
        * @return This builder for chaining.
        */
@@ -1051,16 +1083,7 @@ public final class EntryProto {
         onChanged();
         return this;
       }
-      /**
-       * <code>.Sign sign = 3;</code>
-       * @return The sign.
-       */
-      @java.lang.Override
-      public com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign getSign() {
-        @SuppressWarnings("deprecation")
-        com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign result = com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign.valueOf(sign_);
-        return result == null ? com.vv.personal.diurnal.artifactory.generated.EntryProto.Sign.UNRECOGNIZED : result;
-      }
+
       /**
        * <code>.Sign sign = 3;</code>
        * @param value The sign to set.
@@ -1075,6 +1098,9 @@ public final class EntryProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object currency_ = "";
+
       /**
        * <code>.Sign sign = 3;</code>
        * @return This builder for chaining.
@@ -1086,9 +1112,9 @@ public final class EntryProto {
         return this;
       }
 
-      private java.lang.Object currency_ = "";
       /**
        * <code>string currency = 4;</code>
+       *
        * @return The currency.
        */
       public java.lang.String getCurrency() {
@@ -1131,8 +1157,8 @@ public final class EntryProto {
         java.lang.Object ref = currency_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                          (java.lang.String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           currency_ = b;
           return b;
         } else {
@@ -1146,11 +1172,11 @@ public final class EntryProto {
        * @return This builder for chaining.
        */
       public Builder setCurrencyBytes(
-              com.google.protobuf.ByteString value) {
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
 
         currency_ = value;
         onChanged();
@@ -1167,9 +1193,6 @@ public final class EntryProto {
         onChanged();
         return this;
       }
-
-      private double amount_;
-
       /**
        * <code>double amount = 5;</code>
        * @return The amount.
@@ -1190,7 +1213,6 @@ public final class EntryProto {
         onChanged();
         return this;
       }
-
       /**
        * <code>double amount = 5;</code>
        * @return This builder for chaining.
@@ -1206,6 +1228,7 @@ public final class EntryProto {
 
       /**
        * <code>string description = 6;</code>
+       *
        * @return The description.
        */
       public java.lang.String getDescription() {
@@ -1248,8 +1271,8 @@ public final class EntryProto {
         java.lang.Object ref = description_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                          (java.lang.String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           description_ = b;
           return b;
         } else {
@@ -1263,11 +1286,11 @@ public final class EntryProto {
        * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
-              com.google.protobuf.ByteString value) {
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
 
         description_ = value;
         onChanged();
@@ -1286,7 +1309,6 @@ public final class EntryProto {
       }
 
       private int serial_ ;
-
       /**
        * <code>int32 serial = 7;</code>
        * @return The serial.
@@ -1298,7 +1320,6 @@ public final class EntryProto {
 
       /**
        * <code>int32 serial = 7;</code>
-       *
        * @param value The serial to set.
        * @return This builder for chaining.
        */
@@ -1308,7 +1329,6 @@ public final class EntryProto {
         onChanged();
         return this;
       }
-
       /**
        * <code>int32 serial = 7;</code>
        * @return This builder for chaining.
@@ -1319,7 +1339,6 @@ public final class EntryProto {
         onChanged();
         return this;
       }
-
       @java.lang.Override
       public Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1347,12 +1366,12 @@ public final class EntryProto {
     }
 
     private static final com.google.protobuf.Parser<Entry>
-        PARSER = new com.google.protobuf.AbstractParser<Entry>() {
+            PARSER = new com.google.protobuf.AbstractParser<Entry>() {
       @java.lang.Override
       public Entry parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return new Entry(input, extensionRegistry);
       }
     };
@@ -1378,7 +1397,7 @@ public final class EntryProto {
    */
   public static final class EntryList extends
           com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:EntryList)
+          // @@protoc_insertion_point(message_implements:EntryList)
       EntryListOrBuilder {
   private static final long serialVersionUID = 0L;
     // Use EntryList.newBuilder() to construct.
@@ -1414,7 +1433,7 @@ public final class EntryProto {
                 mutable_bitField0_ |= 0x00000001;
               }
               entry_.add(
-                  input.readMessage(com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry.parser(), extensionRegistry));
+                      input.readMessage(com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -1428,6 +1447,8 @@ public final class EntryProto {
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
                 e).setUnfinishedMessage(this);
@@ -1448,7 +1469,7 @@ public final class EntryProto {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-            UnusedPrivateParameter unused) {
+        UnusedPrivateParameter unused) {
       return new EntryList();
     }
 
@@ -1468,7 +1489,6 @@ public final class EntryProto {
 
     public static final int ENTRY_FIELD_NUMBER = 1;
     private java.util.List<com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry> entry_;
-
     /**
      * <code>repeated .Entry entry = 1;</code>
      */
@@ -1476,16 +1496,14 @@ public final class EntryProto {
     public java.util.List<com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry> getEntryList() {
       return entry_;
     }
-
     /**
      * <code>repeated .Entry entry = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.EntryProto.EntryOrBuilder>
-    getEntryOrBuilderList() {
+        getEntryOrBuilderList() {
       return entry_;
     }
-
     /**
      * <code>repeated .Entry entry = 1;</code>
      */
@@ -1493,7 +1511,6 @@ public final class EntryProto {
     public int getEntryCount() {
       return entry_.size();
     }
-
     /**
      * <code>repeated .Entry entry = 1;</code>
      */
@@ -1501,7 +1518,6 @@ public final class EntryProto {
     public com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry getEntry(int index) {
       return entry_.get(index);
     }
-
     /**
      * <code>repeated .Entry entry = 1;</code>
      */
@@ -1540,7 +1556,7 @@ public final class EntryProto {
       size = 0;
       for (int i = 0; i < entry_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-                .computeMessageSize(1, entry_.get(i));
+          .computeMessageSize(1, entry_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1550,7 +1566,7 @@ public final class EntryProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-        return true;
+       return true;
       }
       if (!(obj instanceof com.vv.personal.diurnal.artifactory.generated.EntryProto.EntryList)) {
         return super.equals(obj);
@@ -1558,7 +1574,7 @@ public final class EntryProto {
       com.vv.personal.diurnal.artifactory.generated.EntryProto.EntryList other = (com.vv.personal.diurnal.artifactory.generated.EntryProto.EntryList) obj;
 
       if (!getEntryList()
-              .equals(other.getEntryList())) return false;
+          .equals(other.getEntryList())) return false;
       return unknownFields.equals(other.unknownFields);
     }
 
@@ -1645,21 +1661,26 @@ public final class EntryProto {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.vv.personal.diurnal.artifactory.generated.EntryProto.EntryList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1668,16 +1689,15 @@ public final class EntryProto {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      * Protobuf type {@code EntryList}
      */
     public static final class Builder extends
-            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:EntryList)
         com.vv.personal.diurnal.artifactory.generated.EntryProto.EntryListOrBuilder {
       public static com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+          getDescriptor() {
         return com.vv.personal.diurnal.artifactory.generated.EntryProto.internal_static_EntryList_descriptor;
       }
 
@@ -1766,12 +1786,12 @@ public final class EntryProto {
       }
       @java.lang.Override
       public Builder clearField(
-              com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
       @java.lang.Override
       public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
       @java.lang.Override
@@ -1817,7 +1837,7 @@ public final class EntryProto {
               entry_ = other.entry_;
               bitField0_ = (bitField0_ & ~0x00000001);
               entryBuilder_ =
-                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getEntryFieldBuilder() : null;
             } else {
               entryBuilder_.addAllMessages(other.entry_);
@@ -1852,12 +1872,10 @@ public final class EntryProto {
         }
         return this;
       }
-
       private int bitField0_;
 
       private java.util.List<com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry> entry_ =
         java.util.Collections.emptyList();
-
       private void ensureEntryIsMutable() {
         if ((bitField0_ & 0x00000001) == 0) {
           entry_ = new java.util.ArrayList<com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry>(entry_);
@@ -1998,13 +2016,14 @@ public final class EntryProto {
         if (entryBuilder_ == null) {
           ensureEntryIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, entry_);
+                  values, entry_);
           onChanged();
         } else {
           entryBuilder_.addAllMessages(values);
         }
         return this;
       }
+
       /**
        * <code>repeated .Entry entry = 1;</code>
        */
@@ -2018,6 +2037,7 @@ public final class EntryProto {
         }
         return this;
       }
+
       /**
        * <code>repeated .Entry entry = 1;</code>
        */
@@ -2094,7 +2114,7 @@ public final class EntryProto {
       getEntryFieldBuilder() {
         if (entryBuilder_ == null) {
           entryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                  com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry, com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry.Builder, com.vv.personal.diurnal.artifactory.generated.EntryProto.EntryOrBuilder>(
+              com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry, com.vv.personal.diurnal.artifactory.generated.EntryProto.Entry.Builder, com.vv.personal.diurnal.artifactory.generated.EntryProto.EntryOrBuilder>(
                   entry_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2112,7 +2132,7 @@ public final class EntryProto {
 
       @java.lang.Override
       public Builder mergeUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 

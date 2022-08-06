@@ -92,6 +92,17 @@ public final class TokenProto {
           // @@protoc_insertion_point(message_implements:TokenShell)
           TokenShellOrBuilder {
     public static final int EMAIL_FIELD_NUMBER = 1;
+
+    // Use TokenShell.newBuilder() to construct.
+    private TokenShell(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TokenShell() {
+      email_ = "";
+      token_ = "";
+    }
+
     public static final int TOKEN_FIELD_NUMBER = 2;
     private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(class_scope:TokenShell)
@@ -114,16 +125,6 @@ public final class TokenProto {
     private volatile java.lang.Object email_;
     private volatile java.lang.Object token_;
     private byte memoizedIsInitialized = -1;
-
-    // Use TokenShell.newBuilder() to construct.
-    private TokenShell(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private TokenShell() {
-      email_ = "";
-      token_ = "";
-    }
 
     private TokenShell(
             com.google.protobuf.CodedInputStream input,
@@ -170,7 +171,7 @@ public final class TokenProto {
         throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -208,9 +209,36 @@ public final class TokenProto {
       return PARSER.parseFrom(data, extensionRegistry);
     }
 
+    @java.lang.Override
+    public boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
     public static com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell parseFrom(byte[] data)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
     }
 
     public static com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell parseFrom(
@@ -218,6 +246,22 @@ public final class TokenProto {
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell parseFrom(java.io.InputStream input)
@@ -260,7 +304,7 @@ public final class TokenProto {
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     public static Builder newBuilder() {
@@ -282,7 +326,7 @@ public final class TokenProto {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-            UnusedPrivateParameter unused) {
+        UnusedPrivateParameter unused) {
       return new TokenShell();
     }
 
@@ -302,7 +346,6 @@ public final class TokenProto {
 
     /**
      * <code>string email = 1;</code>
-     *
      * @return The email.
      */
     @java.lang.Override
@@ -341,7 +384,6 @@ public final class TokenProto {
 
     /**
      * <code>string token = 2;</code>
-     *
      * @return The token.
      */
     @java.lang.Override
@@ -351,7 +393,7 @@ public final class TokenProto {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         token_ = s;
         return s;
@@ -379,16 +421,6 @@ public final class TokenProto {
     }
 
     @java.lang.Override
-    public boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
@@ -401,26 +433,9 @@ public final class TokenProto {
     }
 
     @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-        return true;
+       return true;
       }
       if (!(obj instanceof com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell)) {
         return super.equals(obj);
@@ -428,26 +443,10 @@ public final class TokenProto {
       com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell other = (com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell) obj;
 
       if (!getEmail()
-              .equals(other.getEmail())) return false;
+          .equals(other.getEmail())) return false;
       if (!getToken()
               .equals(other.getToken())) return false;
       return unknownFields.equals(other.unknownFields);
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getEmail().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
     }
 
     @java.lang.Override
@@ -499,19 +498,6 @@ public final class TokenProto {
         maybeForceBuilderInitialization();
       }
 
-      public static com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return com.vv.personal.diurnal.artifactory.generated.TokenProto.internal_static_TokenShell_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return com.vv.personal.diurnal.artifactory.generated.TokenProto.internal_static_TokenShell_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell.class, com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell.Builder.class);
-      }
-
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
@@ -528,9 +514,8 @@ public final class TokenProto {
         return this;
       }
 
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
+      public static com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
         return com.vv.personal.diurnal.artifactory.generated.TokenProto.internal_static_TokenShell_descriptor;
       }
 
@@ -563,6 +548,20 @@ public final class TokenProto {
       }
 
       @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.vv.personal.diurnal.artifactory.generated.TokenProto.internal_static_TokenShell_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell.class, com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell.Builder.class);
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return com.vv.personal.diurnal.artifactory.generated.TokenProto.internal_static_TokenShell_descriptor;
+      }
+
+      @java.lang.Override
       public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
@@ -584,25 +583,8 @@ public final class TokenProto {
       @java.lang.Override
       public Builder setRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, java.lang.Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell) {
-          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
       }
 
       public Builder mergeFrom(com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell other) {
@@ -626,6 +608,23 @@ public final class TokenProto {
       }
 
       @java.lang.Override
+      public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell) {
+          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.TokenProto.TokenShell) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      @java.lang.Override
       public Builder mergeFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -646,14 +645,13 @@ public final class TokenProto {
 
       /**
        * <code>string email = 1;</code>
-       *
        * @return The email.
        */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-                  (com.google.protobuf.ByteString) ref;
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           email_ = s;
           return s;
@@ -707,9 +705,9 @@ public final class TokenProto {
       public Builder setEmailBytes(
               com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
 
         email_ = value;
         onChanged();
@@ -718,7 +716,6 @@ public final class TokenProto {
 
       /**
        * <code>string email = 1;</code>
-       *
        * @return This builder for chaining.
        */
       public Builder clearEmail() {
@@ -748,7 +745,6 @@ public final class TokenProto {
 
       /**
        * <code>string token = 2;</code>
-       *
        * @param value The token to set.
        * @return This builder for chaining.
        */
@@ -784,16 +780,15 @@ public final class TokenProto {
 
       /**
        * <code>string token = 2;</code>
-       *
        * @param value The bytes for token to set.
        * @return This builder for chaining.
        */
       public Builder setTokenBytes(
-              com.google.protobuf.ByteString value) {
+          com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
 
         token_ = value;
         onChanged();
@@ -814,13 +809,13 @@ public final class TokenProto {
 
       @java.lang.Override
       public Builder setUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public Builder mergeUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
