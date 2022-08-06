@@ -133,7 +133,6 @@ public final class ResponsePrimitiveProto {
 
     /**
      * <code>repeated string responses = 6;</code>
-     *
      * @param index The index of the value to return.
      * @return The bytes of the responses at the given index.
      */
@@ -187,15 +186,27 @@ public final class ResponsePrimitiveProto {
     private ResponsePrimitive(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private ResponsePrimitive() {
       response_ = "";
       responses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
+    private static final com.google.protobuf.Parser<ResponsePrimitive>
+            PARSER = new com.google.protobuf.AbstractParser<ResponsePrimitive>() {
+      @java.lang.Override
+      public ResponsePrimitive parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResponsePrimitive(input, extensionRegistry);
+      }
+    };
+
     private ResponsePrimitive(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -248,7 +259,7 @@ public final class ResponsePrimitiveProto {
             }
             default: {
               if (!parseUnknownField(
-                      input, unknownFields, extensionRegistry, tag)) {
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -261,7 +272,7 @@ public final class ResponsePrimitiveProto {
         throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           responses_ = responses_.getUnmodifiableView();
@@ -272,7 +283,7 @@ public final class ResponsePrimitiveProto {
     }
 
     public static com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
+        getDescriptor() {
       return com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.internal_static_ResponsePrimitive_descriptor;
     }
 
@@ -287,14 +298,6 @@ public final class ResponsePrimitiveProto {
     public com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.internal_static_ResponsePrimitive_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.class, com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.Builder.class);
     }
 
     public static final int INTEGRALRESPONSE_FIELD_NUMBER = 1;
@@ -332,8 +335,10 @@ public final class ResponsePrimitiveProto {
 
     public static final int BOOLRESPONSE_FIELD_NUMBER = 4;
     private boolean boolResponse_;
+
     /**
      * <code>bool boolResponse = 4;</code>
+     *
      * @return The boolResponse.
      */
     @java.lang.Override
@@ -343,8 +348,18 @@ public final class ResponsePrimitiveProto {
 
     public static final int RESPONSE_FIELD_NUMBER = 5;
     private volatile java.lang.Object response_;
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.internal_static_ResponsePrimitive_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.class, com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.Builder.class);
+    }
+
     /**
      * <code>string response = 5;</code>
+     *
      * @return The response.
      */
     @java.lang.Override
@@ -360,6 +375,9 @@ public final class ResponsePrimitiveProto {
         return s;
       }
     }
+
+    public static final int RESPONSES_FIELD_NUMBER = 6;
+    private com.google.protobuf.LazyStringList responses_;
 
     /**
      * <code>string response = 5;</code>
@@ -379,19 +397,6 @@ public final class ResponsePrimitiveProto {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int RESPONSES_FIELD_NUMBER = 6;
-    private com.google.protobuf.LazyStringList responses_;
-
-    /**
-     * <code>repeated string responses = 6;</code>
-     *
-     * @return A list containing the responses.
-     */
-    public com.google.protobuf.ProtocolStringList
-    getResponsesList() {
-      return responses_;
     }
     /**
      * <code>repeated string responses = 6;</code>
@@ -414,11 +419,12 @@ public final class ResponsePrimitiveProto {
      * @return The bytes of the responses at the given index.
      */
     public com.google.protobuf.ByteString
-        getResponsesBytes(int index) {
+    getResponsesBytes(int index) {
       return responses_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -427,6 +433,16 @@ public final class ResponsePrimitiveProto {
 
       memoizedIsInitialized = 1;
       return true;
+    }
+
+    /**
+     * <code>repeated string responses = 6;</code>
+     *
+     * @return A list containing the responses.
+     */
+    public com.google.protobuf.ProtocolStringList
+    getResponsesList() {
+      return responses_;
     }
 
     @java.lang.Override
@@ -461,15 +477,15 @@ public final class ResponsePrimitiveProto {
       size = 0;
       if (integralResponse_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-                .computeInt32Size(1, integralResponse_);
+          .computeInt32Size(1, integralResponse_);
       }
       if (longResponse_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-                .computeInt64Size(2, longResponse_);
+          .computeInt64Size(2, longResponse_);
       }
       if (java.lang.Double.doubleToRawLongBits(doubleResponse_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-                .computeDoubleSize(3, doubleResponse_);
+          .computeDoubleSize(3, doubleResponse_);
       }
       if (boolResponse_) {
         size += com.google.protobuf.CodedOutputStream
@@ -489,32 +505,6 @@ public final class ResponsePrimitiveProto {
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive)) {
-        return super.equals(obj);
-      }
-      com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive other = (com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive) obj;
-
-      if (getIntegralResponse()
-              != other.getIntegralResponse()) return false;
-      if (getLongResponse()
-              != other.getLongResponse()) return false;
-      if (java.lang.Double.doubleToLongBits(getDoubleResponse())
-              != java.lang.Double.doubleToLongBits(
-              other.getDoubleResponse())) return false;
-      if (getBoolResponse()
-          != other.getBoolResponse()) return false;
-      if (!getResponse()
-          .equals(other.getResponse())) return false;
-      if (!getResponsesList()
-          .equals(other.getResponsesList())) return false;
-      return unknownFields.equals(other.unknownFields);
     }
 
     @java.lang.Override
@@ -613,21 +603,52 @@ public final class ResponsePrimitiveProto {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+              ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive)) {
+        return super.equals(obj);
+      }
+      com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive other = (com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive) obj;
+
+      if (getIntegralResponse()
+              != other.getIntegralResponse()) return false;
+      if (getLongResponse()
+              != other.getLongResponse()) return false;
+      if (java.lang.Double.doubleToLongBits(getDoubleResponse())
+              != java.lang.Double.doubleToLongBits(
+              other.getDoubleResponse())) return false;
+      if (getBoolResponse()
+              != other.getBoolResponse()) return false;
+      if (!getResponse()
+              .equals(other.getResponse())) return false;
+      if (!getResponsesList()
+              .equals(other.getResponsesList())) return false;
+      return unknownFields.equals(other.unknownFields);
     }
 
     @java.lang.Override
@@ -635,6 +656,17 @@ public final class ResponsePrimitiveProto {
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
+    }
+
+    // @@protoc_insertion_point(class_scope:ResponsePrimitive)
+    private static final com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive();
+    }
+
+    public static com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive getDefaultInstance() {
+      return DEFAULT_INSTANCE;
     }
 
     /**
@@ -645,14 +677,7 @@ public final class ResponsePrimitiveProto {
             // @@protoc_insertion_point(builder_implements:ResponsePrimitive)
             com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveOrBuilder {
       private int integralResponse_;
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.internal_static_ResponsePrimitive_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.class, com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.Builder.class);
-      }
+      private long longResponse_;
 
       // Construct using com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.newBuilder()
       private Builder() {
@@ -730,22 +755,28 @@ public final class ResponsePrimitiveProto {
         return super.clone();
       }
 
-      private long longResponse_;
-
-      @java.lang.Override
-      public Builder clearField(
-              com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
       private double doubleResponse_;
       private boolean boolResponse_;
+
+      public static com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.internal_static_ResponsePrimitive_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.internal_static_ResponsePrimitive_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.class, com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.Builder.class);
+      }
+
+      @java.lang.Override
+      public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.setField(field, value);
+      }
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -816,9 +847,10 @@ public final class ResponsePrimitiveProto {
 
       private int bitField0_;
 
-      public static com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.internal_static_ResponsePrimitive_descriptor;
+      @java.lang.Override
+      public Builder clearField(
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
       }
 
       /**
@@ -832,10 +864,9 @@ public final class ResponsePrimitiveProto {
       }
 
       @java.lang.Override
-      public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.setField(field, value);
+      public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -847,19 +878,9 @@ public final class ResponsePrimitiveProto {
 
       @java.lang.Override
       public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
-      }
-
-      /**
-       * <code>int64 longResponse = 2;</code>
-       *
-       * @return The longResponse.
-       */
-      @java.lang.Override
-      public long getLongResponse() {
-        return longResponse_;
       }
 
       /**
@@ -889,12 +910,34 @@ public final class ResponsePrimitiveProto {
       /**
        * <code>int64 longResponse = 2;</code>
        *
+       * @return The longResponse.
+       */
+      @java.lang.Override
+      public long getLongResponse() {
+        return longResponse_;
+      }
+
+      /**
+       * <code>int64 longResponse = 2;</code>
+       *
        * @param value The longResponse to set.
        * @return This builder for chaining.
        */
       public Builder setLongResponse(long value) {
 
         longResponse_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>int64 longResponse = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLongResponse() {
+
+        longResponse_ = 0L;
         onChanged();
         return this;
       }
@@ -907,17 +950,6 @@ public final class ResponsePrimitiveProto {
       @java.lang.Override
       public double getDoubleResponse() {
         return doubleResponse_;
-      }
-
-      /**
-       * <code>int64 longResponse = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLongResponse() {
-
-        longResponse_ = 0L;
-        onChanged();
-        return this;
       }
 
       /**
@@ -1010,16 +1042,15 @@ public final class ResponsePrimitiveProto {
 
       /**
        * <code>string response = 5;</code>
-       *
        * @return The bytes for response.
        */
       public com.google.protobuf.ByteString
-      getResponseBytes() {
+          getResponseBytes() {
         java.lang.Object ref = response_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                          (java.lang.String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           response_ = b;
           return b;
         } else {
@@ -1138,22 +1169,19 @@ public final class ResponsePrimitiveProto {
 
       /**
        * <code>repeated string responses = 6;</code>
-       *
        * @param values The responses to add.
        * @return This builder for chaining.
        */
       public Builder addAllResponses(
-              java.lang.Iterable<java.lang.String> values) {
+          java.lang.Iterable<java.lang.String> values) {
         ensureResponsesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, responses_);
+            values, responses_);
         onChanged();
         return this;
       }
-
       /**
        * <code>repeated string responses = 6;</code>
-       *
        * @return This builder for chaining.
        */
       public Builder clearResponses() {
@@ -1186,34 +1214,13 @@ public final class ResponsePrimitiveProto {
 
       @java.lang.Override
       public Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
 
       // @@protoc_insertion_point(builder_scope:ResponsePrimitive)
     }
-
-    // @@protoc_insertion_point(class_scope:ResponsePrimitive)
-    private static final com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive();
-    }
-
-    public static com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ResponsePrimitive>
-        PARSER = new com.google.protobuf.AbstractParser<ResponsePrimitive>() {
-      @java.lang.Override
-      public ResponsePrimitive parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ResponsePrimitive(input, extensionRegistry);
-      }
-    };
 
     public static com.google.protobuf.Parser<ResponsePrimitive> parser() {
       return PARSER;
@@ -1237,9 +1244,8 @@ public final class ResponsePrimitiveProto {
   public static final class ResponsePrimitiveList extends
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ResponsePrimitiveList)
-          ResponsePrimitiveListOrBuilder {
-    private static final long serialVersionUID = 0L;
-
+      ResponsePrimitiveListOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ResponsePrimitiveList.newBuilder() to construct.
     private ResponsePrimitiveList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1258,7 +1264,7 @@ public final class ResponsePrimitiveProto {
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
+              com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1273,12 +1279,12 @@ public final class ResponsePrimitiveProto {
                 mutable_bitField0_ |= 0x00000001;
               }
               responsePrimitive_.add(
-                      input.readMessage(com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.parser(), extensionRegistry));
+                  input.readMessage(com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive.parser(), extensionRegistry));
               break;
             }
             default: {
               if (!parseUnknownField(
-                      input, unknownFields, extensionRegistry, tag)) {
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1291,7 +1297,7 @@ public final class ResponsePrimitiveProto {
         throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+                e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           responsePrimitive_ = java.util.Collections.unmodifiableList(responsePrimitive_);
@@ -1302,14 +1308,14 @@ public final class ResponsePrimitiveProto {
     }
 
     public static com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
+        getDescriptor() {
       return com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.internal_static_ResponsePrimitiveList_descriptor;
     }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-            UnusedPrivateParameter unused) {
+        UnusedPrivateParameter unused) {
       return new ResponsePrimitiveList();
     }
 
@@ -1329,6 +1335,7 @@ public final class ResponsePrimitiveProto {
 
     public static final int RESPONSEPRIMITIVE_FIELD_NUMBER = 1;
     private java.util.List<com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive> responsePrimitive_;
+
     /**
      * <code>repeated .ResponsePrimitive responsePrimitive = 1;</code>
      */
@@ -1342,10 +1349,9 @@ public final class ResponsePrimitiveProto {
      */
     @java.lang.Override
     public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveOrBuilder>
-    getResponsePrimitiveOrBuilderList() {
+        getResponsePrimitiveOrBuilderList() {
       return responsePrimitive_;
     }
-
     /**
      * <code>repeated .ResponsePrimitive responsePrimitive = 1;</code>
      */
@@ -1360,6 +1366,7 @@ public final class ResponsePrimitiveProto {
     public com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive getResponsePrimitive(int index) {
       return responsePrimitive_.get(index);
     }
+
     /**
      * <code>repeated .ResponsePrimitive responsePrimitive = 1;</code>
      */
@@ -1382,7 +1389,7 @@ public final class ResponsePrimitiveProto {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-    throws java.io.IOException {
+                        throws java.io.IOException {
       for (int i = 0; i < responsePrimitive_.size(); i++) {
         output.writeMessage(1, responsePrimitive_.get(i));
       }
@@ -1492,17 +1499,17 @@ public final class ResponsePrimitiveProto {
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveList parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
     public static com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveList parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
@@ -1538,8 +1545,7 @@ public final class ResponsePrimitiveProto {
             com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
             // @@protoc_insertion_point(builder_implements:ResponsePrimitiveList)
             com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveListOrBuilder {
-      private java.util.List<com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive> responsePrimitive_ =
-        java.util.Collections.emptyList();
+      private int bitField0_;
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -1619,16 +1625,19 @@ public final class ResponsePrimitiveProto {
         return super.clone();
       }
 
+      private java.util.List<com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitive> responsePrimitive_ =
+              java.util.Collections.emptyList();
+
+      public static com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.internal_static_ResponsePrimitiveList_descriptor;
+      }
+
       @java.lang.Override
       public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
         return super.setField(field, value);
-      }
-
-      public static com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.internal_static_ResponsePrimitiveList_descriptor;
       }
 
       @java.lang.Override
@@ -1638,33 +1647,66 @@ public final class ResponsePrimitiveProto {
       }
 
       @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
       public Builder setRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, java.lang.Object value) {
+          int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
 
       @java.lang.Override
       public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveList) {
-          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveList) other);
+          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveList)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      @java.lang.Override
-      public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
+      public Builder mergeFrom(com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveList other) {
+        if (other == com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveList.getDefaultInstance()) return this;
+        if (responsePrimitiveBuilder_ == null) {
+          if (!other.responsePrimitive_.isEmpty()) {
+            if (responsePrimitive_.isEmpty()) {
+              responsePrimitive_ = other.responsePrimitive_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureResponsePrimitiveIsMutable();
+              responsePrimitive_.addAll(other.responsePrimitive_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.responsePrimitive_.isEmpty()) {
+            if (responsePrimitiveBuilder_.isEmpty()) {
+              responsePrimitiveBuilder_.dispose();
+              responsePrimitiveBuilder_ = null;
+              responsePrimitive_ = other.responsePrimitive_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              responsePrimitiveBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                              getResponsePrimitiveFieldBuilder() : null;
+            } else {
+              responsePrimitiveBuilder_.addAllMessages(other.responsePrimitive_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -1688,40 +1730,6 @@ public final class ResponsePrimitiveProto {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-      private int bitField0_;
-
-      public Builder mergeFrom(com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveList other) {
-        if (other == com.vv.personal.diurnal.artifactory.generated.ResponsePrimitiveProto.ResponsePrimitiveList.getDefaultInstance()) return this;
-        if (responsePrimitiveBuilder_ == null) {
-          if (!other.responsePrimitive_.isEmpty()) {
-            if (responsePrimitive_.isEmpty()) {
-              responsePrimitive_ = other.responsePrimitive_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureResponsePrimitiveIsMutable();
-              responsePrimitive_.addAll(other.responsePrimitive_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.responsePrimitive_.isEmpty()) {
-            if (responsePrimitiveBuilder_.isEmpty()) {
-              responsePrimitiveBuilder_.dispose();
-              responsePrimitiveBuilder_ = null;
-              responsePrimitive_ = other.responsePrimitive_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              responsePrimitiveBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getResponsePrimitiveFieldBuilder() : null;
-            } else {
-              responsePrimitiveBuilder_.addAllMessages(other.responsePrimitive_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
         return this;
       }
       private void ensureResponsePrimitiveIsMutable() {
@@ -1970,10 +1978,9 @@ public final class ResponsePrimitiveProto {
         }
         return responsePrimitiveBuilder_;
       }
-
       @java.lang.Override
       public Builder setUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 

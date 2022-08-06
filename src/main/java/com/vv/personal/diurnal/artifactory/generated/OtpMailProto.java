@@ -82,7 +82,6 @@ public final class OtpMailProto {
 
     /**
      * <code>int32 otp = 2;</code>
-     *
      * @return The otp.
      */
     int getOtp();
@@ -183,7 +182,7 @@ public final class OtpMailProto {
         throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -441,12 +440,9 @@ public final class OtpMailProto {
             com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailOrBuilder {
       private int otp_;
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return com.vv.personal.diurnal.artifactory.generated.OtpMailProto.internal_static_OtpMail_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail.class, com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail.Builder.class);
+      public static com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.vv.personal.diurnal.artifactory.generated.OtpMailProto.internal_static_OtpMail_descriptor;
       }
 
       // Construct using com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail.newBuilder()
@@ -508,9 +504,19 @@ public final class OtpMailProto {
         return super.clone();
       }
 
-      public static com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return com.vv.personal.diurnal.artifactory.generated.OtpMailProto.internal_static_OtpMail_descriptor;
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return com.vv.personal.diurnal.artifactory.generated.OtpMailProto.internal_static_OtpMail_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail.class, com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail.Builder.class);
+      }
+
+      @java.lang.Override
+      public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.setField(field, value);
       }
 
       @java.lang.Override
@@ -523,13 +529,6 @@ public final class OtpMailProto {
       public Builder clearOneof(
               com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.setField(field, value);
       }
 
       @java.lang.Override
@@ -588,24 +587,15 @@ public final class OtpMailProto {
       }
 
       private java.lang.Object email_ = "";
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
       /**
        * <code>string email = 1;</code>
-       *
        * @return The email.
        */
       public java.lang.String getEmail() {
         java.lang.Object ref = email_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+                  (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           email_ = s;
           return s;
@@ -614,21 +604,11 @@ public final class OtpMailProto {
         }
       }
 
-      /**
-       * <code>string email = 1;</code>
-       *
-       * @param value The email to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEmail(
-              java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        email_ = value;
-        onChanged();
-        return this;
+      @java.lang.Override
+      public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
 
       /**
@@ -652,16 +632,32 @@ public final class OtpMailProto {
 
       /**
        * <code>string email = 1;</code>
-       *
        * @param value The bytes for email to set.
        * @return This builder for chaining.
        */
       public Builder setEmailBytes(
-          com.google.protobuf.ByteString value) {
+              com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        email_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string email = 1;</code>
+       *
+       * @param value The email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmail(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
 
         email_ = value;
         onChanged();
@@ -698,10 +694,8 @@ public final class OtpMailProto {
         onChanged();
         return this;
       }
-
       /**
        * <code>int32 otp = 2;</code>
-       *
        * @return This builder for chaining.
        */
       public Builder clearOtp() {
@@ -810,7 +804,7 @@ public final class OtpMailProto {
             }
             default: {
               if (!parseUnknownField(
-                      input, unknownFields, extensionRegistry, tag)) {
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -823,7 +817,7 @@ public final class OtpMailProto {
         throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           otpMail_ = java.util.Collections.unmodifiableList(otpMail_);
@@ -841,7 +835,7 @@ public final class OtpMailProto {
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-            UnusedPrivateParameter unused) {
+        UnusedPrivateParameter unused) {
       return new OtpMailList();
     }
 
@@ -855,12 +849,13 @@ public final class OtpMailProto {
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
     internalGetFieldAccessorTable() {
       return com.vv.personal.diurnal.artifactory.generated.OtpMailProto.internal_static_OtpMailList_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
+              .ensureFieldAccessorsInitialized(
               com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList.class, com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList.Builder.class);
     }
 
     public static final int OTPMAIL_FIELD_NUMBER = 1;
     private java.util.List<com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail> otpMail_;
+
     /**
      * <code>repeated .OtpMail otpMail = 1;</code>
      */
@@ -868,6 +863,7 @@ public final class OtpMailProto {
     public java.util.List<com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail> getOtpMailList() {
       return otpMail_;
     }
+
     /**
      * <code>repeated .OtpMail otpMail = 1;</code>
      */
@@ -876,7 +872,6 @@ public final class OtpMailProto {
     getOtpMailOrBuilderList() {
       return otpMail_;
     }
-
     /**
      * <code>repeated .OtpMail otpMail = 1;</code>
      */
@@ -884,7 +879,6 @@ public final class OtpMailProto {
     public int getOtpMailCount() {
       return otpMail_.size();
     }
-
     /**
      * <code>repeated .OtpMail otpMail = 1;</code>
      */
@@ -1045,6 +1039,7 @@ public final class OtpMailProto {
     public static Builder newBuilder(com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -1065,17 +1060,14 @@ public final class OtpMailProto {
             com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
             // @@protoc_insertion_point(builder_implements:OtpMailList)
             com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailListOrBuilder {
-      public static com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return com.vv.personal.diurnal.artifactory.generated.OtpMailProto.internal_static_OtpMailList_descriptor;
-      }
+      private int bitField0_;
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.vv.personal.diurnal.artifactory.generated.OtpMailProto.internal_static_OtpMailList_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList.class, com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList.Builder.class);
+                .ensureFieldAccessorsInitialized(
+                        com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList.class, com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList.Builder.class);
       }
 
       // Construct using com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList.newBuilder()
@@ -1148,20 +1140,19 @@ public final class OtpMailProto {
         return super.clone();
       }
 
+      private java.util.List<com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail> otpMail_ =
+              java.util.Collections.emptyList();
+
+      public static com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return com.vv.personal.diurnal.artifactory.generated.OtpMailProto.internal_static_OtpMailList_descriptor;
+      }
+
       @java.lang.Override
       public Builder setField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
         return super.setField(field, value);
-      }
-
-      private java.util.List<com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail> otpMail_ =
-              java.util.Collections.emptyList();
-
-      @java.lang.Override
-      public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1171,20 +1162,9 @@ public final class OtpMailProto {
       }
 
       @java.lang.Override
-      public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList) {
-          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
+      public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
       }
 
       @java.lang.Override
@@ -1192,6 +1172,56 @@ public final class OtpMailProto {
               com.google.protobuf.Descriptors.FieldDescriptor field,
               int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList) {
+          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList other) {
+        if (other == com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList.getDefaultInstance()) return this;
+        if (otpMailBuilder_ == null) {
+          if (!other.otpMail_.isEmpty()) {
+            if (otpMail_.isEmpty()) {
+              otpMail_ = other.otpMail_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureOtpMailIsMutable();
+              otpMail_.addAll(other.otpMail_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.otpMail_.isEmpty()) {
+            if (otpMailBuilder_.isEmpty()) {
+              otpMailBuilder_.dispose();
+              otpMailBuilder_ = null;
+              otpMail_ = other.otpMail_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              otpMailBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                              getOtpMailFieldBuilder() : null;
+            } else {
+              otpMailBuilder_.addAllMessages(other.otpMail_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -1218,49 +1248,15 @@ public final class OtpMailProto {
         return this;
       }
 
-      private int bitField0_;
-
-      public Builder mergeFrom(com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList other) {
-        if (other == com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailList.getDefaultInstance()) return this;
-        if (otpMailBuilder_ == null) {
-          if (!other.otpMail_.isEmpty()) {
-            if (otpMail_.isEmpty()) {
-              otpMail_ = other.otpMail_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureOtpMailIsMutable();
-              otpMail_.addAll(other.otpMail_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.otpMail_.isEmpty()) {
-            if (otpMailBuilder_.isEmpty()) {
-              otpMailBuilder_.dispose();
-              otpMailBuilder_ = null;
-              otpMail_ = other.otpMail_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              otpMailBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOtpMailFieldBuilder() : null;
-            } else {
-              otpMailBuilder_.addAllMessages(other.otpMail_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
       private void ensureOtpMailIsMutable() {
         if ((bitField0_ & 0x00000001) == 0) {
           otpMail_ = new java.util.ArrayList<com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail>(otpMail_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail, com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail.Builder, com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailOrBuilder> otpMailBuilder_;
+              com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail, com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMail.Builder, com.vv.personal.diurnal.artifactory.generated.OtpMailProto.OtpMailOrBuilder> otpMailBuilder_;
 
       /**
        * <code>repeated .OtpMail otpMail = 1;</code>
@@ -1497,15 +1493,16 @@ public final class OtpMailProto {
         }
         return otpMailBuilder_;
       }
+
       @java.lang.Override
       public Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public Builder mergeUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 

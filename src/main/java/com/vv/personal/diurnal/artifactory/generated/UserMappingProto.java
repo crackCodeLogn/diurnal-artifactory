@@ -197,6 +197,11 @@ public final class UserMappingProto {
       return internalValueMap;
     }
 
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+    getDescriptor() {
+      return com.vv.personal.diurnal.artifactory.generated.UserMappingProto.getDescriptor().getEnumTypes().get(0);
+    }
+
     public static Currency valueOf(
             com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -209,18 +214,6 @@ public final class UserMappingProto {
       return VALUES[desc.getIndex()];
     }
 
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-    getDescriptorForType() {
-      return getDescriptor();
-    }
-
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-    getDescriptor() {
-      return com.vv.personal.diurnal.artifactory.generated.UserMappingProto.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Currency[] VALUES = values();
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -229,7 +222,7 @@ public final class UserMappingProto {
       return value;
     }
 
-    private final int value;
+    private static final Currency[] VALUES = values();
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
     getValueDescriptor() {
@@ -238,6 +231,13 @@ public final class UserMappingProto {
                 "Can't get the descriptor of an unrecognized enum value.");
       }
       return getDescriptor().getValues().get(ordinal());
+    }
+
+    private final int value;
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+    getDescriptorForType() {
+      return getDescriptor();
     }
 
     // @@protoc_insertion_point(enum_scope:Currency)
@@ -266,22 +266,21 @@ public final class UserMappingProto {
 
     /**
      * <pre>
-     *fixed
+     * fixed
      * </pre>
      *
      * <code>string email = 2;</code>
+     *
      * @return The bytes for email.
      */
     com.google.protobuf.ByteString
-    getEmailBytes();
+        getEmailBytes();
 
     /**
      * <code>string username = 3;</code>
-     *
      * @return The username.
      */
     java.lang.String getUsername();
-
     /**
      * <code>string username = 3;</code>
      * @return The bytes for username.
@@ -297,11 +296,9 @@ public final class UserMappingProto {
 
     /**
      * <code>string hash_cred = 5;</code>
-     *
      * @return The hashCred.
      */
     java.lang.String getHashCred();
-
     /**
      * <code>string hash_cred = 5;</code>
      * @return The bytes for hashCred.
@@ -345,14 +342,11 @@ public final class UserMappingProto {
 
     /**
      * <code>.Currency currency = 11;</code>
-     *
      * @return The enum numeric value on the wire for currency.
      */
     int getCurrencyValue();
-
     /**
      * <code>.Currency currency = 11;</code>
-     *
      * @return The currency.
      */
     com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency getCurrency();
@@ -404,6 +398,7 @@ public final class UserMappingProto {
     private UserMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private UserMapping() {
       email_ = "";
       username_ = "";
@@ -411,10 +406,21 @@ public final class UserMappingProto {
       currency_ = 0;
     }
 
+    private static final com.google.protobuf.Parser<UserMapping>
+            PARSER = new com.google.protobuf.AbstractParser<UserMapping>() {
+      @java.lang.Override
+      public UserMapping parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UserMapping(input, extensionRegistry);
+      }
+    };
+
     private UserMapping(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
@@ -503,7 +509,7 @@ public final class UserMappingProto {
         throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -528,18 +534,12 @@ public final class UserMappingProto {
       return this.unknownFields;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return com.vv.personal.diurnal.artifactory.generated.UserMappingProto.internal_static_UserMapping_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-              com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping.class, com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping.Builder.class);
-    }
-
     public static final int MOBILE_FIELD_NUMBER = 1;
     private long mobile_;
+
     /**
      * <code>int64 mobile = 1;</code>
+     *
      * @return The mobile.
      */
     @java.lang.Override
@@ -549,6 +549,15 @@ public final class UserMappingProto {
 
     public static final int EMAIL_FIELD_NUMBER = 2;
     private volatile java.lang.Object email_;
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.vv.personal.diurnal.artifactory.generated.UserMappingProto.internal_static_UserMapping_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping.class, com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping.Builder.class);
+    }
+
     /**
      * <pre>
      *fixed
@@ -571,6 +580,9 @@ public final class UserMappingProto {
       }
     }
 
+    public static final int USERNAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object username_;
+
     /**
      * <pre>
      * fixed
@@ -587,7 +599,7 @@ public final class UserMappingProto {
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                        (java.lang.String) ref);
         email_ = b;
         return b;
       } else {
@@ -595,8 +607,6 @@ public final class UserMappingProto {
       }
     }
 
-    public static final int USERNAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object username_;
     /**
      * <code>string username = 3;</code>
      * @return The username.
@@ -615,6 +625,22 @@ public final class UserMappingProto {
       }
     }
 
+    public static final int PREMIUMUSER_FIELD_NUMBER = 4;
+    private boolean premiumUser_;
+
+    /**
+     * <code>bool premiumUser = 4;</code>
+     *
+     * @return The premiumUser.
+     */
+    @java.lang.Override
+    public boolean getPremiumUser() {
+      return premiumUser_;
+    }
+
+    public static final int HASH_CRED_FIELD_NUMBER = 5;
+    private volatile java.lang.Object hashCred_;
+
     /**
      * <code>string username = 3;</code>
      *
@@ -626,7 +652,7 @@ public final class UserMappingProto {
       java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
+                com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         username_ = b;
         return b;
@@ -635,19 +661,6 @@ public final class UserMappingProto {
       }
     }
 
-    public static final int PREMIUMUSER_FIELD_NUMBER = 4;
-    private boolean premiumUser_;
-    /**
-     * <code>bool premiumUser = 4;</code>
-     * @return The premiumUser.
-     */
-    @java.lang.Override
-    public boolean getPremiumUser() {
-      return premiumUser_;
-    }
-
-    public static final int HASH_CRED_FIELD_NUMBER = 5;
-    private volatile java.lang.Object hashCred_;
     /**
      * <code>string hash_cred = 5;</code>
      * @return The hashCred.
@@ -659,30 +672,10 @@ public final class UserMappingProto {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         hashCred_ = s;
         return s;
-      }
-    }
-
-    /**
-     * <code>string hash_cred = 5;</code>
-     *
-     * @return The bytes for hashCred.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-    getHashCredBytes() {
-      java.lang.Object ref = hashCred_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        hashCred_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
       }
     }
 
@@ -736,8 +729,10 @@ public final class UserMappingProto {
 
     public static final int ACCOUNTCREATIONTIMESTAMP_FIELD_NUMBER = 10;
     private long accountCreationTimestamp_;
+
     /**
      * <code>int64 accountCreationTimestamp = 10;</code>
+     *
      * @return The accountCreationTimestamp.
      */
     @java.lang.Override
@@ -749,6 +744,26 @@ public final class UserMappingProto {
     private int currency_;
 
     /**
+     * <code>string hash_cred = 5;</code>
+     *
+     * @return The bytes for hashCred.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+    getHashCredBytes() {
+      java.lang.Object ref = hashCred_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+        hashCred_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
      * <code>.Currency currency = 11;</code>
      *
      * @return The enum numeric value on the wire for currency.
@@ -756,6 +771,18 @@ public final class UserMappingProto {
     @java.lang.Override
     public int getCurrencyValue() {
       return currency_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
     }
 
     /**
@@ -768,17 +795,6 @@ public final class UserMappingProto {
       @SuppressWarnings("deprecation")
       com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency result = com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.valueOf(currency_);
       return result == null ? com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.UNRECOGNIZED : result;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
     }
 
     @java.lang.Override
@@ -828,7 +844,7 @@ public final class UserMappingProto {
       size = 0;
       if (mobile_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-                .computeInt64Size(1, mobile_);
+          .computeInt64Size(1, mobile_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, email_);
@@ -838,7 +854,7 @@ public final class UserMappingProto {
       }
       if (premiumUser_) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBoolSize(4, premiumUser_);
+          .computeBoolSize(4, premiumUser_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hashCred_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, hashCred_);
@@ -870,40 +886,6 @@ public final class UserMappingProto {
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping)) {
-        return super.equals(obj);
-      }
-      com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping other = (com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping) obj;
-
-      if (getMobile()
-              != other.getMobile()) return false;
-      if (!getEmail()
-              .equals(other.getEmail())) return false;
-      if (!getUsername()
-              .equals(other.getUsername())) return false;
-      if (getPremiumUser()
-              != other.getPremiumUser()) return false;
-      if (!getHashCred()
-              .equals(other.getHashCred())) return false;
-      if (getHashEmail()
-              != other.getHashEmail()) return false;
-      if (getLastCloudSaveTimestamp()
-              != other.getLastCloudSaveTimestamp()) return false;
-      if (getPaymentExpiryTimestamp()
-          != other.getPaymentExpiryTimestamp()) return false;
-      if (getLastSavedTimestamp()
-          != other.getLastSavedTimestamp()) return false;
-      if (getAccountCreationTimestamp()
-          != other.getAccountCreationTimestamp()) return false;
-      if (currency_ != other.currency_) return false;
-      return unknownFields.equals(other.unknownFields);
     }
 
     @java.lang.Override
@@ -1009,21 +991,60 @@ public final class UserMappingProto {
           .parseWithIOException(PARSER, input);
     }
     public static com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+              .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping)) {
+        return super.equals(obj);
+      }
+      com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping other = (com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping) obj;
+
+      if (getMobile()
+              != other.getMobile()) return false;
+      if (!getEmail()
+              .equals(other.getEmail())) return false;
+      if (!getUsername()
+              .equals(other.getUsername())) return false;
+      if (getPremiumUser()
+              != other.getPremiumUser()) return false;
+      if (!getHashCred()
+              .equals(other.getHashCred())) return false;
+      if (getHashEmail()
+              != other.getHashEmail()) return false;
+      if (getLastCloudSaveTimestamp()
+              != other.getLastCloudSaveTimestamp()) return false;
+      if (getPaymentExpiryTimestamp()
+              != other.getPaymentExpiryTimestamp()) return false;
+      if (getLastSavedTimestamp()
+              != other.getLastSavedTimestamp()) return false;
+      if (getAccountCreationTimestamp()
+              != other.getAccountCreationTimestamp()) return false;
+      if (currency_ != other.currency_) return false;
+      return unknownFields.equals(other.unknownFields);
+    }
+
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
@@ -1035,6 +1056,17 @@ public final class UserMappingProto {
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
+    }
+
+    // @@protoc_insertion_point(class_scope:UserMapping)
+    private static final com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping();
+    }
+
+    public static com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping getDefaultInstance() {
+      return DEFAULT_INSTANCE;
     }
 
     /**
@@ -1142,18 +1174,19 @@ public final class UserMappingProto {
       public Builder clone() {
         return super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
         return super.setField(field, value);
       }
+
       @java.lang.Override
       public Builder clearField(
-              com.google.protobuf.Descriptors.FieldDescriptor field) {
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
@@ -1336,8 +1369,8 @@ public final class UserMappingProto {
         java.lang.Object ref = email_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                          (java.lang.String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           email_ = b;
           return b;
         } else {
@@ -1427,8 +1460,8 @@ public final class UserMappingProto {
         java.lang.Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                          (java.lang.String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           username_ = b;
           return b;
         } else {
@@ -1536,12 +1569,12 @@ public final class UserMappingProto {
        * @return The bytes for hashCred.
        */
       public com.google.protobuf.ByteString
-      getHashCredBytes() {
+          getHashCredBytes() {
         java.lang.Object ref = hashCred_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b =
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                          (java.lang.String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           hashCred_ = b;
           return b;
         } else {
@@ -1734,10 +1767,8 @@ public final class UserMappingProto {
         onChanged();
         return this;
       }
-
       /**
        * <code>int64 accountCreationTimestamp = 10;</code>
-       *
        * @return This builder for chaining.
        */
       public Builder clearAccountCreationTimestamp() {
@@ -1776,10 +1807,8 @@ public final class UserMappingProto {
         com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency result = com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.valueOf(currency_);
         return result == null ? com.vv.personal.diurnal.artifactory.generated.UserMappingProto.Currency.UNRECOGNIZED : result;
       }
-
       /**
        * <code>.Currency currency = 11;</code>
-       *
        * @param value The currency to set.
        * @return This builder for chaining.
        */
@@ -1792,7 +1821,6 @@ public final class UserMappingProto {
         onChanged();
         return this;
       }
-
       /**
        * <code>.Currency currency = 11;</code>
        * @return This builder for chaining.
@@ -1818,27 +1846,6 @@ public final class UserMappingProto {
 
       // @@protoc_insertion_point(builder_scope:UserMapping)
     }
-
-    // @@protoc_insertion_point(class_scope:UserMapping)
-    private static final com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping();
-    }
-
-    public static com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<UserMapping>
-        PARSER = new com.google.protobuf.AbstractParser<UserMapping>() {
-      @java.lang.Override
-      public UserMapping parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UserMapping(input, extensionRegistry);
-      }
-    };
 
     public static com.google.protobuf.Parser<UserMapping> parser() {
       return PARSER;
@@ -1897,7 +1904,7 @@ public final class UserMappingProto {
                 mutable_bitField0_ |= 0x00000001;
               }
               userMapping_.add(
-                      input.readMessage(com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping.parser(), extensionRegistry));
+                  input.readMessage(com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -1930,10 +1937,18 @@ public final class UserMappingProto {
       return com.vv.personal.diurnal.artifactory.generated.UserMappingProto.internal_static_UserMappingList_descriptor;
     }
 
+    public static com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
     @java.lang.Override
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
-            UnusedPrivateParameter unused) {
+        UnusedPrivateParameter unused) {
       return new UserMappingList();
     }
 
@@ -1941,14 +1956,6 @@ public final class UserMappingProto {
     public com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.vv.personal.diurnal.artifactory.generated.UserMappingProto.internal_static_UserMappingList_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList.class, com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList.Builder.class);
     }
 
     public static final int USERMAPPING_FIELD_NUMBER = 1;
@@ -1962,15 +1969,13 @@ public final class UserMappingProto {
       return userMapping_;
     }
 
-    /**
-     * <code>repeated .UserMapping userMapping = 1;</code>
-     */
     @java.lang.Override
-    public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingOrBuilder>
-    getUserMappingOrBuilderList() {
-      return userMapping_;
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return com.vv.personal.diurnal.artifactory.generated.UserMappingProto.internal_static_UserMappingList_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList.class, com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList.Builder.class);
     }
-
     /**
      * <code>repeated .UserMapping userMapping = 1;</code>
      */
@@ -2105,29 +2110,33 @@ public final class UserMappingProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+              .parseDelimitedWithIOException(PARSER, input);
     }
+
     public static com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
+
     public static com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+              .parseWithIOException(PARSER, input);
     }
-    public static com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+
+    /**
+     * <code>repeated .UserMapping userMapping = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingOrBuilder>
+        getUserMappingOrBuilderList() {
+      return userMapping_;
     }
 
     @java.lang.Override
@@ -2163,12 +2172,11 @@ public final class UserMappingProto {
             com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
             // @@protoc_insertion_point(builder_implements:UserMappingList)
             com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingListOrBuilder {
-      private java.util.List<com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping> userMapping_ =
-              java.util.Collections.emptyList();
+      private int bitField0_;
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
+      internalGetFieldAccessorTable() {
         return com.vv.personal.diurnal.artifactory.generated.UserMappingProto.internal_static_UserMappingList_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList.class, com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList.Builder.class);
@@ -2244,15 +2252,12 @@ public final class UserMappingProto {
         return super.clone();
       }
 
+      private java.util.List<com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping> userMapping_ =
+              java.util.Collections.emptyList();
+
       public static com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
         return com.vv.personal.diurnal.artifactory.generated.UserMappingProto.internal_static_UserMappingList_descriptor;
-      }
-
-      @java.lang.Override
-      public Builder clearField(
-              com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
       }
 
       @java.lang.Override
@@ -2260,6 +2265,12 @@ public final class UserMappingProto {
               com.google.protobuf.Descriptors.FieldDescriptor field,
               java.lang.Object value) {
         return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
       }
 
       @java.lang.Override
@@ -2276,20 +2287,53 @@ public final class UserMappingProto {
       }
 
       @java.lang.Override
+      public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList) {
-          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList) other);
+          return mergeFrom((com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      @java.lang.Override
-      public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
-        return super.addRepeatedField(field, value);
+      public Builder mergeFrom(com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList other) {
+        if (other == com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList.getDefaultInstance()) return this;
+        if (userMappingBuilder_ == null) {
+          if (!other.userMapping_.isEmpty()) {
+            if (userMapping_.isEmpty()) {
+              userMapping_ = other.userMapping_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureUserMappingIsMutable();
+              userMapping_.addAll(other.userMapping_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.userMapping_.isEmpty()) {
+            if (userMappingBuilder_.isEmpty()) {
+              userMappingBuilder_.dispose();
+              userMappingBuilder_ = null;
+              userMapping_ = other.userMapping_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              userMappingBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                              getUserMappingFieldBuilder() : null;
+            } else {
+              userMappingBuilder_.addAllMessages(other.userMapping_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -2315,40 +2359,7 @@ public final class UserMappingProto {
         }
         return this;
       }
-      private int bitField0_;
 
-      public Builder mergeFrom(com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList other) {
-        if (other == com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingList.getDefaultInstance()) return this;
-        if (userMappingBuilder_ == null) {
-          if (!other.userMapping_.isEmpty()) {
-            if (userMapping_.isEmpty()) {
-              userMapping_ = other.userMapping_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureUserMappingIsMutable();
-              userMapping_.addAll(other.userMapping_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.userMapping_.isEmpty()) {
-            if (userMappingBuilder_.isEmpty()) {
-              userMappingBuilder_.dispose();
-              userMappingBuilder_ = null;
-              userMapping_ = other.userMapping_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              userMappingBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getUserMappingFieldBuilder() : null;
-            } else {
-              userMappingBuilder_.addAllMessages(other.userMapping_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
       private void ensureUserMappingIsMutable() {
         if ((bitField0_ & 0x00000001) == 0) {
           userMapping_ = new java.util.ArrayList<com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping>(userMapping_);
@@ -2586,7 +2597,7 @@ public final class UserMappingProto {
       getUserMappingFieldBuilder() {
         if (userMappingBuilder_ == null) {
           userMappingBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                  com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping, com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping.Builder, com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingOrBuilder>(
+              com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping, com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMapping.Builder, com.vv.personal.diurnal.artifactory.generated.UserMappingProto.UserMappingOrBuilder>(
                   userMapping_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
